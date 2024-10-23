@@ -3,12 +3,12 @@ package src.baldFlakes;
 
 public class Start {
 
-    public Start () {};
+    public Start () {}
   
     public static void main(String[] args) {
 
         System.out.println("Hello, World!");
 
-    };
+    }
 
-};
+}
