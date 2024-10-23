@@ -1,3 +1,4 @@
+package src.baldFlakes3;
 public class secondTest {
     
     public secondTest () {};
