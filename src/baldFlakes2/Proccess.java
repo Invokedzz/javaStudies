@@ -1,3 +1,6 @@
+package src.baldFlakes2;
+import java.util.Locale;
+
 public class Proccess {
     
     public Proccess () {};
@@ -12,7 +15,21 @@ public class Proccess {
 
         System.out.println(registerValues);
 
-        multiplication(args);
+       // multiplication(args);
+
+        floatNumber(args);
+
+    };
+
+    public static void floatNumber (String[] args) {
+
+        double randomValue = 10.7845784;
+
+        System.out.printf("%.2f", randomValue); // Considera apenas 2 casas decimais
+
+        System.out.printf("%.3f", randomValue); // Considera apenas 3 casas decimais
+
+        Locale.setDefault(Locale.UK);
 
     };
 
