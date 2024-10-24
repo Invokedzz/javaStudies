@@ -16,6 +16,24 @@ public class Trap {
 
        System.out.println("The result is: " + area);
 
+       receiveValuesAgain(args);
+
+    }
+
+    public static void receiveValuesAgain (String[] args) {
+
+        int valueA, valueB;
+
+        double result;
+
+        valueA = 7;
+
+        valueB = 2;
+
+        result = (double) valueA / valueB;
+
+        System.out.println(result);
+
     }
 
 }
