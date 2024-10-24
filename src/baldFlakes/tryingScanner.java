@@ -12,7 +12,9 @@ public class tryingScanner {
 
         String x = sc.next();
 
-        System.out.println("We received: " + x);
+        char oneValue = sc.next().charAt(0);
+
+        System.out.println("We received: " + x + oneValue);
 
         main2(args);
 
