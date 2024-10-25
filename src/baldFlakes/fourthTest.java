@@ -33,6 +33,8 @@ public class fourthTest {
         System.out.printf("Okay, so this worker have: %s hours, id: %s, a salary of: R$%s and a receives R$%s p/h",
                 hours, id, salary, salaryHour);
 
+        sc.close();
+
     }
 
 }
