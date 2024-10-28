@@ -24,6 +24,8 @@ public class whileCondition {
 
         }
 
+        init.close();
+
     }
 
 }
