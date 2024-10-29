@@ -18,11 +18,16 @@ public class fahrenheit {
 
             System.out.printf("We received: %s ", F);
 
-            System.out.println("Would you like to try again? 1/0");
+            System.out.println("Would you like to try again? y/n");
 
-            int askUser = init.nextInt();
+            char askUser = init.next().charAt(0);
 
-            if (askUser == 0) break;
+            if (askUser == 'n') {
+
+                System.out.println("Okay! Bye bye.\n");
+                break;
+
+            }
 
         } while(true);
 
