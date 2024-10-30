@@ -18,13 +18,35 @@ public class ThreeNumbers {
 
         c = scInit.nextDouble();
 
-        if (a > b && a > c) System.out.println(a);
+        double maxValue = totalValues(a, b, c);
 
-        else if (b > a && b > c) System.out.println(b);
+        double showTotal = totalResult(maxValue);
 
-        else if (c > a && c > b) System.out.println(c);
+    }
+
+    public static double totalValues (double x, double y, double z) {
+
+        double receiveValues = 0;
+
+        if (x > y && x > z) receiveValues = x;
+
+
+        else if (y > x && y > z) receiveValues = y;
+
+
+        else if (z > x && z > y) receiveValues = z;
 
         else System.out.println("Error");
+
+        return receiveValues;
+
+    }
+
+    public static double totalResult (double maxValue) {
+
+        System.out.println(maxValue);
+
+        return maxValue;
 
     }
 
