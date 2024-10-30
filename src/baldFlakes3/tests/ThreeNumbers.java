@@ -24,7 +24,7 @@ public class ThreeNumbers {
 
     }
 
-    public static double totalValues (double x, double y, double z) {
+    public static double totalValues (double x, double y, double z) { // Could be void btw
 
         double receiveValues = 0;
 
