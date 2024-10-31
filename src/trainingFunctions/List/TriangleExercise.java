@@ -58,21 +58,33 @@ public class TriangleExercise {
 
     public static double areaCalc_First (double a, double b, double c) {
 
-        double p = (a + b + c) / 2;
+        if (a + b > c && a + c > b && b + c > a) {
 
-        double area = (p * (p - a) * (p - b) * (p - c));
+            double p = (a + b + c) / 2;
 
-        return Math.sqrt(area);
+            double area = (p * (p - a) * (p - b) * (p - c));
+
+            return Math.sqrt(area);
+
+        }
+
+        else return 0.0;
 
     }
 
     public static double areaCalc_Second (double a, double b, double c) {
 
-        double p = (a + b + c) / 2;
+        if (a + b > c && a + c > b && b + c > a) {
 
-        double area = (p * (p - a) * (p - b) * (p - c));
+            double p = (a + b + c) / 2;
 
-        return Math.sqrt(area);
+            double area = (p * (p - a) * (p - b) * (p - c));
+
+            return Math.sqrt(area);
+
+        }
+
+        else return 0.0;
 
     }
 
