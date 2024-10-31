@@ -12,6 +12,8 @@ public class FunctionsList {
 
         insertValues(disposedByUser);
 
+        scInit.close();
+
     }
 
     public static void insertValues (int initialValue) {
