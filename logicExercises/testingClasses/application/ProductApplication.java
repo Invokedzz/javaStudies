@@ -20,7 +20,7 @@ public class ProductApplication {
 
         Scanner initSc = new Scanner (System.in);
 
-       ProductEntity displayInfo = new ProductEntity();
+        ProductEntity displayInfo = new ProductEntity();
 
         System.out.println("Enter the name of the product: \n");
 
@@ -35,6 +35,21 @@ public class ProductApplication {
         displayInfo.quantity = initSc.nextInt();
 
         System.out.printf("%s, %s and %s", displayInfo.name, displayInfo.price, displayInfo.quantity);
+
+        System.out.println("Want to continue?\n");
+
+        char sendInfoToUser = initSc.next().charAt(0);
+
+        if (sendInfoToUser == 'y') {
+
+            System.out.println("Insert the desired measure for quantity\n");
+
+            int selectedValue = initSc.nextInt();
+
+            displayInfo.addProducts(selectedValue);
+
+
+        }
 
     }
 

@@ -16,8 +16,7 @@ public class ProductEntity {
 
     public void addProducts (int quantity) {
 
-        this.quantity += quantity;
-
+        System.out.println(this.quantity += quantity);
     }
 
     public void removeProducts (int quantity) {
