@@ -8,7 +8,7 @@ public class InfoEntity {
 
     public int totalStock;
 
-    public double incrementStock (int newValue) {
+    public int incrementStock (int newValue) {
 
         this.totalStock += newValue;
 
@@ -16,7 +16,7 @@ public class InfoEntity {
 
     }
 
-    public double removeCurrentStock (int newValue) {
+    public int removeCurrentStock (int newValue) {
 
         this.totalStock -= newValue;
 
@@ -24,7 +24,7 @@ public class InfoEntity {
 
     }
 
-    public double fullPriceDisplay (int totalPrice, int totalStock) {
+    public int fullPriceDisplay (int totalPrice, int totalStock) {
 
         this.totalStock = totalStock;
 
