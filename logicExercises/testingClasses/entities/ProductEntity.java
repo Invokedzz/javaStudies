@@ -2,11 +2,11 @@ package logicExercises.testingClasses.entities;
 
 public class ProductEntity {
 
-    private String name;
+    public String name;
 
-    private double price;
+    public double price;
 
-    private int quantity;
+    public int quantity;
 
     public double totalValueInStock () {
 
