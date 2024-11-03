@@ -20,13 +20,19 @@ public class LoopFunny {
 
         int sentByUser = initScanner.nextInt();
 
-        for (int elementCounter = 0; elementCounter <= sentByUser; elementCounter++) {
+        int [] reviewElements = new int [10];
 
-            int [] reviewElements = new int [10];
+        for (int elementCounter = 0; elementCounter <= sentByUser; elementCounter++) {
 
             reviewElements[elementCounter] += 1;
 
             System.out.println(reviewElements[elementCounter]);
+
+        }
+
+        for (int reviewElement : reviewElements) {
+
+            System.out.print(reviewElement);
 
         }
 
