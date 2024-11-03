@@ -10,7 +10,7 @@ public class WorkerEntity {
 
     public String netInformation () {
 
-        return Name + " " + GrossSalary + " " + Tax;
+        return Name + " " + "$" + GrossSalary + " " + "$" + Tax;
 
     }
 
@@ -20,7 +20,11 @@ public class WorkerEntity {
 
     }
 
+    public String newValue () {
 
+        return Name + " " + GrossSalary;
+
+    }
 
 
 }
