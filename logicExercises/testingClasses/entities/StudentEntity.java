@@ -12,15 +12,27 @@ public class StudentEntity {
 
     public double receiveGrades () {
 
-        allGrades = (firstGrade + secondGrade + thirdGrade) / 3.00;
+        allGrades = firstGrade + secondGrade + thirdGrade;
+
+        if (allGrades >= 60.00) {
+
+            System.out.printf("FINAL GRADE = %s\n", allGrades);
+
+            System.out.println("PASS\n");
+
+        }
+
+        else if (allGrades < 60.00) {
+
+            System.out.printf("FINAL GRADE = %s\n", allGrades);
+
+            System.out.println("FAILED\n");
+
+            System.out.printf("MISSING %s POINTS\n", 60 - allGrades);
+
+        }
 
         return allGrades;
-
-    }
-
-    public void showGradesToUser () {
-
-
 
     }
 

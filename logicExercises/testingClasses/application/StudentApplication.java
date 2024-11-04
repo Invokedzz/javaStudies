@@ -32,6 +32,8 @@ public class StudentApplication {
 
         controlGradesPattern(addValuesFor.firstGrade, addValuesFor.secondGrade, addValuesFor.thirdGrade);
 
+        System.out.println(addValuesFor.receiveGrades());
+
         initSc.close();
 
     }
@@ -46,7 +48,7 @@ public class StudentApplication {
 
         else if (c > 35 || c < 0) receiveErrors.errorMessageC();
 
-        else receiveErrors.errorMessageElse();
+        else receiveErrors.receiveMessageElse();
 
     }
 
