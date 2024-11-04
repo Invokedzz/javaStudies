@@ -2,6 +2,8 @@ package logicExercises.testingClasses.application;
 
 import logicExercises.testingClasses.entities.StudentEntity;
 
+import logicExercises.testingClasses.entities.StudentErrorMessage;
+
 import java.util.Scanner;
 
 import java.util.Locale;
@@ -22,10 +24,30 @@ public class StudentApplication {
 
         StudentEntity addValuesFor = new StudentEntity();
 
+        addValuesFor.firstGrade = initSc.nextDouble();
+
+        addValuesFor.secondGrade = initSc.nextDouble();
+
+        addValuesFor.thirdGrade = initSc.nextDouble();
+
+        controlGradesPattern(addValuesFor.firstGrade, addValuesFor.secondGrade, addValuesFor.thirdGrade);
+
+        initSc.close();
+
     }
 
-    public static void controlGradesPattern () {
-        
+    public static void controlGradesPattern (double a, double b, double c) {
+
+        StudentErrorMessage receiveErrors = new StudentErrorMessage();
+
+        if (a > 30 || a < 0) receiveErrors.errorMessageA();
+
+        else if (b > 35 || b < 0) receiveErrors.errorMessageB();
+
+        else if (c > 35 || c < 0) receiveErrors.errorMessageC();
+
+        else receiveErrors.errorMessageElse();
+
     }
 
 }
