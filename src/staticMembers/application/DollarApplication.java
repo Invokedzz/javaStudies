@@ -18,8 +18,15 @@ public class DollarApplication {
 
     private static void receiveDollar () {
 
-        DollarEntity receptor = new DollarEntity();
+        Scanner initSc = new Scanner (System.in);
 
+        DollarEntity.dollarCurrentValue = initSc.nextDouble();
+
+        DollarEntity.productBoughtByUser = initSc.nextDouble();
+
+        DollarEntity.returnValues(DollarEntity.dollarCurrentValue, DollarEntity.productBoughtByUser);
+
+        System.out.println(DollarEntity.taxesUponTheValue());
     }
 
 }

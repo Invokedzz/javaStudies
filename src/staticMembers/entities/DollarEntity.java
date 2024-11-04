@@ -8,9 +8,8 @@ public class DollarEntity {
 
     public static double receiveBothValues;
 
-    public static double returnValues (double dollarCurrentValue, double productBoughtByUser) {
+    public static void returnValues (double dollarCurrentValue, double productBoughtByUser) {
         receiveBothValues = dollarCurrentValue * productBoughtByUser;
-        return receiveBothValues;
     }
 
     public static double taxesUponTheValue () {
