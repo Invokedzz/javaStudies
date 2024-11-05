@@ -20,6 +20,36 @@ public class Construct {
 
         Scanner initScanner = new Scanner (System.in);
 
+        String receiveName = initScanner.next();
+
+        double addToValue = initScanner.nextDouble();
+
+        double totalValue = initScanner.nextDouble();
+
+        Destroy ourProduct = new Destroy (receiveName, addToValue, totalValue);
+
+        boolean receiveBoolean = analyzeValues(receiveName, addToValue, totalValue);
+
+        System.out.println(ourProduct);
+
+        System.out.println(receiveBoolean);
+
+    }
+
+    public static boolean analyzeValues (String name, double addToValue, double totalValue) {
+
+        if (name.length() < 3) {
+            System.out.println("Insert a valid name");
+            return false;
+        }
+
+        if (addToValue <= 0 || totalValue <= 0) {
+            System.out.println("Insert a measure bigger than 0");
+            return false;
+        }
+
+        return true;
+
     }
 
 }

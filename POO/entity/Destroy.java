@@ -18,4 +18,20 @@ public class Destroy {
 
     }
 
+    public String toString () {
+
+        return receiveName
+                + " " +
+                addToValue
+                + " " +
+                totalValue;
+
+    }
+
+    public double addToTotalValue (double addToValue, double totalValue) {
+
+        return totalValue + addToValue;
+
+    }
+
 }
