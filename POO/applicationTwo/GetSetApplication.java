@@ -24,11 +24,15 @@ public class GetSetApplication {
 
         double currentSalary = init.nextDouble();
 
+        double newValueSentByUser = init.nextDouble();
+
         GetSetEntity product = new GetSetEntity(workerName, currentSalary);
 
         System.out.println(product.getUsername());
 
-        System.out.println(product.getCurrentSalary());
+        product.setSalary(newValueSentByUser); // Changes the 1st value sent by the user
+
+        System.out.println(product.changeCurrentValue());
 
     }
 

@@ -38,4 +38,10 @@ public class GetSetEntity {
 
     }
 
+    public double changeCurrentValue () {
+
+        return currentSalary * 0.15 + currentSalary;
+
+    }
+
 }
