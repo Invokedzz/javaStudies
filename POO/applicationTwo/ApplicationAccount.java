@@ -12,6 +12,27 @@ public class ApplicationAccount {
 
         Locale.setDefault(Locale.GERMAN);
 
+        mainApplicationForAccount();
+
+    }
+
+    public static void mainApplicationForAccount () {
+
+        Scanner initScanner = new Scanner (System.in);
+
+        System.out.println("Enter the account number: ");
+
+        int defineAccountNumber = initScanner.nextInt();
+
+        System.out.println("Enter your username: ");
+
+        String defineAccountUsername = initScanner.next();
+
+        char userDecision = initScanner.next().charAt(0);
+
+        AccountEntity elementForAccountClass = new AccountEntity(defineAccountUsername, );
+
+
     }
 
 }
