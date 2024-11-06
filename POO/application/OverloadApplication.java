@@ -8,6 +8,8 @@ import POO.entity.OverloadEntity;
 
 import POO.entity.FunctionsComments;
 
+import POO.entity.IfElseOverload;
+
 public class OverloadApplication {
 
     public static void main (String[] args) {
@@ -36,6 +38,8 @@ public class OverloadApplication {
 
         OverloadEntity.totalValueObtained = initSc.nextDouble();
 
+        validateElementsSentByUser(OverloadEntity.name, OverloadEntity.receivedValue, OverloadEntity.totalValueObtained);
+
         receiveInfo(OverloadEntity.name, OverloadEntity.receivedValue, OverloadEntity.totalValueObtained);
 
     }
@@ -47,6 +51,14 @@ public class OverloadApplication {
         product.constructorOverloadEntity(name, receivedValue, totalValueObtained);
 
         System.out.println(product.addedValuesTotal(receivedValue, totalValueObtained));
+
+    }
+
+    public static void validateElementsSentByUser (String name, double receivedValue, double totalValueObtained) {
+
+        boolean receiveValues = IfElseOverload.validationForElements(name, receivedValue, totalValueObtained);
+
+        if (receiveValues) System.out.println("Values ok");
 
     }
 
