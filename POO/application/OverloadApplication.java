@@ -48,7 +48,11 @@ public class OverloadApplication {
 
         OverloadEntity product = new OverloadEntity();
 
+        product.overloadConstructor(name, totalValueObtained);
+
         product.constructorOverloadEntity(name, receivedValue, totalValueObtained);
+
+        product.currentValueAccount(totalValueObtained);
 
         System.out.println(product.addedValuesTotal(receivedValue, totalValueObtained));
 
