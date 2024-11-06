@@ -8,7 +8,7 @@ public class AccountEntity {
 
     private double initialValue;
 
-    public AccountEntity (int accountNumber, String accountUsername, double initialValue) {
+    public AccountEntity (String accountUsername, double initialValue) {
 
         this.accountUsername = accountUsername;
 
@@ -16,16 +16,28 @@ public class AccountEntity {
 
     }
 
-    public int getAccountNumber (int accountNumber) {
+    public int getAccountNumber () {
         return accountNumber;
     }
 
-    public String getAccountUsername (String accountUsername) {
+    public String getAccountUsername () {
         return accountUsername;
     }
 
-    public double getInitialValue (double initialValue) {
+    public double getInitialValue () {
         return initialValue;
+    }
+
+    public void setAccountUsername (String accountUsername) {
+
+        this.accountUsername = accountUsername;
+
+    }
+
+    public void setInitialValue (double initialValue) {
+
+        this.initialValue = initialValue;
+
     }
 
     public String toString () {
