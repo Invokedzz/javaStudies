@@ -8,11 +8,21 @@ public class AccountEntity {
 
     private double initialValue;
 
-    public AccountEntity (String accountUsername, double initialValue) {
+    public AccountEntity (String accountUsername, int accountNumber, double initialValue) {
 
         this.accountUsername = accountUsername;
 
-        this.initialValue = initialValue;
+        this.accountNumber = accountNumber;
+
+        enterSomeValue(initialValue);
+
+    }
+
+    public AccountEntity (String accountUsername, int accountNumber) {
+
+        this.accountUsername = accountUsername;
+
+        this.accountNumber = accountNumber;
 
     }
 
@@ -34,11 +44,6 @@ public class AccountEntity {
 
     }
 
-    public void setInitialValue (double initialValue) {
-
-        this.initialValue = initialValue;
-
-    }
 
     public String toString () {
 
@@ -53,7 +58,7 @@ public class AccountEntity {
     }
 
     public double removeSomeValue (double randomValue) {
-        return initialValue -= randomValue;
+        return initialValue -= randomValue + 5.00;
     }
 
 }

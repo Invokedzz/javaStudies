@@ -20,6 +20,8 @@ public class ApplicationAccount {
 
         Scanner initScanner = new Scanner (System.in);
 
+        AccountEntity account;
+
         System.out.println("Enter the account number: ");
 
         int defineAccountNumber = initScanner.nextInt();
@@ -28,9 +30,25 @@ public class ApplicationAccount {
 
         String defineAccountUsername = initScanner.next();
 
+        System.out.println("Do you want to continue?");
+
         char userDecision = initScanner.next().charAt(0);
 
-        AccountEntity elementForAccountClass = new AccountEntity(defineAccountUsername, );
+        if (userDecision == 'y') {
+
+            System.out.println("Enter the initial value: ");
+
+            double initialValue = initScanner.nextDouble();
+
+            account = new AccountEntity(defineAccountUsername, defineAccountNumber, initialValue);
+
+        } else {
+
+            account = new AccountEntity(defineAccountUsername, defineAccountNumber);
+
+        }
+
+        System.out.println(account);
 
 
     }
