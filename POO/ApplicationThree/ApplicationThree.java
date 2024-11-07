@@ -6,6 +6,8 @@ import java.util.Locale;
 
 import POO.EntitiesThree.EntitiesThree;
 
+import POO.EntitiesThree.EntitiesValidator;
+
 public class ApplicationThree {
 
     public static void main (String[] args) {
@@ -28,7 +30,21 @@ public class ApplicationThree {
 
         String carColor = initSc.next();
 
-        carInfo = new EntitiesThree(carID, carBrand, carColor);
+        char userDecision = initSc.next().charAt(0);
+
+        if (userDecision == 'y') {
+
+            double totalValue = initSc.nextDouble();
+
+            double totalKm = initSc.nextDouble();
+
+            carInfo = new EntitiesThree(carID, carBrand, carColor, totalValue, totalKm);
+
+        } else {
+
+            carInfo = new EntitiesThree(carID, carBrand, carColor);
+
+        }
 
         System.out.println(carInfo);
 
