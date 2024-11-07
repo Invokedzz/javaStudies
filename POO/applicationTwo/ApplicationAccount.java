@@ -42,11 +42,25 @@ public class ApplicationAccount {
 
             account = new AccountEntity(defineAccountUsername, defineAccountNumber, initialValue);
 
-        } else {
+        } else account = new AccountEntity(defineAccountUsername, defineAccountNumber);
 
-            account = new AccountEntity(defineAccountUsername, defineAccountNumber);
+        System.out.println(account);
 
-        }
+        System.out.println("Deposit something in here: ");
+
+        double depositValue = initScanner.nextDouble();
+
+        account.enterSomeValue(depositValue);
+
+        System.out.println("Updated account: ");
+
+        System.out.println(account);
+
+        System.out.println("Withdraw some value: ");
+
+        double withdrawSomething = initScanner.nextDouble();
+
+        account.removeSomeValue(withdrawSomething);
 
         System.out.println(account);
 
