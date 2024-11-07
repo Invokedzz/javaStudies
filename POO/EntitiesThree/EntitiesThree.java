@@ -82,7 +82,9 @@ public class EntitiesThree {
 
         return "ID: " + carID
                 + "Brand: " + carBrand
-                + "Color: " + carColor;
+                + "Color: " + carColor
+                + "Total price: R$ " + totalValue
+                + "Total km: " + totalKm;
 
     }
 

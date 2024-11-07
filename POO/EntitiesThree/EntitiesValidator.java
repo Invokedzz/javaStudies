@@ -6,7 +6,7 @@ public class EntitiesValidator {
 
     public boolean validatorID (int carId) {
 
-        return carId >= 0;
+        return carId > 0;
 
     }
 
