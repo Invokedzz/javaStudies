@@ -8,8 +8,40 @@ public class EntitiesThree {
 
     private String carColor;
 
-    private double totalValue;
+    public entitiesThree (int carID, String carBrand, String carColor) {
 
-    private double distanceTraveled;
+        this.carID = carID;
+
+        this.carBrand = carBrand;
+
+        this.carColor = carColor;
+
+    }
+
+    public int getCarID() {
+
+        return carID;
+
+    }
+
+    public String getCarBrand () {
+
+        return carBrand;
+
+    }
+
+    public String getCarColor () {
+
+        return carColor;
+
+    }
+
+    public String toString () {
+
+        return "ID: " + carID
+                + "Brand: " + carBrand
+                + "Color: " + carColor;
+
+    }
 
 }
