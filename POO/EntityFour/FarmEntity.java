@@ -1,5 +1,7 @@
 package POO.EntityFour;
 
+import java.util.Arrays;
+
 public class FarmEntity {
 
     private String animalsName;
@@ -10,21 +12,18 @@ public class FarmEntity {
 
     private double animalsHappiness;
 
-    public FarmEntity (double animalsHumor, double animalsBoredom, double animalsHappiness) {
-
-        this.animalsBoredom = animalsBoredom;
-
-        this.animalsHumor = animalsHumor;
-
-        this.animalsHappiness = animalsHappiness;
-
-    }
-
     public FarmEntity (String animalsName) {
 
         this.animalsName = animalsName;
 
+        this.animalsBoredom = 50.0;
+
+        this.animalsHumor = 50.0;
+
+        this.animalsHappiness = 50.0;
+
     }
+
 
     public String toString () {
 
@@ -38,11 +37,16 @@ public class FarmEntity {
 
     }
 
-    public void feedAllOfThem () {
+    public void feedAllOfThem (double foodQty) {
+
+        animalsHappiness += foodQty + (animalsHappiness * 0.05);
+        animalsHumor += 5.25;
 
     }
 
-    public void playWithThem () {
+    public void playWithThem (double animalsHappiness, double playTime) {
+
+        animalsBoredom -= (playTime + animalsHappiness) - playTime * 0.70;
 
     }
 
