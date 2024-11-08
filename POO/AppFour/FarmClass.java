@@ -28,7 +28,17 @@ public class FarmClass {
 
         double animalHappiness = readPositivesOnly(initScanner);
 
+        if (foodQty == -1) return;
+
+        else if (playTime == -1) return;
+
+        else if (animalHappiness == -1) return;
+
         FarmEntity properValues = new FarmEntity(animalsName);
+
+        properValues.feedAllOfThem(foodQty);
+
+        properValues.playWithThem(animalHappiness, playTime);
 
         System.out.println(properValues);
 
