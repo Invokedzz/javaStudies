@@ -2,11 +2,11 @@ package POO.EntityFour;
 
 public class EntityFour {
 
-    private String vehicleName;
+    private final String vehicleName;
 
     private double totalGasInTheVehicle;
 
-    private double reduceOrObtainGas;
+    private double literUsed;
 
     public EntityFour (String vehicleName, double totalGasInTheVehicle) {
 
@@ -23,12 +23,28 @@ public class EntityFour {
 
     }
 
-    public void useGasInATrip () {
+    public void useGasInATrip (double literUsed, double kmsUsed) {
+
+        totalGasInTheVehicle -= kmsUsed / literUsed;
 
     }
 
-    public void addGasAfterATrip () {
-        
+    public void addGasAfterATrip (double literUsed) {
+
+        totalGasInTheVehicle += literUsed;
+
+    }
+
+    public String getVehicleName () {
+        return vehicleName;
+    }
+
+    public double getTotalGasInTheVehicle () {
+        return totalGasInTheVehicle;
+    }
+
+    public double getLiterUsed () {
+        return literUsed;
     }
 
 }
