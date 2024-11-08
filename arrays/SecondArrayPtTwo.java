@@ -20,6 +20,32 @@ public class SecondArrayPtTwo {
 
         Scanner initScanner = new Scanner (System.in);
 
+        int valueReceivedForArrays = initScanner.nextInt();
+
+        SecondArrayEntity [] vector = new SecondArrayEntity[valueReceivedForArrays];
+
+        for (int i = 0; i < valueReceivedForArrays; i ++) {
+
+            String productsName = initScanner.next();
+
+            double productsValue = initScanner.nextDouble();
+
+            vector[i] = new SecondArrayEntity(productsName, productsValue);
+
+        }
+
+        double totalResult = 0.0;
+
+        for (int u = 0; u < valueReceivedForArrays; u ++) {
+
+            totalResult += vector[u].getProductsValue();
+
+        }
+
+        double zzz = totalResult / valueReceivedForArrays;
+
+        System.out.println(zzz);
+
     }
 
 }
