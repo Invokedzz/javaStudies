@@ -32,7 +32,17 @@ public class SecondArray {
 
         }
 
+        double receiveAllProductsValues = 0.0;
 
+        for (int y = 0; y < controlValue; y ++) {
+
+            receiveAllProductsValues += vectorForProducts[y];
+
+        }
+
+        double finalResult = receiveAllProductsValues / controlValue;
+
+        System.out.println(finalResult);
 
     }
 
