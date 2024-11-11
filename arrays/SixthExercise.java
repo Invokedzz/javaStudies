@@ -63,7 +63,7 @@ public class SixthExercise {
             if (age[i] < 16) {
                 System.out.println(name[i]);
             }
-            
+
         }
 
         double avg = sum / receiveNumber;
