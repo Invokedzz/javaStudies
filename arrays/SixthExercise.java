@@ -50,6 +50,26 @@ public class SixthExercise {
 
         }
 
+        double sum = 0.0;
+
+        for (int y = 0; y < receiveNumber; y++) {
+
+            sum += height[y];
+
+        }
+
+        for (int i = 0; i < receiveNumber; i ++) {
+
+            if (age[i] < 16) {
+                System.out.println(name[i]);
+            }
+            
+        }
+
+        double avg = sum / receiveNumber;
+
+        System.out.println(avg);
+
     }
 
 }
