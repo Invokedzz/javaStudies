@@ -53,6 +53,20 @@ public class FriendlyArray {
 
     private static void loadVector (int[] vectorList) {
 
+        Scanner initSc = new Scanner (System.in);
+
+        for (int i = 0; i < vectorList.length; i++) {
+
+            vectorList[i] = initSc.nextInt();
+
+        }
+
+        for (int j : vectorList) {
+
+            System.out.println(j);
+
+        }
+
     }
 
     private static void evenValuesDisplay (int[] vectorList) {
