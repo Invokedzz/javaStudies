@@ -71,6 +71,16 @@ public class FriendlyArray {
 
     private static void evenValuesDisplay (int[] vectorList) {
 
+        Scanner initSc = new Scanner (System.in);
+
+        for (int i = 0; i < vectorList.length; i++) {
+
+            vectorList[i] = initSc.nextInt();
+
+            if (vectorList[i] % 2 == 0) System.out.println(vectorList[i]);
+
+        }
+
     }
 
     private static void oddValuesDisplay (int[] vectorList) {
