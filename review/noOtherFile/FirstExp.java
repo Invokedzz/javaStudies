@@ -22,15 +22,34 @@ public class FirstExp {
 
         textsMinimum();
 
-        minQty = init.nextDouble();
+        minQty = checkScannerInput(init);
 
-        System.out.println("Enter the max qty");
+        textsMaximum();
 
-        maxQty = init.nextDouble();
+        maxQty = checkScannerInput(init);
 
-        totalQty = maxQty + minQty / 2;
+        totalQty = (maxQty + minQty) / 2;
 
         System.out.println(totalQty);
+
+    }
+
+    public static boolean reviewScanner (Scanner value) {
+
+        return value.hasNextDouble();
+
+    }
+
+    public static double checkScannerInput (Scanner input) {
+
+        while (!reviewScanner(input)) {
+
+            System.out.println("Enter valid values!");
+            input.next(); // Clear the buffer. Otherwise the text loops infinitely
+
+        }
+
+        return input.nextDouble();
 
     }
 
@@ -40,6 +59,10 @@ public class FirstExp {
 
     }
 
-    public st
+    public static void textsMaximum () {
+
+        System.out.println("Enter the max qty");
+
+    }
 
 }
