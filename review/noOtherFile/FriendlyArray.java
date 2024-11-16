@@ -22,13 +22,19 @@ public class FriendlyArray {
 
         displayTextForUser();
 
-        measureForVector = callScanner.nextInt();
+        measureForVector = validateScannerInput(callScanner);
 
         int [] vectorList = new int[measureForVector];
 
         displayTextForUserAgain();
 
-        switchMeasure = callScanner.nextInt();
+        switchMeasure = validateScannerInput(callScanner);
+
+        switchCaseFunctionCall(switchMeasure, vectorList);
+
+    }
+
+    private static void switchCaseFunctionCall (int switchMeasure, int [] vectorList) {
 
         switch (switchMeasure) {
 
@@ -84,6 +90,35 @@ public class FriendlyArray {
     }
 
     private static void oddValuesDisplay (int[] vectorList) {
+
+        Scanner initSc = new Scanner (System.in);
+
+        for (int i = 0; i < vectorList.length; i++) {
+
+            vectorList[i] = initSc.nextInt();
+
+            if (vectorList[i] % 2 != 0) System.out.println(vectorList[i]);
+
+        }
+
+    }
+
+    private static boolean returnScannerProperValue (Scanner input) {
+
+        return input.hasNextInt();
+
+    }
+
+    private static int validateScannerInput (Scanner init) {
+
+        while (!returnScannerProperValue(init)) {
+
+                System.out.println("Enter valid measures");
+                init.next();
+
+        }
+
+        return init.nextInt();
 
     }
 
