@@ -10,9 +10,7 @@ public class ClassEntity {
 
     public String toString () {
 
-        return numberOfPkCaptured
-                + " " + newCapturedPks
-                + " " + releasePks;
+        return "Pkm captured (total): " + numberOfPkCaptured;
 
     }
 

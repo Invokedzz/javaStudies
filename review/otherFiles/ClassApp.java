@@ -12,13 +12,25 @@ public class ClassApp {
 
         Locale.setDefault(Locale.JAPANESE);
 
+        addInputsToApplication();
+
+    }
+
+    private static void addInputsToApplication () {
+
         Scanner init = new Scanner (System.in);
 
         int pkmCaptured, releasedPkm, newCaptures;
 
+        System.out.println("Enter the measure for total of pkm captured: ");
+
         pkmCaptured = init.nextInt();
 
+        System.out.println("Enter the measure for the released pkm");
+
         releasedPkm = init.nextInt();
+
+        System.out.println("Enter the measure for your new captures");
 
         newCaptures = init.nextInt();
 
@@ -28,7 +40,13 @@ public class ClassApp {
 
     private static void projectMainFunction (int pkmCaptured, int releasedPkm, int newCaptures) {
 
-        ClassEntity product = new ClassEntity();
+        ClassEntity product = new ClassEntity(pkmCaptured, releasedPkm, newCaptures);
+
+        product.addPkToDex();
+
+        product.removePksFromDex();
+
+        System.out.println(product);
 
     }
 
