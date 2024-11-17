@@ -16,4 +16,16 @@ public class ClassEntity {
 
     }
 
+    public int getNumberOfPkCaptured () {
+        return numberOfPkCaptured;
+    }
+
+    public int getReleasePks () {
+        return releasePks;
+    }
+
+    public int getNewCapturedPks () {
+        return newCapturedPks;
+    }
+
 }
