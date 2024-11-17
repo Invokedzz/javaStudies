@@ -50,4 +50,24 @@ public class ClassApp {
 
     }
 
+    private static boolean validateInputFromScanner (Scanner element) {
+
+        return element.hasNextInt();
+
+    }
+
+    private static int confirmInputSentByUser (Scanner element) {
+
+        while (!validateInputFromScanner(element)) {
+
+            System.out.println("Enter a valid measure");
+
+            element.next();
+
+        }
+
+        return element.nextInt();
+
+    }
+
 }
