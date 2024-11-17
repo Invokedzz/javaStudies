@@ -24,15 +24,15 @@ public class ClassApp {
 
         System.out.println("Enter the measure for total of pkm captured: ");
 
-        pkmCaptured = init.nextInt();
+        pkmCaptured = confirmInputSentByUser(init);
 
         System.out.println("Enter the measure for the released pkm");
 
-        releasedPkm = init.nextInt();
+        releasedPkm = confirmInputSentByUser(init);
 
         System.out.println("Enter the measure for your new captures");
 
-        newCaptures = init.nextInt();
+        newCaptures = confirmInputSentByUser(init);
 
         projectMainFunction(pkmCaptured, releasedPkm, newCaptures);
 
