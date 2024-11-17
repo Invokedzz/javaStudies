@@ -12,13 +12,23 @@ public class ClassApp {
 
         Locale.setDefault(Locale.JAPANESE);
 
-        projectMainFunction();
+        Scanner init = new Scanner (System.in);
+
+        int pkmCaptured, releasedPkm, newCaptures;
+
+        pkmCaptured = init.nextInt();
+
+        releasedPkm = init.nextInt();
+
+        newCaptures = init.nextInt();
+
+        projectMainFunction(pkmCaptured, releasedPkm, newCaptures);
 
     }
 
-    private static void projectMainFunction () {
+    private static void projectMainFunction (int pkmCaptured, int releasedPkm, int newCaptures) {
 
-        Scanner init = new Scanner (System.in);
+        ClassEntity product = new ClassEntity();
 
     }
 
