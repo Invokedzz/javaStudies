@@ -18,9 +18,27 @@ public class StudentEntity {
 
     }
 
+    public double studentAverage (double firstGrade, double secondGrade) {
+
+        return firstGrade + secondGrade / 2;
+
+    }
+
     public String toString () {
 
         return studentName;
+
+    }
+
+    public double getFirstGrade () {
+
+        return firstGrade;
+
+    }
+
+    public double getSecondGrade () {
+
+        return secondGrade;
 
     }
 
