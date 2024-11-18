@@ -30,7 +30,7 @@ public class StudentApp {
 
         StudentEntity product = new StudentEntity(studentsName, firstGrade, secondGrade);
 
-        for (int y = 1; y <= receiveInitialValue; y++) {
+        for (int y = 0; y < receiveInitialValue; y++) {
 
             System.out.println("Enter the measure for the " + y + " student");
 
