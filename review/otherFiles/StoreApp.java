@@ -28,7 +28,7 @@ public class StoreApp {
 
         StoreEntity productMainClass = new StoreEntity(productName, productPrice);
 
-        for (int i = 0; i < arrayParameter; i++) {
+        for (int i = 0; i < productPrice.length; i++) {
 
             System.out.println("Enter the product name: ");
 
@@ -42,7 +42,7 @@ public class StoreApp {
 
         double average = 0.0;
 
-        for (int y = 0; y < arrayParameter; y++) {
+        for (int y = 0; y < productPrice.length; y++) {
 
              average = productMainClass.valuesAddition(productPrice, y);
 
