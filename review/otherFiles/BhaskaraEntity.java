@@ -2,11 +2,11 @@ package review.otherFiles;
 
 public class BhaskaraEntity {
 
-    private Double valueA;
+    private double valueA;
 
-    private Double valueB;
+    private double valueB;
 
-    private Double valueC;
+    private double valueC;
 
     private Double deltaValue;
 
@@ -16,13 +16,13 @@ public class BhaskaraEntity {
 
     // public BhaskaraEntity () {};
 
-    public BhaskaraEntity (Double deltaValue, Double bhaskaraTotalOne, Double bhaskaraTotalTwo) {
+    public BhaskaraEntity (Double valueA, Double valueB, Double valueC) {
 
-        this.deltaValue = deltaValue;
+        this.valueA = valueA;
 
-        this.bhaskaraTotalOne = bhaskaraTotalOne;
+        this.valueB = valueB;
 
-        this.bhaskaraTotalTwo = bhaskaraTotalTwo;
+        this.valueC = valueC;
 
     }
 
