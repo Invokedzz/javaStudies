@@ -44,11 +44,13 @@ public class StudentApp {
 
             secondGrade[y] = init.nextDouble();
 
-        }
+            double average = product.studentAverage(firstGrade[y], secondGrade[y]);
 
-        for (int y = 0; y < receiveInitialValue; y++) {
+            if (average >= 6.0) {
 
-            product.studentAverage();
+                System.out.println("Approved students: " + studentsName[y]);
+
+            }
 
         }
 
