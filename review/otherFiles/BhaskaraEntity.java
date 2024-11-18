@@ -1,5 +1,7 @@
 package review.otherFiles;
 
+import review.otherFiles.BhaskaraValidator;
+
 public class BhaskaraEntity {
 
     private double valueA;
@@ -37,6 +39,10 @@ public class BhaskaraEntity {
     public double deltaCalculus (double valueA, double valueB, double valueC) {
 
         deltaValue = Math.pow(valueB, 2) - 4 * valueA * valueC;
+
+        BhaskaraValidator product = new BhaskaraValidator();
+
+        product.reviewDelta(deltaValue);
 
         return deltaValue;
 
