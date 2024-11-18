@@ -42,4 +42,8 @@ public class HotelRoomEntity {
         this.studentEmail = studentEmail;
     }
 
+    public void setStudentRoom (int studentRoom) {
+        this.studentRoom = studentRoom;
+    }
+
 }

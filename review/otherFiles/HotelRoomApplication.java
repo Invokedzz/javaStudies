@@ -20,7 +20,7 @@ public class HotelRoomApplication {
 
         Scanner init = new Scanner(System.in);
 
-        int parameterValue = init.nextInt();
+        int parameterValue = validateIntInput(init);
 
         String [] studentName = new String[parameterValue];
 
@@ -40,7 +40,7 @@ public class HotelRoomApplication {
 
             System.out.println("Enter your room: ");
 
-            studentsRoom[y] = init.nextInt();
+            studentsRoom[y] = validateIntInput(init);
 
         }
 
@@ -48,7 +48,7 @@ public class HotelRoomApplication {
 
             HotelRoomEntity room = new HotelRoomEntity(studentName[x], studentsEmail[x], studentsRoom[x]);
 
-            if (studentsRoom[x] > 10) {
+            if (studentsRoom[x] <= 0 || studentsRoom[x] > 10) {
 
                 System.out.println("Enter a valid room");
 
@@ -59,6 +59,25 @@ public class HotelRoomApplication {
             System.out.println(room);
 
         }
+
+        init.close();
+
+    }
+
+    private static boolean returnProperIntInput (Scanner input) {
+        return input.hasNextInt();
+    }
+
+    private static int validateIntInput (Scanner init) {
+
+        while (!returnProperIntInput(init)) {
+
+            System.out.println("Enter with a valid int/input");
+            init.next();
+
+        }
+
+        return init.nextInt();
 
     }
 
