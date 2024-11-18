@@ -35,10 +35,38 @@ public class AverageApp {
              height[i] = init.nextDouble();
 
              System.out.println("Enter the gender: ");
-             
+
              genders[i] = init.next().charAt(0);
 
          }
+
+         double lowHeight = 0;
+
+         double highHeight = 0;
+
+         for (int i = 1; i < valueForArrays; i++) {
+             if (height[i] > highHeight) highHeight = height[i];
+             else if (height[i] < lowHeight) lowHeight = height[i];
+         }
+
+         int qtyMen, qtyWomen, averageTotal;
+
+         qtyMen = 0;
+
+         qtyWomen = 0;
+
+         averageTotal = 0;
+
+         for (int i = 1; i < valueForArrays; i++) {
+
+             if (genders[i] == 'M') qtyMen++;
+
+             else {
+                 qtyWomen++;
+                 averageTotal += (int) height[i];
+             }
+
+        }
 
     }
 
