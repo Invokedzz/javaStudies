@@ -2,13 +2,13 @@ package review.otherFiles;
 
 public class StudentEntity {
 
-    private String studentName;
+    private String [] studentName;
 
-    private double firstGrade;
+    private double [] firstGrade;
 
-    private double secondGrade;
+    private double [] secondGrade;
 
-    public StudentEntity (String studentName, double firstGrade, double secondGrade) {
+    public StudentEntity (String [] studentName, double [] firstGrade, double [] secondGrade) {
 
         this.studentName = studentName;
 
@@ -26,19 +26,7 @@ public class StudentEntity {
 
     public String toString () {
 
-        return studentName;
-
-    }
-
-    public double getFirstGrade () {
-
-        return firstGrade;
-
-    }
-
-    public double getSecondGrade () {
-
-        return secondGrade;
+        return "" + studentName;
 
     }
 
