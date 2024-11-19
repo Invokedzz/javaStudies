@@ -4,15 +4,14 @@ public class AdditionEntity {
 
     private Double valueSentByUser;
 
-    private Double totalResult;
+    private double totalResult;
 
     public AdditionEntity (Double valueSentByUser) {
         this.valueSentByUser = valueSentByUser;
     }
 
     public Double addValuesToVariable (Double valueSentByUser) {
-         totalResult += valueSentByUser;
-         return totalResult;
+         return totalResult += valueSentByUser;
     }
 
     public Double getValueSentByUser () {
