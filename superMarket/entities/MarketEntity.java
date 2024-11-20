@@ -6,7 +6,7 @@ public class MarketEntity {
 
     private final Integer productId;
 
-    private final Double productPrice;
+    private Double productPrice;
 
     public MarketEntity (String productName, Integer productId, Double productPrice) {
 
@@ -16,6 +16,10 @@ public class MarketEntity {
 
         this.productPrice = productPrice;
 
+    }
+
+    public Double addDiscount (double percentage) {
+        return productPrice -= productPrice * percentage / 100;
     }
 
     @Override
