@@ -28,12 +28,38 @@ public class MoreArrayList {
 
         for (int i = 0; i < loopController; i++) {
 
+            System.out.println("Enter the product name: ");
+
+            String gameName = initSc.next();
+
+            System.out.println("Enter the product Id: ");
+
+            Integer gameId = validateScannerInput(initSc);
+
+            ArrayListEntity game = new ArrayListEntity(gameName, gameId);
+
+            list.add(game);
+
         }
 
     }
 
+    private static Integer findIdPosition (List <ArrayListEntity> list, Integer elementId) {
+
+        for (int i = 0; i < list.size(); i++) {
+
+            if (list.get(i).getGameId() == elementId) return i;
+
+        }
+
+        return null;
+
+    }
+
     private static boolean reviewScannerIntegerMethod (Scanner initSc) {
+
         return initSc.hasNextInt();
+
     }
 
     private static Integer validateScannerInput (Scanner initSc) {
@@ -57,6 +83,7 @@ public class MoreArrayList {
         while (number <= 0) {
 
             System.out.println("The value must be greater than zero");
+
             number = validateScannerInput(initSc);
 
         }
