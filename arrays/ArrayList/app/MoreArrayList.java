@@ -30,7 +30,7 @@ public class MoreArrayList {
 
             System.out.println("Enter the product name: ");
 
-            String gameName = initSc.next();
+            String gameName = initSc.next().trim();
 
             System.out.println("Enter the product Id: ");
 
@@ -42,13 +42,26 @@ public class MoreArrayList {
 
         }
 
+        System.out.println("Enter the game ID you desire: ");
+
+        int idChoseByUser = validateScannerInput(initSc);
+
+        if (findIdPosition(list, idChoseByUser) != null) {
+
+            ArrayListEntity grabValue = list.stream().filter(x -> x.getGameId().equals(idChoseByUser))
+                    .findFirst().orElse(null);
+
+            System.out.println(grabValue);
+
+        } else System.out.println("That's an invalid id!");
+
     }
 
     private static Integer findIdPosition (List <ArrayListEntity> list, Integer elementId) {
 
         for (int i = 0; i < list.size(); i++) {
 
-            if (list.get(i).getGameId() == elementId) return i;
+            if (list.get(i).getGameId().equals(elementId)) return i;
 
         }
 
