@@ -34,7 +34,7 @@ public class MoreArrayList {
 
             System.out.println("Enter the product Id: ");
 
-            Integer gameId = validateScannerInput(initSc);
+            Integer gameId = validateIfGreaterThanZero(initSc);
 
             ArrayListEntity game = new ArrayListEntity(gameName, gameId);
 
@@ -49,7 +49,7 @@ public class MoreArrayList {
         if (findIdPosition(list, idChoseByUser) != null) {
 
             ArrayListEntity grabValue = list.stream().filter(x -> x.getGameId().equals(idChoseByUser))
-                    .findFirst().orElse(null);
+                    .findFirst().orElse(null); // Use .equals() instead of "=="!
 
             System.out.println(grabValue);
 
