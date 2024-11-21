@@ -1,4 +1,4 @@
-package arrays;
+package arrays.Exercises;
 
 import arrays.entities.SecondArrayEntity;
 
