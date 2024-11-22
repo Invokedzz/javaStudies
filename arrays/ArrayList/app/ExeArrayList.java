@@ -2,6 +2,8 @@ package arrays.ArrayList.app;
 
 import arrays.ArrayList.entities.ExeArrayListEntity;
 
+import arrays.ArrayList.entities.ExeArrayListPartTwo;
+
 import java.util.List;
 
 import java.util.ArrayList;
@@ -42,9 +44,37 @@ public class ExeArrayList {
 
             list.add(user);
 
+            System.out.println(list);
+
         }
 
+        if (!list.isEmpty()) receiveExtraInformation(list, init);
+
+    }
+
+    private static void receiveExtraInformation (List <ExeArrayListEntity> list, Scanner init) {
+
+        List <ExeArrayListPartTwo> extraList = new ArrayList<>();
+
         for (int i = 0; i < list.size(); i++) {
+
+            System.out.println("What do you work with? ");
+
+            String workAs = init.next();
+
+            System.out.println("What's your car model? ");
+
+            String carModel = init.next();
+
+            System.out.println("What's your car id? ");
+
+            Integer carId = init.nextInt();
+
+            ExeArrayListPartTwo elements = new ExeArrayListPartTwo(workAs, carModel, carId);
+
+            extraList.add(elements);
+
+            System.out.println(extraList);
 
         }
 
