@@ -2,9 +2,9 @@ package arrays.ArrayList.entities;
 
 public class ExeArrayListPartTwo {
 
-    private final String workAs;
+    private String workAs;
 
-    private final String carModel;
+    private String carModel;
 
     private final Integer carId;
 
@@ -18,6 +18,10 @@ public class ExeArrayListPartTwo {
 
     }
 
+    public ExeArrayListPartTwo (Integer carId) {
+        this.carId = carId;
+    }
+
     @Override
     public String toString () {
 
@@ -29,6 +33,10 @@ public class ExeArrayListPartTwo {
 
     public Integer getCarId () {
         return carId;
+    }
+
+    public String giveVipToACertainCarId (int carId) {
+        return "ID: " + carId + ". You received VIP!";
     }
 
 }

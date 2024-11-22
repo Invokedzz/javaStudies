@@ -91,6 +91,12 @@ public class ExeArrayList {
 
         if (findIdPosition(extraList, reviewCarId) != null) {
 
+            ExeArrayListPartTwo element = new ExeArrayListPartTwo(reviewCarId);
+
+            String receiveVip = element.giveVipToACertainCarId(reviewCarId);
+
+            System.out.println(receiveVip);
+
         }
 
     }
