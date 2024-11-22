@@ -16,7 +16,7 @@ public class MatrixExercise {
 
         for (int i = 0; i < matrix.length; i++) {
 
-            for (int j = 0; j <= n; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
 
                 matrix[i][j] = init.nextInt();
 
@@ -25,11 +25,28 @@ public class MatrixExercise {
 
         for (int i = 0; i < matrix.length; i++) {
 
-            for (int j = 0; j <= n; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
 
                 System.out.println(matrix[i][j]);
 
             }
+        }
+
+        int incrementSomeValue = 0;
+
+        for (int i = 0; i < matrix.length; i++) {
+
+            for (int j = 0; j < matrix[i].length; j++) {
+
+                if (matrix[i][j] < 0) {
+
+                    incrementSomeValue++;
+                    System.out.println(incrementSomeValue);
+
+                }
+
+            }
+
         }
 
     }
