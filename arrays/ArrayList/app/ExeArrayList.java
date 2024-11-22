@@ -68,7 +68,14 @@ public class ExeArrayList {
 
             System.out.println("What's your car id? ");
 
-            Integer carId = init.nextInt();
+            int carId = init.nextInt();
+
+            while (idExistenceApproved(extraList, carId)) {
+
+                System.out.println("Enter a different id!");
+                carId = init.nextInt();
+
+            }
 
             ExeArrayListPartTwo elements = new ExeArrayListPartTwo(workAs, carModel, carId);
 
@@ -77,6 +84,34 @@ public class ExeArrayList {
             System.out.println(extraList);
 
         }
+
+        System.out.println("Enter the car id you want to review: ");
+
+        int reviewCarId = init.nextInt();
+
+        if (findIdPosition(extraList, reviewCarId) != null) {
+
+        }
+
+    }
+
+    private static Integer findIdPosition (List <ExeArrayListPartTwo> list, int carId) {
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getCarId().equals(carId)) return i;
+        }
+
+        return null;
+
+    }
+
+    private static boolean idExistenceApproved (List <ExeArrayListPartTwo> list, int carId) {
+
+        ExeArrayListPartTwo element = list.stream()
+                .filter(x -> x.getCarId().equals(carId))
+                .findFirst().orElse(null);
+
+        return element != null;
 
     }
 

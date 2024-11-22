@@ -2,11 +2,11 @@ package arrays.ArrayList.entities;
 
 public class ExeArrayListPartTwo {
 
-    private String workAs;
+    private final String workAs;
 
-    private String carModel;
+    private final String carModel;
 
-    private Integer carId;
+    private final Integer carId;
 
     public ExeArrayListPartTwo (String workAs, String carModel, Integer carId) {
 
