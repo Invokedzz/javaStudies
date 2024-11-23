@@ -20,6 +20,8 @@ public class TurnOnTurnOffEntity {
 
             turnDeviceOn = true;
 
+            turnOn();
+
         }
 
     }
@@ -30,7 +32,54 @@ public class TurnOnTurnOffEntity {
 
             turnDeviceOff = true;
 
+            turnOff();
+
         }
+
+    }
+
+    private void turnOn() {
+
+        new Thread(() -> {
+
+            if (turnDeviceOn) {
+
+            try {
+
+
+                Thread.sleep(3000);
+
+                System.out.println("Your device was turned on successfully!");
+
+            } catch (InterruptedException error) {
+
+                error.printStackTrace();
+
+            }
+
+        }
+
+        }).start();
+
+    }
+
+    private void turnOff () {
+
+        new Thread (() -> {
+
+            try {
+
+                Thread.sleep(6000);
+
+                System.out.println("The device was turned off");
+
+            } catch (InterruptedException error) {
+
+                error.printStackTrace();
+
+            }
+
+        }).start();
 
     }
 
