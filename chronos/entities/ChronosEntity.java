@@ -56,13 +56,43 @@ public class ChronosEntity {
 
     public void resetChronos () {
 
+        elapsedTime = 0;
+
+        startTime = 0;
+
+        runningChronos = false;
+
+        pausedChronos = false;
+
+        System.out.println("00-00-00");
+
     }
 
-    public void runChronometer () {
+    private void runChronometer () {
+
+        new Thread(() -> {
+
+            long currentTime = System.currentTimeMillis();
+
+            long timeTraveled = currentTime - startTime;
+
+            chronosEngine(timeTraveled);
+
+            try {
+
+                Thread.sleep(1000);
+
+            } catch (InterruptedException e) {
+                
+                e.printStackTrace();
+
+            }
+
+        }).start();
 
     }
 
-    public void chronosEngine (long timeTraveled) {
+    private void chronosEngine (long timeTraveled) {
 
         long secondsTraveled = (timeTraveled / 1000) % 60;
 

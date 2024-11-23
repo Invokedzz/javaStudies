@@ -18,13 +18,6 @@ public class ChronosApp {
 
     private static void mainChronosFunction () {
 
-        ChronosEntity product = new ChronosEntity();
-
-        Scanner init = new Scanner(System.in);
-
-        long initialValue = init.nextLong();
-
-        product.chronosEngine(initialValue);
 
     }
 
