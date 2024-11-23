@@ -2,9 +2,67 @@ package chronos.entities;
 
 public class ChronosEntity {
 
-    public void chronosEngine (long initialTime) {
+    private long startTime;
 
-        long timeTraveled = System.currentTimeMillis() - initialTime;
+    private long elapsedTime;
+
+    private boolean pausedChronos;
+
+    private boolean runningChronos;
+
+    public ChronosEntity () {
+
+        this.startTime = 0;
+
+        this.elapsedTime = 0;
+
+        this.pausedChronos = false;
+
+        this.runningChronos = false;
+
+    }
+
+    // Start, Pause, Reset, Run;
+
+    public void startChronos () {
+
+        if (!runningChronos) {
+
+            this.startTime = System.currentTimeMillis() - elapsedTime;
+
+            this.pausedChronos = false;
+
+            this.runningChronos = true;
+
+            runChronometer();
+
+        }
+
+    }
+
+    public void pauseChronos () {
+
+        if (runningChronos && !pausedChronos) {
+
+            elapsedTime = System.currentTimeMillis() - startTime;
+
+            runningChronos = false;
+
+            pausedChronos = true;
+
+        }
+
+    }
+
+    public void resetChronos () {
+
+    }
+
+    public void runChronometer () {
+
+    }
+
+    public void chronosEngine (long timeTraveled) {
 
         long secondsTraveled = (timeTraveled / 1000) % 60;
 
