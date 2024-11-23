@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 
 import java.time.LocalTime;
 
+import java.time.format.DateTimeFormatter;
+
 public class FirstDateTime {
 
     public static void main (String[] args) {
@@ -17,6 +19,8 @@ public class FirstDateTime {
         showLocalTime();
 
         showLocalDateTime();
+
+        dateTimeFormatter();
 
     }
 
@@ -35,6 +39,20 @@ public class FirstDateTime {
         LocalDateTime randomVariable = LocalDateTime.now(); // Create the LocalDateTime object;
 
         System.out.println(randomVariable); // Display the current time, but also the hours, minutes and seconds.
+
+    }
+
+    private static void dateTimeFormatter () {
+
+        LocalDateTime anotherRandomObject = LocalDateTime.now(); // Creating the object for LocalDateTime;
+
+        DateTimeFormatter formatterElement = DateTimeFormatter.ofPattern("dd-MM-yy");
+        // Creating the object for DateTimeFormatter, including the pattern creation
+
+        String formattingOurDate = anotherRandomObject.format(formatterElement);
+        // Introducing this pattern for our "anotherRandomObject" variable;
+
+        System.out.println(formattingOurDate);
 
     }
 
