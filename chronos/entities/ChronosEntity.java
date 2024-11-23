@@ -10,6 +10,8 @@ public class ChronosEntity {
 
     private boolean runningChronos;
 
+    private boolean stopChronos;
+
     public ChronosEntity () {
 
         this.startTime = 0;
@@ -19,6 +21,8 @@ public class ChronosEntity {
         this.pausedChronos = false;
 
         this.runningChronos = false;
+
+        this.stopChronos = false;
 
     }
 
@@ -33,6 +37,8 @@ public class ChronosEntity {
             this.pausedChronos = false;
 
             this.runningChronos = true;
+
+            this.stopChronos = false;
 
             runChronometer();
 
@@ -50,6 +56,8 @@ public class ChronosEntity {
 
             pausedChronos = true;
 
+            stopChronos = true;
+
         }
 
     }
@@ -64,6 +72,8 @@ public class ChronosEntity {
 
         pausedChronos = false;
 
+        stopChronos = true;
+
         System.out.println("00-00-00");
 
     }
@@ -72,19 +82,27 @@ public class ChronosEntity {
 
         new Thread(() -> {
 
-            long currentTime = System.currentTimeMillis();
+            while (!stopChronos) {
 
-            long timeTraveled = currentTime - startTime;
+                if (runningChronos) {
 
-            chronosEngine(timeTraveled);
+                    long currentTime = System.currentTimeMillis();
 
-            try {
+                    long timeTraveled = currentTime - startTime;
 
-                Thread.sleep(1000);
+                    chronosEngine(timeTraveled);
 
-            } catch (InterruptedException e) {
-                
-                e.printStackTrace();
+                    try {
+
+                        Thread.sleep(1000);
+
+                    } catch (InterruptedException e) {
+
+                        e.printStackTrace();
+
+                    }
+
+                }
 
             }
 
@@ -102,7 +120,7 @@ public class ChronosEntity {
 
         String timeFormatted = String.format("%02d:%02d:%02d", hoursTraveled, minutesTraveled, secondsTraveled);
 
-        System.out.println(timeFormatted);
+        System.out.println("\r" + timeFormatted);
 
     }
 
