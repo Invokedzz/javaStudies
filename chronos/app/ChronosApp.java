@@ -19,7 +19,7 @@ public class ChronosApp {
     private static void startChronosEngine () throws InterruptedException {
 
         ChronosEntity chronos = new ChronosEntity();
-        
+
         chronos.startChronos();
 
         Thread.sleep(10000);
