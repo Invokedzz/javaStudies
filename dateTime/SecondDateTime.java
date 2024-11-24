@@ -20,6 +20,8 @@ public class SecondDateTime {
 
         LocalDate fifthElement = LocalDate.parse("2005-08-10");
 
+        LocalDateTime sixthElement = LocalDateTime.parse("2008-08-10T03:10:22");
+
         System.out.println(firstElement);
 
         System.out.println(secondElement);
@@ -30,6 +32,13 @@ public class SecondDateTime {
 
         System.out.println(fifthElement);
 
+        System.out.println(sixthElement);
+
+        // LocalDate -> year, month, day;
+
+        // LocalTime -> minutes, seconds, milliseconds
+
+        // LocalDateTime -> LocalDate + LocalTime;
 
     }
 
