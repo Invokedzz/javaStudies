@@ -28,9 +28,9 @@ public class TurnOnTurnOff {
 
         device.turnOnOurDevice();
 
-        char userResponse = init.next().charAt(0);
-
         System.out.println("Want to turn off your device?");
+
+        char userResponse = init.next().charAt(0);
 
         usersAnswersPath(userResponse, device);
 
