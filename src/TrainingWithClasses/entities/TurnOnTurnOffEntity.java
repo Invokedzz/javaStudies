@@ -16,7 +16,7 @@ public class TurnOnTurnOffEntity {
 
     public void turnOnOurDevice () {
 
-        if (!turnDeviceOff) {
+        if (!turnDeviceOff && !turnDeviceOn) {
 
             turnDeviceOn = true;
 
@@ -28,7 +28,7 @@ public class TurnOnTurnOffEntity {
 
     public void turnOffOurDevice () {
 
-        if (!turnDeviceOn) {
+        if (turnDeviceOn && !turnDeviceOff) {
 
             turnDeviceOff = true;
 
@@ -42,8 +42,6 @@ public class TurnOnTurnOffEntity {
 
         new Thread(() -> {
 
-            if (turnDeviceOn) {
-
             try {
 
 
@@ -51,13 +49,14 @@ public class TurnOnTurnOffEntity {
 
                 System.out.println("Your device was turned on successfully!");
 
+                turnDeviceOff = false;
+
             } catch (InterruptedException error) {
 
-                error.printStackTrace();
+                Thread.currentThread().interrupt();
+                System.out.println(error.getMessage());
 
             }
-
-        }
 
         }).start();
 
@@ -73,9 +72,12 @@ public class TurnOnTurnOffEntity {
 
                 System.out.println("The device was turned off successfully!");
 
+                turnDeviceOn = false;
+
             } catch (InterruptedException error) {
 
-                error.printStackTrace();
+                Thread.currentThread().interrupt();
+                System.out.println(error.getMessage());
 
             }
 
