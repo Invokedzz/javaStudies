@@ -2,11 +2,9 @@ package chronos.app;
 
 import chronos.entities.ChronosEntity;
 
+import chronos.entities.ChronosDate;
+
 import java.util.Scanner;
-
-import java.time.LocalDate;
-
-import java.time.format.DateTimeFormatter;
 
 import java.util.Locale;
 
@@ -31,7 +29,7 @@ public class ChronosApp {
         chronosControl(userCommand);
 
         chronosOptions();
-        
+
     }
 
     private static void chronosOptions () {

@@ -98,7 +98,8 @@ public class ChronosEntity {
 
                     } catch (InterruptedException e) {
 
-                        e.printStackTrace();
+                        Thread.currentThread().interrupt();
+                        System.out.println(e.getMessage());
 
                     }
 
