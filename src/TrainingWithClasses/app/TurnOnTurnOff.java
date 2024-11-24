@@ -18,7 +18,29 @@ public class TurnOnTurnOff {
 
     private static void mainFunctionalities () {
 
+        TurnOnTurnOffEntity device = new TurnOnTurnOffEntity();
 
+        Scanner init = new Scanner(System.in);
+
+        System.out.println("Welcome to the Chronos Network!");
+
+        System.out.println("Let's turn on your device!");
+
+        device.turnOnOurDevice();
+
+        char userResponse = init.next().charAt(0);
+
+        System.out.println("Want to turn off your device?");
+
+        usersAnswersPath(userResponse, device);
+
+    }
+
+    private static void usersAnswersPath (char response, TurnOnTurnOffEntity device) {
+
+        if (response == 'y' || response == 'Y') device.turnOffOurDevice();
+
+        else System.out.println("Device working...");
 
     }
 

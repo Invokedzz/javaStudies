@@ -71,7 +71,7 @@ public class TurnOnTurnOffEntity {
 
                 Thread.sleep(6000);
 
-                System.out.println("The device was turned off");
+                System.out.println("The device was turned off successfully!");
 
             } catch (InterruptedException error) {
 
