@@ -43,7 +43,23 @@ public class ChronosApp {
             case 1:
                 chronosChronometerControl(initScanner);
 
+            case 2:
+                displayDateToUserWithChronos();
+
+            case 3:
+                displayTimeToUserWithChronos();
+
+            default:
+                
         }
+
+    }
+
+    private static void displayDateToUserWithChronos () {
+
+    }
+
+    private static void displayTimeToUserWithChronos () {
 
     }
 
@@ -76,6 +92,8 @@ public class ChronosApp {
         Thread.sleep(millisTime);
 
         chronos.pauseChronos();
+
+        chronos.resetChronos();
 
     }
 
