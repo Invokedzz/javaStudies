@@ -2,8 +2,6 @@ package dateTime;
 
 import java.time.format.DateTimeFormatter;
 
-import java.time.LocalTime;
-
 import java.time.LocalDateTime;
 
 import java.time.LocalDate;
@@ -20,6 +18,8 @@ public class FifthDateTime {
 
         workingWithLocalDateTime();
 
+        workingWithZoneId();
+
     }
 
     private static void workingWithLocalDate () {
@@ -28,7 +28,9 @@ public class FifthDateTime {
 
         Month getMonth = date.getMonth();
 
-        System.out.println(getMonth);
+        int getYear = date.getYear();
+
+        System.out.printf("%s and %s \n", getYear, getMonth);
 
     }
 
@@ -36,6 +38,15 @@ public class FifthDateTime {
 
         LocalDateTime dateTime = LocalDateTime.parse("2024-09-10T01:10:20");
 
+        int getHour = dateTime.getHour();
+
+        System.out.println(getHour);
+
     }
+
+    private static void workingWithZoneId() {
+
+    }
+
 
 }
