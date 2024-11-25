@@ -15,11 +15,13 @@ public class ChronosDate {
             try {
 
                 Thread.sleep(1000);
+
                 dateByChronos();
 
             } catch (InterruptedException error) {
 
                 Thread.currentThread().interrupt();
+
                 System.out.println(error.getMessage());
 
 
@@ -36,11 +38,13 @@ public class ChronosDate {
             try {
 
                 Thread.sleep(1000);
+
                 timeByChronos();
 
             } catch (InterruptedException error) {
 
                 Thread.currentThread().interrupt();
+
                 System.out.println(error.getMessage());
 
             }

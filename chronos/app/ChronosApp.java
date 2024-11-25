@@ -36,30 +36,51 @@ public class ChronosApp {
 
         System.out.println("Select an option!");
 
-        int selectOption = initScanner.nextInt();
+        int selectOption = validationScanner(initScanner);
 
         switch (selectOption) {
 
             case 1:
+
                 chronosChronometerControl(initScanner);
 
+                break;
+
             case 2:
+
                 displayDateToUserWithChronos();
 
+                break;
+
             case 3:
+
                 displayTimeToUserWithChronos();
 
+                break;
+
             default:
-                
+
+                System.out.println("Select a valid option!");
+
+                break;
+
         }
 
     }
 
     private static void displayDateToUserWithChronos () {
 
+        System.out.println("Let's display the current date for u. \n");
+
+        ChronosDate.showDateWithChronos();
+
     }
 
     private static void displayTimeToUserWithChronos () {
+
+        System.out.println("Let's display the current time for u. \n");
+
+        ChronosDate.showTimeWithChronos();
 
     }
 
@@ -85,7 +106,7 @@ public class ChronosApp {
 
         System.out.println("Select the time u want the chronometer to stop: ");
 
-        int millisTime = initScanner.nextInt();
+        int millisTime = validationScanner(initScanner);
 
         chronos.startChronos();
 
@@ -94,6 +115,26 @@ public class ChronosApp {
         chronos.pauseChronos();
 
         chronos.resetChronos();
+
+    }
+
+    private static boolean verifyScannerInt (Scanner initScanner) {
+
+        return initScanner.hasNextInt();
+
+    }
+
+    private static int validationScanner (Scanner initScanner) {
+
+        while (!verifyScannerInt(initScanner)) {
+
+            System.out.println("Enter a valid number!");
+
+            initScanner.next();
+
+        }
+
+        return initScanner.nextInt();
 
     }
 
