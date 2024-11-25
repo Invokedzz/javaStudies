@@ -31,7 +31,21 @@ public class ChronosDate {
 
     public static void showTimeWithChronos () {
 
-        timeByChronos();
+        new Thread (() -> {
+
+            try {
+
+                Thread.sleep(1000);
+                timeByChronos();
+
+            } catch (InterruptedException error) {
+
+                Thread.currentThread().interrupt();
+                System.out.println(error.getMessage());
+
+            }
+
+        }).start();
 
     }
 
