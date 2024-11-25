@@ -18,7 +18,7 @@ public class ChronosApp {
 
     }
 
-    private static void startChronosEngine () {
+    private static void startChronosEngine () throws InterruptedException {
 
         Scanner initScanner = new Scanner(System.in);
 
@@ -32,15 +32,16 @@ public class ChronosApp {
 
     }
 
-    private static void chronosOptions (Scanner initScanner) {
-
-        ChronosEntity chronos = new ChronosEntity();
+    private static void chronosOptions (Scanner initScanner) throws InterruptedException {
 
         System.out.println("Select an option!");
 
         int selectOption = initScanner.nextInt();
 
         switch (selectOption) {
+
+            case 1:
+                chronosChronometerControl(initScanner);
 
         }
 
@@ -57,6 +58,24 @@ public class ChronosApp {
         }
 
         System.out.println("Welcome!");
+
+    }
+
+    private static void chronosChronometerControl (Scanner initScanner) throws InterruptedException {
+
+        ChronosEntity chronos = new ChronosEntity();
+
+        System.out.println("Turning on the chronometer \n");
+
+        System.out.println("Select the time u want the chronometer to stop: ");
+
+        int millisTime = initScanner.nextInt();
+
+        chronos.startChronos();
+
+        Thread.sleep(millisTime);
+
+        chronos.pauseChronos();
 
     }
 
