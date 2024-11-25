@@ -28,13 +28,21 @@ public class ChronosApp {
 
         chronosControl(userCommand);
 
-        chronosOptions();
+        chronosOptions(initScanner);
 
     }
 
-    private static void chronosOptions () {
+    private static void chronosOptions (Scanner initScanner) {
 
         ChronosEntity chronos = new ChronosEntity();
+
+        System.out.println("Select an option!");
+
+        int selectOption = initScanner.nextInt();
+
+        switch (selectOption) {
+
+        }
 
     }
 

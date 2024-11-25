@@ -10,7 +10,22 @@ public class ChronosDate {
 
     public static void showDateWithChronos () {
 
-        dateByChronos();
+        new Thread(() -> {
+
+            try {
+
+                Thread.sleep(1000);
+                dateByChronos();
+
+            } catch (InterruptedException error) {
+
+                Thread.currentThread().interrupt();
+                System.out.println(error.getMessage());
+
+
+            }
+
+        }).start();
 
     }
 
