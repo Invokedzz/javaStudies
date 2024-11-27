@@ -28,6 +28,12 @@ public class Store {
 
     }
 
+    public Integer getProductId () {
+
+        return productId;
+
+    }
+
     @Override
     public String toString () {
 
