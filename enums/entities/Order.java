@@ -44,8 +44,8 @@ public class Order {
     public String toString () {
 
         return "id: " + id
-                + "moment: " + moment
-                + "status: " + status;
+                + " moment: " + moment
+                + " status: " + status;
 
     }
 
