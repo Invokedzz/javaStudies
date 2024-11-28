@@ -1,9 +1,12 @@
 package localstore.app;
 
 import localstore.entities.classes.Worker;
+
 import localstore.entities.enums.StoreOrders;
 
 import localstore.entities.classes.Store;
+
+import localstore.validators.ScannerValidator;
 
 import localstore.entities.enums.WorkerStatus;
 
@@ -31,9 +34,10 @@ public class MainStore {
 
         List <Worker> workerList = new ArrayList<>();
 
-        int defineWorkersQty = init.nextInt();
+        int defineWorkersQty = ScannerValidator.intValidation(init);
 
         for (int i = 0; i < defineWorkersQty; i++) {
+
             // name, id, period
 
             System.out.println("Enter the worker name: ");
@@ -42,13 +46,13 @@ public class MainStore {
 
             System.out.println("Enter the worker id: ");
 
-            int workerId = init.nextInt();
+            int workerId = ScannerValidator.intValidation(init);
 
             while (findWorkerId(workerList, workerId)) {
 
                 System.out.println("This id already exists. Try again! ");
 
-                workerId = init.nextInt();
+                workerId = ScannerValidator.intValidation(init);
 
             }
 
