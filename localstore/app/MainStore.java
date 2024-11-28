@@ -6,6 +6,10 @@ import localstore.entities.enums.StoreOrders;
 
 import localstore.entities.classes.Store;
 
+import localstore.status.verifyWorker;
+
+import localstore.status.verifyOrder;
+
 import localstore.validators.ScannerValidator;
 
 import localstore.entities.enums.WorkerStatus;
@@ -27,54 +31,6 @@ public class MainStore {
     }
 
      private static void storeOrdersApp () {
-
-    }
-
-    private static StoreOrders orders (char orderStatus) {
-
-        return switch (orderStatus) {
-
-            case 'p' | 'P' -> {
-
-                System.out.println("Pending payment. \n");
-
-                yield StoreOrders.PENDING_PAYMENT;
-
-            }
-
-            case 'a' | 'A' -> {
-
-                System.out.println("Payment approved! \n");
-
-                yield StoreOrders.PAYMENT_APPROVED;
-
-            }
-
-            case 's' | 'S' -> {
-
-                System.out.println("Product shipped. \n");
-
-                yield StoreOrders.PRODUCT_SHIPPED;
-
-            }
-
-            case 'd' | 'D' -> {
-
-                System.out.println("Product delivered. \n");
-
-                yield StoreOrders.DELIVERED;
-
-            }
-
-            default -> {
-
-                System.out.println("Product was not found in the database");
-
-                yield StoreOrders.NOT_FOUND;
-
-            }
-
-        };
 
     }
 
@@ -136,7 +92,7 @@ public class MainStore {
 
             char periodChoice = init.next().charAt(0);
 
-            WorkerStatus receiveValue = verifyWorkerStatus(periodChoice);
+            WorkerStatus receiveValue = verifyWorker.displayWorkerStatus(periodChoice);
 
             Worker elementsFromWorker = new Worker(workerName, workerId, receiveValue);
 
@@ -148,45 +104,6 @@ public class MainStore {
 
     }
 
-    private static WorkerStatus verifyWorkerStatus (char periodChoice) {
-
-        return switch (periodChoice) { // This is called "enhanced switch"
-
-            case 'd' | 'D' -> { // Instead of ':'
-
-                System.out.println("Daytime \n");
-
-                yield WorkerStatus.DAY_TIME; // Yield seems like a type of return;
-
-            }
-
-            case 'a' | 'A' -> {
-
-                System.out.println("Afternoon \n");
-
-                yield WorkerStatus.AFTERNOON;
-
-            }
-
-            case 'n' | 'N' -> {
-
-                System.out.println("Nighttime \n");
-
-                yield WorkerStatus.NIGHT_TIME;
-
-            }
-
-            default -> {
-
-                System.out.println("Not registered");
-
-                yield WorkerStatus.NOT_REGISTERED;
-
-            }
-
-        };
-
-    }
 
      private static boolean findWorkerId (List <Worker> workerList, int workerId) {
 
