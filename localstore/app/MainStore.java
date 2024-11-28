@@ -76,6 +76,8 @@ public class MainStore {
 
             storeList.add(mainElement);
 
+            System.out.println(storeList);
+
         }
 
     }
@@ -176,6 +178,18 @@ public class MainStore {
         for (int i = 0; i < workerList.size(); i++) {
 
             if (workerList.get(i).getWorkerId().equals(workerId)) return i;
+
+        }
+
+        return -1;
+
+     }
+
+     private static int returnStorePosition (List <Store> productList, int productId) {
+
+        for (int i = 0; i < productList.size(); i++) {
+
+            if (productList.get(i).getProductId().equals(productId)) return i;
 
         }
 
