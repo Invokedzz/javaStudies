@@ -8,13 +8,13 @@ public class Store {
 
     // name, id, time, status;
 
-    private String productName;
+    private final String productName;
 
-    private Integer productId;
+    private final Integer productId;
 
-    private LocalDate time;
+    private final LocalDate time;
 
-    private StoreOrders status;
+    private final StoreOrders status;
 
     public Store (String productName, Integer productId, LocalDate time, StoreOrders status) {
 

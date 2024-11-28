@@ -26,9 +26,35 @@ public class MainStore {
 
     }
 
-    /* private static void storeOrdersApp () {
+     private static void storeOrdersApp () {
 
-    } */
+    }
+
+    private static void chooseOptions (Scanner init, char element) {
+
+        switch (element) {
+
+            case 'w' | 'W':
+
+                workerAnalysis(init);
+
+                break;
+
+            case 's' | 'S':
+
+                storeOrdersApp();
+
+                break;
+
+            default:
+
+                System.out.println("Enter a valid option!");
+
+                break;
+
+        }
+
+    }
 
     private static void workerAnalysis (Scanner init) {
 
