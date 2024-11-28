@@ -2,7 +2,7 @@ package localstore.status;
 
 import localstore.entities.enums.WorkerStatus;
 
-public class verifyWorker {
+public class VerifyWorker {
 
     private static WorkerStatus verifyWorkerStatus (char periodChoice) {
 

@@ -2,17 +2,19 @@ package localstore.app;
 
 import localstore.entities.classes.Worker;
 
-import localstore.entities.enums.StoreOrders;
-
 import localstore.entities.classes.Store;
 
-import localstore.status.verifyWorker;
+import localstore.entities.enums.StoreOrders;
 
-import localstore.status.verifyOrder;
+import localstore.status.VerifyOrder;
+
+import localstore.status.VerifyWorker;
 
 import localstore.validators.ScannerValidator;
 
 import localstore.entities.enums.WorkerStatus;
+
+import java.time.LocalDate;
 
 import java.util.Scanner;
 
@@ -26,11 +28,55 @@ public class MainStore {
 
         Scanner init = new Scanner (System.in);
 
-        workerAnalysis(init);
+        System.out.println("Enter with w (worker) or s (store): ");
+
+        char userInput = init.next().charAt(0);
+
+        chooseOptions(init, userInput);
 
     }
 
-     private static void storeOrdersApp () {
+     private static void storeOrdersApp (Scanner init) {
+
+        List <Store> storeList = new ArrayList<>();
+
+        System.out.println("Enter the number of products: ");
+
+        int defineProductsQty = ScannerValidator.intValidation(init);
+
+        for (int i = 0; i < defineProductsQty; i++) {
+
+            // name, id, time, status
+
+            System.out.println("Enter the product name: ");
+
+            String productName = init.next();
+
+            System.out.println("Enter the product id: ");
+
+            int productId = ScannerValidator.intValidation(init);
+
+            while (findProductId(storeList, productId)) {
+
+                System.out.println("This id already exists. Try again. \n");
+
+                productId = ScannerValidator.intValidation(init);
+
+            }
+
+            System.out.println("Enter the product status: ");
+
+            char orderOption = init.next().charAt(0);
+
+            LocalDate displayDate = LocalDate.now();
+
+            StoreOrders order = VerifyOrder.displayOrders(orderOption);
+
+            Store mainElement = new Store(productName, productId, displayDate, order);
+
+            storeList.add(mainElement);
+
+        }
 
     }
 
@@ -46,7 +92,7 @@ public class MainStore {
 
             case 's' | 'S':
 
-                storeOrdersApp();
+                storeOrdersApp(init);
 
                 break;
 
@@ -92,7 +138,7 @@ public class MainStore {
 
             char periodChoice = init.next().charAt(0);
 
-            WorkerStatus receiveValue = verifyWorker.displayWorkerStatus(periodChoice);
+            WorkerStatus receiveValue = VerifyWorker.displayWorkerStatus(periodChoice);
 
             Worker elementsFromWorker = new Worker(workerName, workerId, receiveValue);
 
@@ -112,6 +158,16 @@ public class MainStore {
                    .findFirst().orElse(null);
 
            return element != null;
+
+     }
+
+     private static boolean findProductId (List <Store> orderList, int productId) {
+
+        Store element = orderList.stream()
+                .filter(x -> x.getProductId().equals(productId))
+                .findFirst().orElse(null);
+
+        return element != null;
 
      }
 

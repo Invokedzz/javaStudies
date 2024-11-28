@@ -2,11 +2,11 @@ package localstore.status;
 
 import localstore.entities.enums.StoreOrders;
 
-public class verifyOrder {
+public class VerifyOrder {
 
-    private static StoreOrders orders (char orderStatus) {
+    private static StoreOrders orders (char element) {
 
-        return switch (orderStatus) {
+        return switch (element) {
 
             case 'p' | 'P' -> {
 
@@ -52,9 +52,9 @@ public class verifyOrder {
 
     }
 
-    public static StoreOrders displayOrders (char orderStatus) {
+    public static StoreOrders displayOrders (char element) {
 
-        return orders(orderStatus);
+        return orders(element);
 
     }
 
