@@ -34,6 +34,8 @@ public class MainStore {
 
         List <Worker> workerList = new ArrayList<>();
 
+        System.out.println("Enter the number of workers: ");
+
         int defineWorkersQty = ScannerValidator.intValidation(init);
 
         for (int i = 0; i < defineWorkersQty; i++) {
@@ -119,6 +121,18 @@ public class MainStore {
                    .findFirst().orElse(null);
 
            return element != null;
+
+     }
+
+     private static int returnWorkerPosition (List <Worker> workerList, int workerId) {
+
+        for (int i = 0; i < workerList.size(); i++) {
+
+            if (workerList.get(i).getWorkerId().equals(workerId)) return i;
+
+        }
+
+        return -1;
 
      }
 
