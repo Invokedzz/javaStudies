@@ -20,9 +20,9 @@ public class MainStore {
 
     }
 
-    private static void storeOrdersApp () {
+    /* private static void storeOrdersApp () {
 
-    }
+    } */
 
     private static void workerAnalysis (Scanner init) {
 
@@ -47,6 +47,12 @@ public class MainStore {
 
             WorkerStatus receiveValue = verifyWorkerStatus(periodChoice);
 
+            Worker elementsFromWorker = new Worker(workerName, workerId, receiveValue);
+
+            workerList.add(elementsFromWorker);
+
+            System.out.println(workerList);
+
         }
 
     }
@@ -54,16 +60,29 @@ public class MainStore {
     private static WorkerStatus verifyWorkerStatus (char periodChoice) {
 
         switch (periodChoice) {
+
             case 'd' | 'D':
 
+                return WorkerStatus.DAY_TIME;
+
+            case 'a' | 'A':
+
+                return WorkerStatus.AFTERNOON;
+
+            case 'n' | 'N':
+
+                return WorkerStatus.NIGHT_TIME;
+
+            default:
                 
+                return WorkerStatus.NOT_REGISTERED;
 
         }
 
     }
 
-    private static int findWorkerId () {
+    /* private static int findWorkerId () {
 
-    }
+    } */
 
 }

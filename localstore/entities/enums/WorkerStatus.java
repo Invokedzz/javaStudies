@@ -8,4 +8,6 @@ public enum WorkerStatus {
 
     NIGHT_TIME,
 
+    NOT_REGISTERED,
+
 }
