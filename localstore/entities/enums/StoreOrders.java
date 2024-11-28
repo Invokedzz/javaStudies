@@ -10,4 +10,6 @@ public enum StoreOrders {
 
     DELIVERED,
 
+    NOT_FOUND,
+
 }
