@@ -4,9 +4,8 @@ import localstore.entities.classes.Worker;
 import localstore.entities.enums.StoreOrders;
 
 import localstore.entities.classes.Store;
-import localstore.entities.enums.WorkerStatus;
 
-import java.time.LocalDate;
+import localstore.entities.enums.WorkerStatus;
 
 import java.util.Scanner;
 
@@ -17,6 +16,10 @@ import java.util.List;
 public class MainStore {
 
     public static void main (String[] args) {
+
+        Scanner init = new Scanner (System.in);
+
+        workerAnalysis(init);
 
     }
 
@@ -41,7 +44,15 @@ public class MainStore {
 
             int workerId = init.nextInt();
 
-            System.out.println("Enter the worker period: ");
+            while (findWorkerId(workerList, workerId)) {
+
+                System.out.println("This id already exists. Try again! ");
+
+                workerId = init.nextInt();
+
+            }
+
+            System.out.println("Enter the worker period ('d', 'a' or 'n': ");
 
             char periodChoice = init.next().charAt(0);
 
@@ -59,30 +70,52 @@ public class MainStore {
 
     private static WorkerStatus verifyWorkerStatus (char periodChoice) {
 
-        switch (periodChoice) {
+        return switch (periodChoice) { // This is called "enhanced switch"
 
-            case 'd' | 'D':
+            case 'd' | 'D' -> { // Instead of ':'
 
-                return WorkerStatus.DAY_TIME;
+                System.out.println("Daytime \n");
 
-            case 'a' | 'A':
+                yield WorkerStatus.DAY_TIME; // Yield seems like a type of return;
 
-                return WorkerStatus.AFTERNOON;
+            }
 
-            case 'n' | 'N':
+            case 'a' | 'A' -> {
 
-                return WorkerStatus.NIGHT_TIME;
+                System.out.println("Afternoon \n");
 
-            default:
-                
-                return WorkerStatus.NOT_REGISTERED;
+                yield WorkerStatus.AFTERNOON;
 
-        }
+            }
+
+            case 'n' | 'N' -> {
+
+                System.out.println("Nighttime \n");
+
+                yield WorkerStatus.NIGHT_TIME;
+
+            }
+
+            default -> {
+
+                System.out.println("Not registered");
+
+                yield WorkerStatus.NOT_REGISTERED;
+
+            }
+
+        };
 
     }
 
-    /* private static int findWorkerId () {
+     private static boolean findWorkerId (List <Worker> workerList, int workerId) {
 
-    } */
+           Worker element = workerList.stream()
+                   .filter(x -> x.getWorkerId().equals(workerId))
+                   .findFirst().orElse(null);
+
+           return element != null;
+
+     }
 
 }
