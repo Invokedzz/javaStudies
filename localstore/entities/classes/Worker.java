@@ -4,34 +4,34 @@ import localstore.entities.enums.WorkerStatus;
 
 public class Worker {
 
-    private String workerName;
+    private final String WORKER_NAME;
 
-    private Integer workerId;
+    private final Integer ID;
 
-    private WorkerStatus workerPeriod;
+    private final WorkerStatus PERIOD;
 
-    public Worker (String workerName, Integer workerId, WorkerStatus workerPeriod) {
+    public Worker (String WORKER_NAME, Integer ID, WorkerStatus PERIOD) {
 
-        this.workerName = workerName;
+        this.WORKER_NAME = WORKER_NAME;
 
-        this.workerId = workerId;
+        this.ID = ID;
 
-        this.workerPeriod = workerPeriod;
+        this.PERIOD = PERIOD;
 
     }
 
     public Integer getWorkerId () {
 
-        return workerId;
+        return ID;
 
     }
 
     @Override
     public String toString () {
 
-        return "Name: " + workerName
-                + " Id: " + workerId
-                + " Period: " + workerPeriod;
+        return "Name: " + WORKER_NAME
+                + " Id: " + ID
+                + " Period: " + PERIOD;
 
     }
 
