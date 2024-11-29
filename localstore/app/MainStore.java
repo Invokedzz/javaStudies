@@ -26,15 +26,21 @@ public class MainStore {
 
     public static void main (String[] args) {
 
-        Scanner init = new Scanner (System.in);
-
-        System.out.println("Enter with w (worker) or s (store): ");
-
-        char userInput = init.next().charAt(0);
-
-        chooseOptions(init, userInput);
+        initTheWholeSystem();
 
     }
+
+     private static void initTheWholeSystem () {
+
+         Scanner init = new Scanner (System.in);
+
+         System.out.println("Enter with w (worker) or s (store): ");
+
+         char userInput = init.next().charAt(0);
+
+         chooseOptions(init, userInput);
+
+     }
 
      private static void storeOrdersApp (Scanner init) {
 
@@ -77,6 +83,14 @@ public class MainStore {
             storeList.add(mainElement);
 
             System.out.println(storeList);
+
+        }
+
+        System.out.println("Enter the product's id you want to review: ");
+
+        int productId = ScannerValidator.intValidation(init);
+
+        if (returnStorePosition(storeList, productId) != null) {
 
         }
 
@@ -150,6 +164,24 @@ public class MainStore {
 
         }
 
+        System.out.println("Enter the worker's id you want to review: ");
+
+        int workerId = ScannerValidator.intValidation(init);
+
+        if (returnWorkerPosition(workerList, workerId) != null) {
+
+            Worker getElement = workerList.stream()
+                    .filter(x -> x.getWorkerId().equals(workerId))
+                    .findFirst().orElse(null);
+
+            System.out.println(getElement);
+
+            return;
+
+        }
+
+        System.out.println("Not found");
+
     }
 
 
@@ -173,7 +205,7 @@ public class MainStore {
 
      }
 
-     private static int returnWorkerPosition (List <Worker> workerList, int workerId) {
+     private static Integer returnWorkerPosition (List <Worker> workerList, int workerId) {
 
         for (int i = 0; i < workerList.size(); i++) {
 
@@ -181,11 +213,11 @@ public class MainStore {
 
         }
 
-        return -1;
+        return null;
 
      }
 
-     private static int returnStorePosition (List <Store> productList, int productId) {
+     private static Integer returnStorePosition (List <Store> productList, int productId) {
 
         for (int i = 0; i < productList.size(); i++) {
 
@@ -193,7 +225,7 @@ public class MainStore {
 
         }
 
-        return -1;
+        return null;
 
      }
 
