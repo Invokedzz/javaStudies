@@ -8,39 +8,39 @@ public class Store {
 
     // name, id, time, status;
 
-    private final String productName;
+    private final String PRODUCT_NAME;
 
-    private final Integer productId;
+    private final Integer PRODUCT_ID;
 
-    private final LocalDate time;
+    private final LocalDate TIME;
 
-    private final StoreOrders status;
+    private final StoreOrders STATUS;
 
-    public Store (String productName, Integer productId, LocalDate time, StoreOrders status) {
+    public Store (String PRODUCT_NAME, Integer PRODUCT_ID, LocalDate TIME, StoreOrders STATUS) {
 
-        this.productName = productName;
+        this.PRODUCT_NAME = PRODUCT_NAME;
 
-        this.productId = productId;
+        this.PRODUCT_ID = PRODUCT_ID;
 
-        this.time = time;
+        this.TIME = TIME;
 
-        this.status = status;
+        this.STATUS = STATUS;
 
     }
 
     public Integer getProductId () {
 
-        return productId;
+        return PRODUCT_ID;
 
     }
 
     @Override
     public String toString () {
 
-        return "Name: " + productName
-                + " Id: " + productId
-                + " Time: " + time
-                + " Status: " + status;
+        return "Name: " + PRODUCT_NAME
+                + " Id: " + PRODUCT_ID
+                + " Time: " + TIME
+                + " Status: " + STATUS;
 
     }
 
