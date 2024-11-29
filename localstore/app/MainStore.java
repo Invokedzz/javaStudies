@@ -92,7 +92,17 @@ public class MainStore {
 
         if (returnStorePosition(storeList, productId) != null) {
 
+            Store getElement = storeList.stream()
+                    .filter(x -> x.getProductId().equals(productId))
+                    .findFirst().orElse(null);
+
+            System.out.println(getElement);
+
+            return;
+
         }
+
+        System.out.println("NOT_FOUND");
 
     }
 
@@ -180,7 +190,7 @@ public class MainStore {
 
         }
 
-        System.out.println("Not found");
+        System.out.println("NOT_FOUND");
 
     }
 
