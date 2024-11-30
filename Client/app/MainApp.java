@@ -5,9 +5,14 @@ import Client.entities.OrderItem;
 import Client.entities.Product;
 
 import Client.entities.Client;
+
 import Client.entities.enums.OrderStatus;
 
+import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
+
+import java.time.format.DateTimeFormatter;
 
 import java.util.Scanner;
 
@@ -35,13 +40,15 @@ public class MainApp {
 
         System.out.println("Birth date: ");
 
-        LocalDate localDate = LocalDate.parse(init.next());
+        LocalDate date = LocalDate.parse(init.next());
 
         System.out.println("Enter order data: ");
 
-        OrderStatus orderStatus = OrderStatus.valueOf(init.next());
+    //    OrderStatus orderStatus = OrderStatus.valueOf(init.next());
 
-        Client clientElements = new Client(name, email, localDate);
+        Client clientElements = new Client(name, email, date);
+
+        System.out.println(clientElements);
 
     }
 
