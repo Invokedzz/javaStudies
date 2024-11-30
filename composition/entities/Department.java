@@ -4,6 +4,8 @@ public class Department {
 
     private String name;
 
+    public Department (String departmentName) {}
+
     public String getName () {
         return name;
     }
