@@ -20,7 +20,7 @@ import java.util.Locale;
 
 public class Program {
 
-    public static void main (String[] args) {
+    public static void main (String[] args) throws ParseException {
 
         Locale.setDefault(Locale.ITALIAN);
 
@@ -28,7 +28,7 @@ public class Program {
 
     }
 
-    private static void mainApp () {
+    private static void mainApp () throws ParseException {
 
         Scanner sc = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -44,6 +44,32 @@ public class Program {
         double baseSalary = sc.nextDouble();
 
         Worker worker = new Worker(workerName, WorkerLevel.valueOf(workerLevel), baseSalary, new Department(departmentName));
+
+        System.out.println(worker);
+
+        System.out.println("Enter the numbers of workers: ");
+
+        int value = sc.nextInt();
+
+        for (int i = 0; i < value; i++) {
+
+            System.out.println("Enter date: ");
+
+            LocalDate date = LocalDate.parse(sc.next()); // "yyyy-MM-dd"
+
+            System.out.println("Enter the value per hours: ");
+
+            Double valuePerHour = sc.nextDouble();
+
+            System.out.println("Enter hours: ");
+
+            int hours = sc.nextInt();
+
+            HourContract hourContract = new HourContract(date, valuePerHour, hours);
+
+            worker.addContract(hourContract);
+
+        }
 
     }
 

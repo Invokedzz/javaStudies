@@ -1,9 +1,5 @@
 package composition.entities;
 
-import composition.entities.HourContract;
-
-import composition.entities.Department;
-
 import java.time.LocalDate;
 
 import java.util.List;
@@ -67,7 +63,7 @@ public class Worker {
 
     public void addContract (HourContract contract) {
 
-        contracts.add(contract);
+        System.out.println(contracts.add(contract));
 
     }
 
@@ -92,6 +88,16 @@ public class Worker {
         }
 
         return sum;
+
+    }
+
+    @Override
+    public String toString () {
+
+        return name +
+                " " + level + " "
+                + baseSalary + " "
+                + department;
 
     }
 
