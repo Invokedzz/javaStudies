@@ -6,11 +6,11 @@ import java.text.SimpleDateFormat;
 
 public class Client {
 
-    private String name;
+    private final String name;
 
-    private String email;
+    private final String email;
 
-    private LocalDate birthDate;
+    private final LocalDate birthDate;
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 

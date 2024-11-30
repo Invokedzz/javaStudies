@@ -1,23 +1,47 @@
 package Client.app;
 
 import Client.entities.OrderItem;
+
 import Client.entities.Product;
+
+import Client.entities.Client;
+import Client.entities.enums.OrderStatus;
+
+import java.time.LocalDate;
+
+import java.util.Scanner;
 
 public class MainApp {
 
     public static void main (String[] args) {
 
-        projectFunction();
+        Scanner init = new Scanner(System.in);
+
+        projectFunction(init);
 
     }
 
-    private static void projectFunction () {
+    private static void projectFunction (Scanner init) {
 
-        Product value = new Product("Ball", 20);
+        System.out.println("Enter client data: ");
 
-        OrderItem item = new OrderItem(10, 20.0, value);
+        System.out.println("Name: ");
 
-        System.out.println(item);
+        String name = init.next();
+
+        System.out.println("Email: ");
+
+        String email = init.next();
+
+        System.out.println("Birth date: ");
+
+        LocalDate localDate = LocalDate.parse(init.next());
+
+        System.out.println("Enter order data: ");
+
+        OrderStatus orderStatus = OrderStatus.valueOf(init.next());
+
+        Client clientElements = new Client(name, email, localDate);
 
     }
 
