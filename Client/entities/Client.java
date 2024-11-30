@@ -12,7 +12,7 @@ public class Client {
 
     private final LocalDate birthDate;
 
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+  //  SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public Client (String name, String email, LocalDate birthDate) {
 
@@ -29,7 +29,7 @@ public class Client {
 
         return name + " " +
                 email + " " +
-                dateFormat.format(birthDate);
+                birthDate;
 
     }
 
