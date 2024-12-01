@@ -33,10 +33,10 @@ public class UserProfile {
     @Override
     public String toString () {
 
-        return firstName
-                + " " + lastName
-                + " " + password +
-                " " + status;
+        return "Name: " + firstName
+                + " Last Name: " + lastName
+                + " Password: " + password +
+                " Status: " + status;
 
     }
 
