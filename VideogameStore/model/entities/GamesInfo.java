@@ -33,7 +33,7 @@ public class GamesInfo {
 
         return "Game: " + gameName +
                 " Price: " + gamePrice
-                + " Stats: " + availability;
+                + " Stats: \n" + availability;
 
     }
 

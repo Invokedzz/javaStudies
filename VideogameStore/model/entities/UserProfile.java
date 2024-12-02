@@ -36,7 +36,7 @@ public class UserProfile {
         return "Name: " + firstName
                 + " Last Name: " + lastName
                 + " Password: " + password +
-                " Status: " + status;
+                " Status: \n" + status;
 
     }
 

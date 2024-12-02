@@ -27,7 +27,7 @@ public class GamesOverlook {
 
         return "Release: " + releaseGameDate
                 + " Genre: " + gameGenre
-                + " Info: " + gamesInfo;
+                + " Info: \n" + gamesInfo;
 
     }
 

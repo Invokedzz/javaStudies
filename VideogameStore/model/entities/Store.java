@@ -8,11 +8,11 @@ import VideogameStore.model.enums.DeliveryStatus;
 
 public class Store {
 
-    private UserProfile profile;
+    private final UserProfile profile;
 
-    private GamesOverlook overlook;
+    private final GamesOverlook overlook;
 
-    private DeliveryStatus status;
+    private final DeliveryStatus status;
 
     public Store (UserProfile profile, GamesOverlook overlook, DeliveryStatus status) {
 
@@ -43,7 +43,7 @@ public class Store {
 
         return "Profile: " + profile
                 + " General Information: " + overlook
-                + " Delivery status: " + status;
+                + " Delivery status: \n" + status;
 
     }
 
