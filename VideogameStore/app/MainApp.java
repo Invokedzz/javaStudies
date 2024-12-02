@@ -32,11 +32,11 @@ public class MainApp {
 
         int selectOption = init.nextInt();
 
-        allOptionsAvailable(selectOption);
+        allOptionsAvailable(selectOption, init);
 
     }
 
-    private static void allOptionsAvailable (int selectOption) {
+    private static void allOptionsAvailable (int selectOption, Scanner init) {
 
         System.out.println("Choose an option: ");
 
@@ -44,12 +44,12 @@ public class MainApp {
 
             case 1:
 
-                accessUserProfile();
+                accessUserProfile(init);
                 break;
 
             case 2:
 
-                accessGameStore();
+                accessGameStore(init);
                 break;
 
             default:
@@ -59,13 +59,41 @@ public class MainApp {
 
     }
 
-    private static void accessUserProfile () {
+    private static UserProfile accessUserProfile (Scanner init) {
 
+        // UserProfile = first name, last name, password, status
 
+        System.out.println("Enter your first name: ");
+
+        String firstName = init.next();
+
+        System.out.println("Enter your last name: ");
+
+        String lastName = init.next();
+
+        System.out.println("Enter your password: ");
+
+        String password = init.next();
+
+        System.out.println("Enter your current status (INCOGNITO, MEMBER, PREMIUM_MEMBERSHIP): ");
+
+        UserStatus userStatus = UserStatus.valueOf(init.next());
+
+        return new UserProfile(firstName, lastName, password, userStatus);
 
     }
 
-    private static void accessGameStore () {
+    private static void accessGameStore (Scanner init) {
+
+        // UserProfile, GamesOverlook, DeliveryStatus
+
+        // GamesOverlook = gamesInfo (GamesInfo), releaseGameDate (LocalDate), gameGenre (String)
+
+        // DeliveryStatus -> enum
+
+        UserProfile getElements = accessUserProfile(init);
+
+        System.out.println(getElements);
 
     }
 
