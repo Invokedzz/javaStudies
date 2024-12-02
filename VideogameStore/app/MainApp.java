@@ -46,6 +46,8 @@ public class MainApp {
 
             case 1:
 
+                // GameCatalog function is going to replace "accessUserProfile"
+
                 accessUserProfile(init);
                 break;
 
@@ -75,7 +77,7 @@ public class MainApp {
 
         System.out.println("Enter your password: ");
 
-        String password = init.next().toUpperCase();
+        String password = init.next().toUpperCase(); // Variable we can review, so it can only return a String
 
         System.out.println("Enter your current status (INCOGNITO, MEMBER, PREMIUM_MEMBERSHIP): \n");
 
