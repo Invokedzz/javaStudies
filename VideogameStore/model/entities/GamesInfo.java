@@ -2,11 +2,13 @@ package VideogameStore.model.entities;
 
 import VideogameStore.model.enums.ProductsAvailability;
 
+import VideogameStore.model.enums.DeliveryStatus;
+
 public class GamesInfo {
 
     private final String gameName;
 
-    private Double gamePrice;
+    private final Double gamePrice;
 
     private final ProductsAvailability availability;
 
@@ -20,11 +22,11 @@ public class GamesInfo {
 
     }
 
-    public double verifyAvailability (ProductsAvailability stats) {
+    public DeliveryStatus verifyAvailability (ProductsAvailability stats) {
 
-        if (stats.equals(ProductsAvailability.OUT_OF_STOCK)) return gamePrice = 0.0;
+        if (stats.equals(ProductsAvailability.OUT_OF_STOCK)) return DeliveryStatus.CANNOT_BE_SHIPPED;
 
-        return gamePrice;
+        return DeliveryStatus.CAN_BE_SHIPPED;
 
     }
 

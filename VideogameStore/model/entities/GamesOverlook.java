@@ -1,7 +1,5 @@
 package VideogameStore.model.entities;
 
-import VideogameStore.model.entities.GamesInfo;
-
 import java.time.LocalDate;
 
 public class GamesOverlook {

@@ -1,9 +1,5 @@
 package VideogameStore.model.entities;
 
-import VideogameStore.model.entities.UserProfile;
-
-import VideogameStore.model.entities.GamesOverlook;
-
 import VideogameStore.model.enums.DeliveryStatus;
 
 public class Store {
@@ -30,7 +26,7 @@ public class Store {
 
             System.out.println("The game can be shipped");
 
-            return DeliveryStatus.CAN_BE_SHIPPED;
+            return DeliveryStatus.READY_TOBE_SHIPPED;
 
         }
 

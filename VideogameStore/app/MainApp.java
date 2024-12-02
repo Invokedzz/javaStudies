@@ -16,6 +16,8 @@ import VideogameStore.model.enums.DeliveryStatus;
 
 import java.time.LocalDate;
 
+import java.util.Scanner;
+
 public class MainApp {
 
     public static void main (String[] args) {
@@ -26,16 +28,16 @@ public class MainApp {
 
     private static void mainOp () {
 
-        UserProfile profile = new UserProfile("Paul", "Washington", "1234", UserStatus.MEMBER);
 
-        GamesInfo info = new GamesInfo("Dark Souls", 100.0, ProductsAvailability.AVAILABLE);
 
-        GamesOverlook overlook = new GamesOverlook(LocalDate.now(), "Adventure", info);
+    }
 
-        Store store = new Store(profile, overlook, DeliveryStatus.PENDING_PAYMENT);
+    private static void accessUserProfile () {
 
-        System.out.println(store);
+    }
 
+    private static void accessGameStore () {
+        
     }
 
 }

@@ -8,6 +8,8 @@ public enum DeliveryStatus {
 
     CAN_BE_SHIPPED,
 
+    READY_TOBE_SHIPPED,
+
     SHIPPED,
 
     DELIVERED,
