@@ -28,16 +28,45 @@ public class MainApp {
 
     private static void mainOp () {
 
+        Scanner init = new Scanner (System.in);
 
+        int selectOption = init.nextInt();
+
+        allOptionsAvailable(selectOption);
+
+    }
+
+    private static void allOptionsAvailable (int selectOption) {
+
+        System.out.println("Choose an option: ");
+
+        switch (selectOption) {
+
+            case 1:
+
+                accessUserProfile();
+                break;
+
+            case 2:
+
+                accessGameStore();
+                break;
+
+            default:
+                System.out.println("Enter a valid option!");
+                break;
+        }
 
     }
 
     private static void accessUserProfile () {
 
+
+
     }
 
     private static void accessGameStore () {
-        
+
     }
 
 }
