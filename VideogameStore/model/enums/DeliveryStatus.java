@@ -6,8 +6,14 @@ public enum DeliveryStatus {
 
     PROCESSING_PAYMENT,
 
+    CAN_BE_SHIPPED,
+
     SHIPPED,
 
     DELIVERED,
+
+    CANNOT_BE_SHIPPED,
+
+    NOT_FOUND,
 
 }
