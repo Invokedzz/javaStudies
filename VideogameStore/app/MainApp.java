@@ -117,6 +117,8 @@ public class MainApp {
 
         ProductsAvailability availability = ProductsAvailability.AVAILABLE;
 
+
+
         return new GamesInfo(gameName, gamePrice, availability);
 
     }
@@ -133,11 +135,15 @@ public class MainApp {
 
         GamesOverlook getGamesElements = gamesOverlook(init);
 
-        DeliveryStatus status = DeliveryStatus.PENDING_PAYMENT;
+        // Need to receive DeliveryStatus and ProductsAvailability
+
+        DeliveryStatus status = DeliveryStatus.PROCESSING_PAYMENT;
 
         Store store = new Store(getProfileElements, getGamesElements, status);
 
-        System.out.println(store);
+        Store getStoreElements = store.canShip(status);
+
+        System.out.println(getStoreElements);
 
     }
 

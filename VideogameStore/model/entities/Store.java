@@ -8,7 +8,7 @@ public class Store {
 
     private final GamesOverlook overlook;
 
-    private final DeliveryStatus status;
+    private DeliveryStatus status;
 
     public Store (UserProfile profile, GamesOverlook overlook, DeliveryStatus status) {
 
@@ -20,17 +20,21 @@ public class Store {
 
     }
 
-    public DeliveryStatus canShip (DeliveryStatus stats) {
+    public Store canShip (DeliveryStatus stats) {
 
         if (DeliveryStatus.PROCESSING_PAYMENT.equals(stats)) {
 
             System.out.println("The game can be shipped");
 
-            return DeliveryStatus.READY_TOBE_SHIPPED;
+            status = DeliveryStatus.CAN_BE_SHIPPED;
+
+            return new Store(profile, overlook, status);
 
         }
 
-        return DeliveryStatus.CANNOT_BE_SHIPPED;
+        status = DeliveryStatus.CANNOT_BE_SHIPPED;
+
+        return new Store(profile, overlook, status);
 
     }
 
