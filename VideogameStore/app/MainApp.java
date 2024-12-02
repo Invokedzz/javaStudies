@@ -13,6 +13,7 @@ import VideogameStore.model.enums.ProductsAvailability;
 import VideogameStore.model.entities.Store;
 
 import VideogameStore.model.enums.DeliveryStatus;
+import com.sun.management.GarbageCollectorMXBean;
 
 import java.time.LocalDate;
 
@@ -75,7 +76,7 @@ public class MainApp {
 
         String password = init.next();
 
-        System.out.println("Enter your current status (INCOGNITO, MEMBER, PREMIUM_MEMBERSHIP): ");
+        System.out.println("Enter your current status (INCOGNITO, MEMBER, PREMIUM_MEMBERSHIP): \n");
 
         UserStatus userStatus = UserStatus.valueOf(init.next());
 
@@ -91,7 +92,7 @@ public class MainApp {
 
         LocalDate date = LocalDate.now();
 
-        System.out.println("Enter the game genre: ");
+        System.out.println("Enter the game genre: \n");
 
         String gameGenre = init.next();
 
@@ -113,13 +114,13 @@ public class MainApp {
 
         double gamePrice = init.nextDouble();
 
-        System.out.println("Enter the product availability: ");
+        System.out.println("Enter the product availability: \n");
 
         ProductsAvailability availability = ProductsAvailability.AVAILABLE;
 
+        DeliveryStatus info = GamesInfo.verifyAvailability(availability);
 
-
-        return new GamesInfo(gameName, gamePrice, availability);
+        return new GamesInfo(gameName, gamePrice, info);
 
     }
 

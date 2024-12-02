@@ -10,9 +10,9 @@ public class GamesInfo {
 
     private final Double gamePrice;
 
-    private final ProductsAvailability availability;
+    private final DeliveryStatus availability;
 
-    public GamesInfo (String gameName, Double gamePrice, ProductsAvailability availability) {
+    public GamesInfo (String gameName, Double gamePrice, DeliveryStatus availability) {
 
         this.gameName = gameName;
 
@@ -22,7 +22,7 @@ public class GamesInfo {
 
     }
 
-    public DeliveryStatus verifyAvailability (ProductsAvailability stats) {
+    public static DeliveryStatus verifyAvailability (ProductsAvailability stats) {
 
         if (stats.equals(ProductsAvailability.OUT_OF_STOCK)) return DeliveryStatus.CANNOT_BE_SHIPPED;
 
