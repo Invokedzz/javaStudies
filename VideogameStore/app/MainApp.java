@@ -13,11 +13,12 @@ import VideogameStore.model.enums.ProductsAvailability;
 import VideogameStore.model.entities.Store;
 
 import VideogameStore.model.enums.DeliveryStatus;
-import com.sun.management.GarbageCollectorMXBean;
 
 import java.time.LocalDate;
 
 import java.util.Scanner;
+
+import java.time.format.DateTimeFormatter;
 
 public class MainApp {
 
@@ -66,15 +67,15 @@ public class MainApp {
 
         System.out.println("Enter your first name: ");
 
-        String firstName = init.next();
+        String firstName = init.next().toUpperCase();
 
         System.out.println("Enter your last name: ");
 
-        String lastName = init.next();
+        String lastName = init.next().toUpperCase();
 
         System.out.println("Enter your password: ");
 
-        String password = init.next();
+        String password = init.next().toUpperCase();
 
         System.out.println("Enter your current status (INCOGNITO, MEMBER, PREMIUM_MEMBERSHIP): \n");
 
@@ -90,11 +91,13 @@ public class MainApp {
 
         System.out.println("Enter the game release date: ");
 
-        LocalDate date = LocalDate.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        LocalDate date = LocalDate.parse(init.next(), dateTimeFormatter);
 
         System.out.println("Enter the game genre: \n");
 
-        String gameGenre = init.next();
+        String gameGenre = init.next().toUpperCase();
 
         GamesInfo gamesInfo = gamesInfo(init);
 
@@ -108,7 +111,7 @@ public class MainApp {
 
         System.out.println("Enter the game name: ");
 
-        String gameName = init.next();
+        String gameName = init.next().toUpperCase();
 
         System.out.println("Enter the game price: ");
 
@@ -116,7 +119,9 @@ public class MainApp {
 
         System.out.println("Enter the product availability: \n");
 
-        ProductsAvailability availability = ProductsAvailability.AVAILABLE;
+        // ProductsAvailability = OUT_OF_STOCK, AVAILABLE;
+
+        ProductsAvailability availability = ProductsAvailability.valueOf(init.next());
 
         DeliveryStatus info = GamesInfo.verifyAvailability(availability);
 
@@ -132,13 +137,17 @@ public class MainApp {
 
         // DeliveryStatus -> enum
 
+        // Need to receive DeliveryStatus and ProductsAvailability
+
         UserProfile getProfileElements = accessUserProfile(init);
 
         GamesOverlook getGamesElements = gamesOverlook(init);
 
-        // Need to receive DeliveryStatus and ProductsAvailability
+        // DeliveryStatus = PENDING_PAYMENT, PROCESSING_PAYMENT, SHIPPED, NOT FOUND...
 
-        DeliveryStatus status = DeliveryStatus.PROCESSING_PAYMENT;
+        System.out.println("Enter the delivery status for this project: ");
+
+        DeliveryStatus status = DeliveryStatus.valueOf(init.next());
 
         Store store = new Store(getProfileElements, getGamesElements, status);
 
