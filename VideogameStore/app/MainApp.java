@@ -14,6 +14,8 @@ import VideogameStore.model.entities.Store;
 
 import VideogameStore.model.enums.DeliveryStatus;
 
+import VideogameStore.model.validators.ScannerValidator;
+
 import java.time.LocalDate;
 
 import java.util.Scanner;
@@ -77,7 +79,7 @@ public class MainApp {
 
         System.out.println("Enter your password: ");
 
-        String password = init.next().toUpperCase(); // Variable we can review, so it can only return a String
+        String password = ScannerValidator.verifyPassword(init); // Variable we can review, so it can only return a String
 
         System.out.println("Enter your current status (INCOGNITO, MEMBER, PREMIUM_MEMBERSHIP): \n");
 
