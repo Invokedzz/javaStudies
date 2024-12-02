@@ -83,17 +83,47 @@ public class MainApp {
 
     }
 
+    private static GamesOverlook gamesOverlook (Scanner init) {
+
+        // GamesOverlook = gamesInfo (GamesInfo), releaseGameDate (LocalDate), gameGenre (String)
+
+        System.out.println("Enter the game release date: ");
+
+        LocalDate date = LocalDate.now();
+
+        System.out.println("Enter the game genre: ");
+
+        String gameGenre = init.next();
+
+        // GamesInfo = String gameName, Double gamePrice, ProductsAvailability availability
+
+        GamesInfo gamesInfo = gamesInfo(init);
+
+        return new GamesOverlook(date, gameGenre, gamesInfo);
+
+    }
+
+    private static GamesInfo gamesInfo (Scanner init) {
+        
+    }
+
     private static void accessGameStore (Scanner init) {
 
         // UserProfile, GamesOverlook, DeliveryStatus
 
-        // GamesOverlook = gamesInfo (GamesInfo), releaseGameDate (LocalDate), gameGenre (String)
+        // UserProfile profile, GamesOverlook overlook, DeliveryStatus status -> Store
 
         // DeliveryStatus -> enum
 
-        UserProfile getElements = accessUserProfile(init);
+        UserProfile getProfileElements = accessUserProfile(init);
 
-        System.out.println(getElements);
+        GamesOverlook getGamesElements = gamesOverlook(init);
+
+        DeliveryStatus status = DeliveryStatus.PENDING_PAYMENT;
+
+        Store store = new Store(getProfileElements, getGamesElements, status);
+
+        System.out.println(store);
 
     }
 
