@@ -95,8 +95,6 @@ public class MainApp {
 
         String gameGenre = init.next();
 
-        // GamesInfo = String gameName, Double gamePrice, ProductsAvailability availability
-
         GamesInfo gamesInfo = gamesInfo(init);
 
         return new GamesOverlook(date, gameGenre, gamesInfo);
@@ -104,7 +102,23 @@ public class MainApp {
     }
 
     private static GamesInfo gamesInfo (Scanner init) {
-        
+
+        // GamesInfo = String gameName, Double gamePrice, ProductsAvailability availability
+
+        System.out.println("Enter the game name: ");
+
+        String gameName = init.next();
+
+        System.out.println("Enter the game price: ");
+
+        double gamePrice = init.nextDouble();
+
+        System.out.println("Enter the product availability: ");
+
+        ProductsAvailability availability = ProductsAvailability.AVAILABLE;
+
+        return new GamesInfo(gameName, gamePrice, availability);
+
     }
 
     private static void accessGameStore (Scanner init) {
