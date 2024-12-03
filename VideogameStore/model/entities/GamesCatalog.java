@@ -30,7 +30,7 @@ public class GamesCatalog {
 
     @Override
     public String toString () {
-        
+
         return "Name: " + gameName
                 + "ID: " + gameId
                 + "Availability: " + isAvailable;

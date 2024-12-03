@@ -24,6 +24,10 @@ import java.util.Scanner;
 
 import java.time.format.DateTimeFormatter;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
 public class MainApp {
 
     public static void main (String[] args) {
@@ -52,7 +56,7 @@ public class MainApp {
 
                 // GameCatalog function is going to replace "accessUserProfile"
 
-                accessUserProfile(init);
+                accessGameCatalog(init);
                 break;
 
             case 2:
@@ -64,6 +68,46 @@ public class MainApp {
                 System.out.println("Enter a valid option!");
                 break;
         }
+
+    }
+
+    private static void accessGameCatalog (Scanner init) {
+
+        List <GamesCatalog> catalogList = new ArrayList<>();
+
+        System.out.println("Enter the number of games you want to register: ");
+
+        int numberOfGames = init.nextInt();
+
+        for (int i = 0; i < numberOfGames; i++) {
+
+            System.out.println("Enter the game name: ");
+
+            String gameName = init.next();
+
+            System.out.println("Enter the game id: ");
+
+            int gameId = init.nextInt();
+
+            System.out.println("Enter the product availability: ");
+
+            ProductsAvailability availability = ProductsAvailability.valueOf(init.next());
+
+            GamesCatalog catalog = new GamesCatalog(gameName, gameId, availability);
+
+            catalogList.add(catalog);
+
+            System.out.println(catalogList);
+
+        }
+
+    }
+
+    private static void validateIdInputs (List <GamesCatalog> catalogList, int elementId) {
+
+    }
+
+    private static void findIdPosition (List <GamesCatalog> catalogList, int elementId) {
 
     }
 
