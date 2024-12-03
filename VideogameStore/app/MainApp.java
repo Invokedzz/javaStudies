@@ -119,7 +119,7 @@ public class MainApp {
 
         System.out.println("Enter the game price: ");
 
-        double gamePrice = init.nextDouble();
+        double gamePrice = ScannerValidator.returnDoubleValue(init);
 
         System.out.println("Enter the product availability: \n");
 

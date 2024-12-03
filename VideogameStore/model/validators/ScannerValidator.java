@@ -20,4 +20,22 @@ public class ScannerValidator {
 
     }
 
+    private static boolean validateDoubleInput (Scanner init) {
+        return init.hasNextDouble();
+    }
+
+    public static double returnDoubleValue (Scanner init) {
+
+        while (!validateDoubleInput(init)) {
+
+            System.out.println("Enter a valid number!");
+
+            init.next();
+
+        }
+
+        return init.nextDouble();
+
+    }
+
 }
