@@ -40,15 +40,15 @@ public class MainApp {
 
         Scanner init = new Scanner (System.in);
 
-        int selectOption = init.nextInt();
+        System.out.println("Choose an option: ");
+
+        int selectOption = ScannerValidator.returnIntegerInput(init);
 
         allOptionsAvailable(selectOption, init);
 
     }
 
     private static void allOptionsAvailable (int selectOption, Scanner init) {
-
-        System.out.println("Choose an option: ");
 
         switch (selectOption) {
 
@@ -109,6 +109,14 @@ public class MainApp {
 
         }
 
+        System.out.println("Enter the id you want to check: ");
+
+        int productIdForReview = ScannerValidator.returnIntegerInput(init);
+
+        if (findIdPosition(catalogList, productIdForReview) != null) System.out.println(productIdForReview);
+
+        System.out.println("Invalid id");
+
     }
 
     private static boolean validateIdInputs (List <GamesCatalog> catalogList, int elementId) {
@@ -121,7 +129,15 @@ public class MainApp {
 
     }
 
-    private static void findIdPosition (List <GamesCatalog> catalogList, int elementId) {
+    private static Integer findIdPosition (List <GamesCatalog> catalogList, int elementId) {
+
+        for (int i = 0; i < catalogList.size(); i++) {
+
+            if (catalogList.get(i).getGameId().equals(elementId)) return i;
+
+        }
+
+        return null;
 
     }
 
