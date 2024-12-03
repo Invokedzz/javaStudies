@@ -16,6 +16,8 @@ import VideogameStore.model.enums.DeliveryStatus;
 
 import VideogameStore.model.validators.ScannerValidator;
 
+import VideogameStore.model.entities.GamesCatalog;
+
 import java.time.LocalDate;
 
 import java.util.Scanner;
