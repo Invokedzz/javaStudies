@@ -12,15 +12,15 @@ public class Post {
 
     // moment (LocalDate), title (String), content (String), likes (int) -> comment;
 
-    private LocalDate moment;
+    private final LocalDate moment;
 
-    private String title;
+    private final String title;
 
-    private String content;
+    private final String content;
 
-    private int likes;
+    private final int likes;
 
-    private List <Comment> comments = new ArrayList<>();
+    private final List <Comment> comments = new ArrayList<>();
 
     public Post (LocalDate moment, String title, String content, int likes) {
 
@@ -49,6 +49,12 @@ public class Post {
         comments.remove(comment);
 
     }
-    
+
+    @Override
+    public String toString () {
+
+        return moment + " " + title + " " + content + " " + likes;
+
+    }
 
 }
