@@ -77,7 +77,7 @@ public class MainApp {
 
         System.out.println("Enter the number of games you want to register: ");
 
-        int numberOfGames = init.nextInt();
+        int numberOfGames = ScannerValidator.returnIntegerInput(init);
 
         for (int i = 0; i < numberOfGames; i++) {
 
@@ -87,9 +87,9 @@ public class MainApp {
 
             System.out.println("Enter the game id: ");
 
-            int gameId = init.nextInt();
+            int gameId = ScannerValidator.returnIntegerInput(init);
 
-            System.out.println("Enter the product availability: ");
+            System.out.println("Enter the product availability: (AVAILABLE/OUT_OF_STOCK)");
 
             ProductsAvailability availability = ProductsAvailability.valueOf(init.next());
 

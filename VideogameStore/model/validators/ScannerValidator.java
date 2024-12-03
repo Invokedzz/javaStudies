@@ -38,6 +38,22 @@ public class ScannerValidator {
 
     }
 
-    
+    private static boolean validateIntegerInput (Scanner init) {
+        return init.hasNextInt();
+    }
+
+    public static int returnIntegerInput (Scanner init) {
+
+        while (!validateIntegerInput(init)) {
+
+            System.out.println("Enter a valid number!");
+
+            init.next();
+
+        }
+
+        return init.nextInt();
+
+    }
 
 }

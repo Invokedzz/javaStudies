@@ -33,7 +33,7 @@ public class GamesCatalog {
 
         return "Name: " + gameName
                 + "ID: " + gameId
-                + "Availability: " + isAvailable;
+                + " Availability: " + isAvailable;
 
     }
 
