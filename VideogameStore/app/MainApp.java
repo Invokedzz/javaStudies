@@ -89,6 +89,14 @@ public class MainApp {
 
             int gameId = ScannerValidator.returnIntegerInput(init);
 
+            while (validateIdInputs(catalogList, gameId)) {
+
+                System.out.println("Enter a valid id!");
+
+                gameId = ScannerValidator.returnIntegerInput(init);
+
+            }
+
             System.out.println("Enter the product availability: (AVAILABLE/OUT_OF_STOCK)");
 
             ProductsAvailability availability = ProductsAvailability.valueOf(init.next());
@@ -103,7 +111,13 @@ public class MainApp {
 
     }
 
-    private static void validateIdInputs (List <GamesCatalog> catalogList, int elementId) {
+    private static boolean validateIdInputs (List <GamesCatalog> catalogList, int elementId) {
+
+        GamesCatalog list = catalogList.stream()
+                .filter(x -> x.getGameId().equals(elementId))
+                .findFirst().orElse(null);
+
+        return list != null;
 
     }
 
