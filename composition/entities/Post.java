@@ -53,7 +53,7 @@ public class Post {
     @Override
     public String toString () {
 
-        return moment + " " + title + " " + content + " " + likes;
+        return moment + " " + title + " " + content + " " + likes + " " + comments;
 
     }
 
