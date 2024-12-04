@@ -18,11 +18,6 @@ public class App {
 
         Scanner init = new Scanner (System.in);
 
-        Bank bank = new Bank("Brade",
-                10983,
-                new UserAccount("Chico", 1092, 1000));
-
-
         while (true) {
 
             System.out.println("Main menu: ");
@@ -45,6 +40,10 @@ public class App {
 
         System.out.println("Main menu: ");
 
+        Bank bank = new Bank("Brade",
+                10983,
+                new UserAccount("Chico", 1092, 1000));
+
             switch (selectAnOption) {
 
                 case 1:
@@ -57,6 +56,25 @@ public class App {
 
                 case 2:
 
+                    // withdraw
+
+                    double valueWithdraw = init.nextDouble();
+
+                    double resultWithdraw = bank.withdrawSomeValue(valueWithdraw, init);
+
+                    System.out.println(resultWithdraw);
+
+                    break;
+
+                case 3:
+
+                    // deposit
+
+                    double valueDeposit = init.nextDouble();
+
+                    double resultDeposit = bank.depositSomeValue(valueDeposit, init);
+
+                    System.out.println(resultDeposit);
 
                     break;
 
@@ -67,7 +85,7 @@ public class App {
                     break;
 
             }
-            }
+        }
 
     }
 
