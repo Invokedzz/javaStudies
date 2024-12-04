@@ -13,9 +13,11 @@ public class App {
 
     private static void initProgram () {
 
-        UserAccount saygex 
+        UserAccount saygex = new UserAccount("flaji", 10293, 1000);
 
-        Bank bank = new Bank();
+        Bank bank = new Bank("bradesco", 10291, saygex);
+
+        System.out.println(bank);
 
     }
 

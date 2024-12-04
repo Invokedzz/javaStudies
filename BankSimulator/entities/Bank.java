@@ -50,7 +50,7 @@ public class Bank {
     public String toString () {
 
         return "Bank: " + bankName
-                + "Bank PIN: " + bankPIN
+                + " Bank PIN: " + bankPIN
                 + userElements;
 
     }

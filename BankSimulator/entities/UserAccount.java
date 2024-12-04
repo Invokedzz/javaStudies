@@ -27,9 +27,9 @@ public class UserAccount {
     @Override
     public String toString () {
 
-        return "Username: " + username
-                + "PIN: " + accountPin
-                + "Deposit value: " + initialValue;
+        return " Username: " + username
+                + " PIN: " + accountPin
+                + " Deposit value: $" + initialValue;
 
     }
 
