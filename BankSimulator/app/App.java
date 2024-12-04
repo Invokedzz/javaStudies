@@ -38,8 +38,6 @@ public class App {
 
     private static void optionsForUser (int selectAnOption, Scanner init) {
 
-        System.out.println("Main menu: ");
-
         Bank bank = new Bank("Brade",
                 10983,
                 new UserAccount("Chico", 1092, 1000));
@@ -58,6 +56,8 @@ public class App {
 
                     // withdraw
 
+                    System.out.println("Enter a value to withdraw: ");
+
                     double valueWithdraw = init.nextDouble();
 
                     double resultWithdraw = bank.withdrawSomeValue(valueWithdraw, init);
@@ -69,6 +69,8 @@ public class App {
                 case 3:
 
                     // deposit
+
+                    System.out.println("Enter a value to deposit: ");
 
                     double valueDeposit = init.nextDouble();
 
