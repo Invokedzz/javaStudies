@@ -1,4 +1,50 @@
 package POO.imc.entities;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
 public class StatsTwo {
+
+    private final double weight;
+
+    private final double height;
+
+    List < PatientTwo > patientTwoList = new ArrayList<>();
+
+    public StatsTwo ( double weight, double height ) {
+
+        this.weight = weight;
+
+        this.height = height;
+
+    }
+
+    public double calculusImc ( double weight, double height ) {
+
+        return weight / ( height * height );
+
+    }
+
+    public void addPatient ( PatientTwo patientTwo ) {
+
+        patientTwoList.add( patientTwo );
+
+    }
+
+    public void removePatient ( PatientTwo patientTwo ) {
+
+        patientTwoList.remove( patientTwo );
+
+    }
+
+    @Override
+    public String toString () {
+
+        return "Weight: " + weight +
+                "kg" + " Height: " + height
+                + "m " + patientTwoList;
+
+    }
+
 }
