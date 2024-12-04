@@ -6,7 +6,7 @@ public class UserAccount {
 
     private int accountPin;
 
-    private double initialValue;
+    private static double initialValue;
 
     public UserAccount (String username, int accountPin, double initialValue) {
 
@@ -14,11 +14,11 @@ public class UserAccount {
 
         this.accountPin = accountPin;
 
-        this.initialValue = initialValue;
+        UserAccount.initialValue = initialValue;
 
     }
 
-    public double getInitialValue () {
+    public static double getInitialValue () {
 
         return initialValue;
 

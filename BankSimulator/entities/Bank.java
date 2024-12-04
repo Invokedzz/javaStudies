@@ -24,7 +24,7 @@ public class Bank {
 
     public double depositSomeValue (double value, Scanner init) {
 
-        double getInitialValue = userElements.getInitialValue();
+        double getInitialValue = UserAccount.getInitialValue();
 
         return getInitialValue + value;
 
@@ -32,7 +32,7 @@ public class Bank {
 
     public double withdrawSomeValue (double value, Scanner init) {
 
-        double getInitialValue = userElements.getInitialValue();
+        double getInitialValue = UserAccount.getInitialValue();
 
         while (value > getInitialValue) {
 

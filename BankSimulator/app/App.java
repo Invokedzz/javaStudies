@@ -1,7 +1,10 @@
 package BankSimulator.app;
 
 import BankSimulator.entities.Bank;
+
 import BankSimulator.entities.UserAccount;
+
+import java.util.Scanner;
 
 public class App {
 
@@ -13,11 +16,32 @@ public class App {
 
     private static void initProgram () {
 
-        UserAccount saygex = new UserAccount("flaji", 10293, 1000);
+        Scanner init = new Scanner (System.in);
 
-        Bank bank = new Bank("bradesco", 10291, saygex);
+        int selectAnOption = init.nextInt();
 
-        System.out.println(bank);
+        optionsForUser(selectAnOption);
+
+    }
+
+    private static void optionsForUser (int selectAnOption) {
+
+        System.out.println("Main menu: ");
+
+        switch (selectAnOption) {
+
+            case 1:
+
+                double getElement = UserAccount.getInitialValue();
+
+                System.out.println(getElement);
+
+                break;
+
+            case 2:
+
+
+        }
 
     }
 
