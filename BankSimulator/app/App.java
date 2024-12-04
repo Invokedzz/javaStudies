@@ -18,31 +18,56 @@ public class App {
 
         Scanner init = new Scanner (System.in);
 
-        int selectAnOption = init.nextInt();
+        Bank bank = new Bank("Brade",
+                10983,
+                new UserAccount("Chico", 1092, 1000));
 
-        optionsForUser(selectAnOption);
 
-    }
+        while (true) {
 
-    private static void optionsForUser (int selectAnOption) {
+            System.out.println("Main menu: ");
+            System.out.println("1 - Get Initial Value");
+            System.out.println("2 - Withdraw from Account");
+            System.out.println("3 - Deposit to Account");
+            System.out.println("4 - Exit");
 
-        System.out.println("Main menu: ");
+            int selectAnOption = init.nextInt();
 
-        switch (selectAnOption) {
+            if (selectAnOption == 4) break;
 
-            case 1:
-
-                double getElement = UserAccount.getInitialValue();
-
-                System.out.println(getElement);
-
-                break;
-
-            case 2:
-
+            optionsForUser(selectAnOption, init);
 
         }
 
     }
 
-}
+    private static void optionsForUser (int selectAnOption, Scanner init) {
+
+        System.out.println("Main menu: ");
+
+            switch (selectAnOption) {
+
+                case 1:
+
+                    double getElement = UserAccount.getInitialValue();
+
+                    System.out.println(getElement);
+
+                    break;
+
+                case 2:
+
+
+                    break;
+
+                default:
+
+                    System.out.println("Enter a valid operation");
+
+                    break;
+
+            }
+            }
+
+    }
+
