@@ -41,9 +41,24 @@ public class StatsTwo {
     @Override
     public String toString () {
 
-        return "Weight: " + weight +
-                "kg" + " Height: " + height
-                + "m " + patientTwoList;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append( "Weight: " ).append(weight).append( "kg " )
+                .append("Height: ").append(height).append("m ");
+
+        if (!patientTwoList.isEmpty()) {
+
+            stringBuilder.append("Patients: ");
+
+            for (PatientTwo list: patientTwoList) {
+
+                stringBuilder.append(list.toString());
+
+            }
+
+        }
+
+        return stringBuilder.toString();
 
     }
 
