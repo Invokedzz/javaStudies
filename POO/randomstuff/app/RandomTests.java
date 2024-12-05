@@ -14,20 +14,7 @@ public class RandomTests {
 
     private static void mainFunction () {
 
-        JOptionPane.showMessageDialog(null, "Welcome!");
 
-        JOptionPane.showMessageDialog(null, "How are you?");
-
-        JOptionPane.showOptionDialog(
-                null
-                , "Question?"        // Message
-                , "Title"               // Title
-                , JOptionPane.YES_NO_OPTION
-                , JOptionPane.PLAIN_MESSAGE
-                , null // Icon
-                , null // Values for buttons
-                , "Random button"    // Label default button
-        );
 
     }
 
