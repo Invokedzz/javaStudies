@@ -56,11 +56,29 @@ public class ProgramPtTwo {
 
             StatsTwo element = new StatsTwo(weight, height);
 
-            
+            double getImcResult = element.calculusImc(weight, height);
+
+            String getCondition = verifyImcCondition(getImcResult);
 
             System.out.println(element);
 
+            System.out.printf("Status of the patient: %s", getCondition);
+
         }
+
+    }
+
+    private static String verifyImcCondition (double getResult) {
+
+        if ( getResult < 18.50 ) return "Underweight";
+
+        if ( getResult >= 18.50 && getResult < 24.90 ) return "Normal";
+
+        if ( getResult >= 25 && getResult < 29.90 ) return "Overweight";
+
+        if ( getResult >= 30.0 ) return "Obese";
+
+        return "Undefined";
 
     }
 
