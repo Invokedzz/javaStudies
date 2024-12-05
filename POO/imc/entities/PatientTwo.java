@@ -6,7 +6,7 @@ public class PatientTwo {
 
     private final String lastName;
 
-    public PatientTwo (String firstName, String lastName) {
+    public PatientTwo ( String firstName, String lastName ) {
 
         this.firstName = firstName;
 

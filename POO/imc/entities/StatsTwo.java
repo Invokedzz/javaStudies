@@ -43,16 +43,16 @@ public class StatsTwo {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append( "Weight: " ).append(weight).append( "kg " )
-                .append("Height: ").append(height).append("m ");
+        stringBuilder.append( "Weight: " ).append( weight ).append( "kg " )
+                .append("Height: ").append( height ).append("m ");
 
-        if (!patientTwoList.isEmpty()) {
+        if ( !patientTwoList.isEmpty() ) {
 
-            stringBuilder.append("Patients: ");
+            stringBuilder.append( "Patients: " );
 
-            for (PatientTwo list: patientTwoList) {
+            for ( PatientTwo list: patientTwoList ) {
 
-                stringBuilder.append(list.toString());
+                stringBuilder.append( list.toString() );
 
             }
 

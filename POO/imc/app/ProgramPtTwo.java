@@ -4,47 +4,43 @@ import POO.imc.entities.PatientTwo;
 
 import POO.imc.entities.StatsTwo;
 
-import java.util.ArrayList;
-
 import java.util.Scanner;
-
-import java.util.List;
 
 public class ProgramPtTwo {
 
     public static void main ( String[] args ) {
 
-        Scanner init = new Scanner(System.in);
+        Scanner init = new Scanner( System.in );
 
-        imcCalculator (init);
+        imcCalculator ( init );
 
     }
 
     private static void imcCalculator (Scanner init) {
 
-      //  PatientTwo patientTwo = new PatientTwo( "Peter", "Claus" );
+      //  PatientTwo patientTwo = new PatientTwo( "Peter", "Claus" ); -> dumb example
 
-        System.out.println("Enter the number of patients: ");
+        System.out.println( "Enter the number of patients: " );
 
         int numberOfPatients = init.nextInt();
 
-        for (int i = 0; i < numberOfPatients; i++) {
+        for ( int i = 0; i < numberOfPatients; i++ ) {
 
-            System.out.println("Enter the patient first name: ");
+            System.out.println( "Enter the patient first name: " );
 
             String firstName = init.next();
 
-            System.out.println("Enter the patient second name: ");
+            System.out.println( "Enter the patient second name: " );
 
             String lastName = init.next();
 
-            PatientTwo patientTwo = new PatientTwo(firstName, lastName);
+            PatientTwo patientTwo = new PatientTwo( firstName, lastName );
 
-            StatsTwo.addPatient(patientTwo);
+            StatsTwo.addPatient( patientTwo );
 
         }
 
-        for (int i = 0; i < numberOfPatients; i++) {
+        for ( int i = 0; i < numberOfPatients; i++ ) {
 
             System.out.println("Enter the patient weight: ");
 
@@ -54,15 +50,15 @@ public class ProgramPtTwo {
 
             double height = init.nextDouble();
 
-            StatsTwo element = new StatsTwo(weight, height);
+            StatsTwo element = new StatsTwo( weight, height );
 
-            double getImcResult = element.calculusImc(weight, height);
+            double getImcResult = element.calculusImc( weight, height );
 
-            String getCondition = verifyImcCondition(getImcResult);
+            String getCondition = verifyImcCondition( getImcResult );
 
-            System.out.println(element);
+            System.out.println( element );
 
-            System.out.printf("Status of the patient: %s", getCondition);
+            System.out.printf( "Status of the patient: %s", getCondition );
 
         }
 
