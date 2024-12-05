@@ -6,9 +6,9 @@ public class PanesTUFF {
 
     public static void main ( String[] args ) {
 
-        JOptionPane.showMessageDialog(null, "Welcome!");
+        JOptionPane.showMessageDialog( null, "Welcome!" );
 
-        JOptionPane.showMessageDialog(null, "How are you?");
+        JOptionPane.showMessageDialog( null, "How are you?" );
 
         JOptionPane.showOptionDialog(
                 null

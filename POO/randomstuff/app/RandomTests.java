@@ -14,11 +14,11 @@ public class RandomTests {
 
     private static void mainFunction () {
 
-        RandomEntitiesForRandomTests randomTests = new RandomEntitiesForRandomTests("Hello!");
+        RandomEntitiesForRandomTests randomTests = new RandomEntitiesForRandomTests( "Hello!" );
 
         String getTheGet = randomTests.getWriteSomethingHere();
 
-        randomTests.setWriteSomethingHere("Haha, we changed something here, dummy!");
+        randomTests.setWriteSomethingHere( "Haha, we changed something here, dummy!" );
 
         String getElement = randomTests.returnSomeKindOfDumbText();
 

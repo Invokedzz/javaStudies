@@ -4,7 +4,7 @@ public class RandomEntitiesForRandomTests {
 
     private String writeSomethingHere;
 
-    public RandomEntitiesForRandomTests (String writeSomethingHere) {
+    public RandomEntitiesForRandomTests ( String writeSomethingHere ) {
 
         this.writeSomethingHere = writeSomethingHere;
 
@@ -16,7 +16,7 @@ public class RandomEntitiesForRandomTests {
 
     }
 
-    public void setWriteSomethingHere (String writeSomethingHere) {
+    public void setWriteSomethingHere ( String writeSomethingHere ) {
 
         this.writeSomethingHere = writeSomethingHere;
 
