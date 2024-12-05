@@ -10,7 +10,7 @@ public class StatsTwo {
 
     private final double height;
 
-    List < PatientTwo > patientTwoList = new ArrayList<>();
+    static List < PatientTwo > patientTwoList = new ArrayList<>();
 
     public StatsTwo ( double weight, double height ) {
 
@@ -26,13 +26,13 @@ public class StatsTwo {
 
     }
 
-    public void addPatient ( PatientTwo patientTwo ) {
+    public static void addPatient ( PatientTwo patientTwo ) {
 
         patientTwoList.add( patientTwo );
 
     }
 
-    public void removePatient ( PatientTwo patientTwo ) {
+    public static void removePatient ( PatientTwo patientTwo ) {
 
         patientTwoList.remove( patientTwo );
 

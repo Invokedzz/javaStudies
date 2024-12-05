@@ -4,23 +4,51 @@ import POO.imc.entities.PatientTwo;
 
 import POO.imc.entities.StatsTwo;
 
+import java.util.ArrayList;
+
+import java.util.Scanner;
+
+import java.util.List;
+
 public class ProgramPtTwo {
 
     public static void main ( String[] args ) {
 
-        imcCalculator ();
+        Scanner init = new Scanner(System.in);
+
+        imcCalculator (init);
 
     }
 
-    private static void imcCalculator () {
+    private static void imcCalculator (Scanner init) {
 
-        StatsTwo statsTwo = new StatsTwo( 10.7, 1 );
+      //  PatientTwo patientTwo = new PatientTwo( "Peter", "Claus" );
 
-        PatientTwo patientTwo = new PatientTwo( "Peter", "Claus" );
+        System.out.println("Enter the number of patients: ");
 
-        statsTwo.addPatient(patientTwo);
+        int numberOfPatients = init.nextInt();
 
-        System.out.println(statsTwo);
+        for (int i = 0; i < numberOfPatients; i++) {
+
+            System.out.println("Enter the patient first name: ");
+
+            String firstName = init.next();
+
+            System.out.println("Enter the patient second name: ");
+
+            String lastName = init.next();
+
+            PatientTwo patientTwo = new PatientTwo(firstName, lastName);
+
+            StatsTwo.addPatient(patientTwo);
+
+        }
+
+        for (int i = 0; i < numberOfPatients; i++) {
+
+            System.out.println("")
+
+        }
 
     }
 
