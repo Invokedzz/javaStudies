@@ -46,7 +46,19 @@ public class ProgramPtTwo {
 
         for (int i = 0; i < numberOfPatients; i++) {
 
-            System.out.println("")
+            System.out.println("Enter the patient weight: ");
+
+            double weight = init.nextDouble();
+
+            System.out.println("Enter the patient height: ");
+
+            double height = init.nextDouble();
+
+            StatsTwo element = new StatsTwo(weight, height);
+
+            
+
+            System.out.println(element);
 
         }
 

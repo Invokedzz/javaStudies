@@ -17,7 +17,7 @@ public class PatientTwo {
     @Override
     public String toString () {
 
-        return "Name: " + firstName +
+        return " Name: " + firstName +
                 " Last Name: " + lastName;
 
     }
