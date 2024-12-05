@@ -22,7 +22,7 @@ public class RandomEntitiesForRandomTests {
 
     }
 
-    public String returnSomeKindOfDumbText (String writeSomethingHere) {
+    public String returnSomeKindOfDumbText () {
 
         return "Dumb shit: " + writeSomethingHere;
 
