@@ -32,9 +32,13 @@ public class EntityEmployee {
 
     }
 
-    public double changeCurrentSalary (double currentSalary) {
+    public String changeCurrentSalary () {
 
-        return currentSalary * 12 * 0.10 + currentSalary;
+        double salaryPerYear = currentSalary * 12;
+
+        double newSalary = currentSalary * 0.10 + currentSalary;
+
+        return "New Salary: " + newSalary + " Old salary per year: " + salaryPerYear;
 
     }
 
@@ -48,7 +52,7 @@ public class EntityEmployee {
 
                 .append(" Last Name: ").append( lastName )
 
-                .append(" Current Salary: ").append( currentSalary );
+                .append("\n Current Salary: ").append( currentSalary );
 
         return sb.toString();
 

@@ -12,7 +12,11 @@ public class MainEmployee {
 
     private static void mainOperations () {
 
+        EntityEmployee employee = new EntityEmployee("Walter", "White", 1200.0);
 
+        String getWholeElement = employee.changeCurrentSalary();
+
+        System.out.printf("%s and %s", employee, getWholeElement);
 
     }
 
