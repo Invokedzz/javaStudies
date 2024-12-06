@@ -22,7 +22,7 @@ public class EntityEmployeeUpgrade {
 
     }
 
-    List < EntityEmployeeUpgrade > employeeUpgrades = new ArrayList<>();
+    List < EntityEmployee > employeeUpgrades = new ArrayList<>();
 
     public void setCurrentSalary (double currentSalary) {
 
@@ -48,13 +48,13 @@ public class EntityEmployeeUpgrade {
 
     }
 
-    public void addEmployees (EntityEmployeeUpgrade employeeUpgrade) {
+    public void addEmployees (EntityEmployee employeeUpgrade) {
 
         employeeUpgrades.add(employeeUpgrade);
 
     }
 
-    public void removeEmployees (EntityEmployeeUpgrade employeeUpgrade) {
+    public void removeEmployees (EntityEmployee employeeUpgrade) {
 
         employeeUpgrades.add(employeeUpgrade);
 
@@ -68,8 +68,13 @@ public class EntityEmployeeUpgrade {
 
         if (!employeeUpgrades.isEmpty()) {
 
-            sb.append("Employees: ")
-                    .append(employeeUpgrades);
+            sb.append("Employees: ");
+
+            for ( EntityEmployee up : employeeUpgrades) {
+
+                sb.append(up);
+
+            }
 
         }
 
