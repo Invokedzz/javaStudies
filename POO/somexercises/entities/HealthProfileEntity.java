@@ -36,15 +36,43 @@ public class HealthProfileEntity {
 
     }
 
-    public double transformHeight () {
+    public double getHeight () {
 
         return height / 2.54;
 
     }
 
-    public double transformWeight () {
+    public double getWeight () {
 
         return weight * 2.2046;
+
+    }
+
+    public void setHeight ( double height ) {
+
+        if ( height < 0 ) {
+
+            this.height = 0;
+
+            return;
+
+        }
+
+        this.height = height / 2.54;
+
+    }
+
+    public void setWeight ( double weight ) {
+
+        if ( weight < 0 ) {
+
+            this.weight = 0;
+
+            return;
+
+        }
+
+        this.weight = weight * 2.2046;
 
     }
 
@@ -59,8 +87,8 @@ public class HealthProfileEntity {
                 .append( " Last Name: ").append( lastName )
                 .append( " Gender: ").append( gender )
                 .append( "Birth date: ").append( birthDate )
-                .append( "Height: ").append( transformHeight() )
-                .append( " Weight: ").append( transformWeight() );
+                .append( "Height: ").append( getHeight() )
+                .append( " Weight: ").append( getWeight() );
 
         return sc.toString();
 
