@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 public class HealthProfileEntityTwo {
 
-    private String gender;
+    private final String gender;
 
-    private LocalDate birthDate;
+    private final LocalDate birthDate;
 
     public HealthProfileEntityTwo ( String gender, LocalDate birthDate ) {
 
@@ -16,6 +16,34 @@ public class HealthProfileEntityTwo {
 
     }
 
+    public int fcMaxForMen ( int birthDate ) {
 
+        int age = LocalDate.now().getYear() - birthDate;
+
+        return 220 - age;
+
+    }
+
+    public int fcMaxForWomen ( int birthDate ) {
+
+        int age = LocalDate.now().getYear() - birthDate;
+
+        return 226 - age;
+
+    }
+
+    @Override
+    public String toString () {
+
+        StringBuilder sb;
+
+        sb = new StringBuilder();
+
+        sb.append(" Birth Date: ").append(birthDate)
+                .append(" Gender: ").append(gender);
+
+        return sb.toString();
+
+    }
 
 }

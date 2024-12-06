@@ -1,21 +1,19 @@
 package POO.somexercises.entities;
 
-import POO.somexercises.entities.HealthProfileEntityTwo;
-
 public class HealthProfileEntity {
 
     // name, lastname, gender (String / char), birthdate (LocalDate / String), height (double), weight (double)
     // returnAge (), freqCard (), imcCalculus ()
 
-    private String name;
+    private final String name;
 
-    private String lastName;
+    private final String lastName;
 
     private double height;
 
     private double weight;
 
-    private HealthProfileEntityTwo health;
+    private final HealthProfileEntityTwo health;
 
     public HealthProfileEntity ( String name, String lastName, double height, double weight,
                                  HealthProfileEntityTwo health ) {
@@ -87,9 +85,9 @@ public class HealthProfileEntity {
 
         sc.append( "Name: " ).append( name )
                 .append( " Last Name: ").append( lastName )
-                .append( "Height: ").append( getHeight() )
-                .append( " Weight: ").append( getWeight() )
-                .append(" Status: ").append(health);
+                .append( " Height: ").append( getHeight() )
+                .append( "\n Weight: ").append( getWeight() )
+                .append(health);
 
         return sc.toString();
 
