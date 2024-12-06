@@ -1,6 +1,6 @@
 package POO.somexercises.entities;
 
-import java.time.LocalDate;
+import POO.somexercises.entities.HealthProfileEntityTwo;
 
 public class HealthProfileEntity {
 
@@ -11,28 +11,30 @@ public class HealthProfileEntity {
 
     private String lastName;
 
-    private String gender;
-
-    private LocalDate birthDate;
-
     private double height;
 
     private double weight;
 
-    public HealthProfileEntity ( String name, String lastName, String gender, LocalDate birthDate,
-                                double height, double weight ) {
+    private HealthProfileEntityTwo health;
+
+    public HealthProfileEntity ( String name, String lastName, double height, double weight,
+                                 HealthProfileEntityTwo health ) {
 
         this.name = name;
 
         this.lastName = lastName;
 
-        this.gender = gender;
-
-        this.birthDate = birthDate;
-
         this.height = height;
 
         this.weight = weight;
+
+        this.health = health;
+
+    }
+
+    public double imcCalculus () {
+
+        return weight / Math.pow(height, 2);
 
     }
 
@@ -85,10 +87,9 @@ public class HealthProfileEntity {
 
         sc.append( "Name: " ).append( name )
                 .append( " Last Name: ").append( lastName )
-                .append( " Gender: ").append( gender )
-                .append( "Birth date: ").append( birthDate )
                 .append( "Height: ").append( getHeight() )
-                .append( " Weight: ").append( getWeight() );
+                .append( " Weight: ").append( getWeight() )
+                .append(" Status: ").append(health);
 
         return sc.toString();
 
