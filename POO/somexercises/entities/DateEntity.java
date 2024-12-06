@@ -12,7 +12,7 @@ public class DateEntity {
 
     private int year;
 
-    public DateEntity (int day, int month, int year) {
+    public DateEntity ( int day, int month, int year ) {
 
         this.day = day;
 
@@ -22,9 +22,9 @@ public class DateEntity {
 
     }
 
-    public void setDay (int day) {
+    public void setDay ( int day ) {
 
-        if (day > 0 && day <= 31) {
+        if ( day > 0 && day <= 31 ) {
 
             this.day = day;
 
@@ -32,13 +32,13 @@ public class DateEntity {
 
         }
 
-        System.out.println("Enter a valid day value!");
+        System.out.println( "Enter a valid day value!" );
 
     }
 
-    public void setMonth (int month) {
+    public void setMonth ( int month ) {
 
-        if (month > 0 && month <= 12) {
+        if ( month > 0 && month <= 12 ) {
 
             this.month = month;
 
@@ -46,13 +46,13 @@ public class DateEntity {
 
         }
 
-        System.out.println("Enter a valid month value!");
+        System.out.println( "Enter a valid month value!" );
 
     }
 
-    public void setYear (int year) {
+    public void setYear ( int year ) {
 
-        if (year > 0 && year <= LocalDate.now().getYear()) {
+        if ( year > 0 && year <= LocalDate.now().getYear() ) {
 
             this.year = year;
 
@@ -60,7 +60,7 @@ public class DateEntity {
 
         }
 
-        System.out.println("Enter a valid year!");
+        System.out.println( "Enter a valid year!" );
 
     }
 
@@ -69,9 +69,9 @@ public class DateEntity {
         StringBuilder sb;
         sb = new StringBuilder();
 
-        sb.append(day).append("/")
-                .append(month).append("/")
-                .append(year);
+        sb.append( day ).append( "/" )
+                .append( month ).append( "/" )
+                .append( year );
 
         return sb.toString();
 
