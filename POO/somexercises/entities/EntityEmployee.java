@@ -2,9 +2,9 @@ package POO.somexercises.entities;
 
 public class EntityEmployee {
 
-    private String name;
+    private final String name;
 
-    private String lastName;
+    private final String lastName;
 
     private double currentSalary;
 
@@ -32,18 +32,25 @@ public class EntityEmployee {
 
     }
 
+    public double changeCurrentSalary (double currentSalary) {
+
+        return currentSalary * 12 * 0.10 + currentSalary;
+
+    }
+
     @Override
     public String toString () {
 
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder sb;
+        sb = new StringBuilder();
 
-        stringBuilder.append( "Name: " ).append( name )
+        sb.append( "Name: " ).append( name )
 
                 .append(" Last Name: ").append( lastName )
 
                 .append(" Current Salary: ").append( currentSalary );
 
-        return stringBuilder.toString();
+        return sb.toString();
 
     }
 
