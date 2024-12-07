@@ -20,9 +20,15 @@ public class HeartRatesBirth {
 
     }
 
-    public void getUserAge () {
+    public int getUserAge () {
 
-        
+        int actualAge = LocalDate.now().getYear() - yearBirth;
+
+        int getMonth = LocalDate.now().getMonthValue();
+
+        if (getMonth < monthBirth) actualAge--;
+
+        return actualAge;
 
     }
 
