@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class HeartRatesBirth {
 
-    private int yearBirth;
+    private final int yearBirth;
 
-    private int monthBirth;
+    private final int monthBirth;
 
-    private int dayBirth;
+    private final int dayBirth;
 
     public HeartRatesBirth ( int yearBirth, int monthBirth, int dayBirth ) {
 
@@ -34,7 +34,7 @@ public class HeartRatesBirth {
 
     public int fcMaxCalculus () {
 
-        return 220 - yearBirth;
+        return 220 - getUserAge();
 
     }
 
@@ -45,9 +45,9 @@ public class HeartRatesBirth {
 
         sb = new StringBuilder();
 
-        sb.append(dayBirth).append("/")
-                .append(monthBirth).append("/")
-                .append(yearBirth);
+        sb.append( dayBirth ).append( "/" )
+                .append( monthBirth ).append( "/" )
+                .append( yearBirth );
 
         return sb.toString();
 

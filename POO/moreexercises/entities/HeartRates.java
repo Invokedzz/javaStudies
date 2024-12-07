@@ -6,7 +6,7 @@ public class HeartRates {
 
     private String lastName;
 
-    private HeartRatesBirth ratesBirth;
+    private final HeartRatesBirth ratesBirth;
 
     public HeartRates ( String name, String lastName, HeartRatesBirth ratesBirth ) {
 
@@ -53,9 +53,9 @@ public class HeartRates {
 
         sb = new StringBuilder();
 
-        sb.append("Name: ").append(name)
-                .append(" Last Name: ").append(lastName)
-                .append(ratesBirth);
+        sb.append( "Name: " ).append( name )
+                .append( " Last Name: " ).append( lastName )
+                .append( " " ).append( ratesBirth );
 
         return sb.toString();
 
