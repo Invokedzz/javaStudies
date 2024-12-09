@@ -14,21 +14,39 @@ public class CryptoApp {
 
     private static void mainApplication ( Scanner init ) {
 
-        System.out.println( "Enter the first digit: " );
+        String input = init.next();
 
-        int firstDigit = init.nextInt() + 7;
+        StringBuilder sb;
 
-        System.out.println( "Enter the second digit: " );
+        sb = new StringBuilder();
 
-        int secondDigit = init.nextInt() + 7;
+        for ( char someDigit : input.toCharArray() ) {
 
-        System.out.println( "Enter the third digit: " );
+            int newValue = Character.getNumericValue( someDigit );
 
-        int thirdDigit = init.nextInt() + 7;
+            int newDigit = ( newValue + 7 ) % 10;
 
-        System.out.println( "Enter the fourth digit: " );
+            sb.append( newDigit );
 
-        int fourthDigit = init.nextInt() + 7;
+        }
+
+        char firstDigit = sb.charAt(0);
+
+        char secondDigit = sb.charAt(1);
+
+        char thirdDigit = sb.charAt(2);
+
+        char fourthDigit = sb.charAt(3);
+
+        sb.setCharAt(0, thirdDigit);
+
+        sb.setCharAt(1, fourthDigit);
+
+        sb.setCharAt(2, firstDigit);
+
+        sb.setCharAt(3, secondDigit);
+
+        System.out.println(sb);
 
     }
 
