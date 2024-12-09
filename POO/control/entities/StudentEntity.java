@@ -1,5 +1,7 @@
 package POO.control.entities;
 
+import POO.control.entities.status.StudentStatus;
+
 public class StudentEntity {
 
     private final String name;
@@ -10,7 +12,9 @@ public class StudentEntity {
 
     private final double grades;
 
-    public StudentEntity ( String name, String lastName, int id, double grades ) {
+    private final StudentStatus status;
+
+    public StudentEntity ( String name, String lastName, int id, double grades, StudentStatus status ) {
 
         this.name = name;
 
@@ -19,6 +23,8 @@ public class StudentEntity {
         this.id = id;
 
         this.grades = grades;
+
+        this.status = status;
 
     }
 
@@ -32,7 +38,8 @@ public class StudentEntity {
         sb.append( "Name: " ).append( name )
                 .append( " Last Name: " ).append( lastName )
                 .append( " Id: ").append( id )
-                .append( " Grades: ").append( grades );
+                .append( " Grades: ").append( grades )
+                .append( " Status: ").append( status );
 
         return sb.toString();
 

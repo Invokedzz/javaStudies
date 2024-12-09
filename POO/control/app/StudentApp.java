@@ -44,13 +44,45 @@ public class StudentApp {
 
             double studentGrade = init.nextDouble();
 
-            StudentEntity student = new StudentEntity( name, lastName, studentId, studentGrade );
+            double getAllGrades = gradesCalculus( studentGrade, numberOfStudents );
+
+            StudentStatus status = verifyStudentsGrade( studentGrade );
+
+            StudentEntity student = new StudentEntity( name, lastName, studentId, studentGrade, status );
 
             list.add(student);
 
             System.out.println(list);
 
+            System.out.println( getAllGrades );
+
         }
+
+    }
+
+    private static StudentStatus verifyStudentsGrade ( double grades ) {
+
+        if ( grades >= 7.0 ) return StudentStatus.valueOf( "APPROVED" );
+
+        return StudentStatus.valueOf( "FAILED" );
+
+    }
+
+    private static double gradesCalculus ( double grades, int students ) {
+
+        double element = 0;
+
+        int size = 0;
+
+        while ( size < students ) {
+
+            element += grades;
+
+            size++;
+
+        }
+
+        return element / students;
 
     }
 
