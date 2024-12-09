@@ -2,15 +2,19 @@ package POO.control.entities;
 
 import POO.control.entities.status.StudentStatus;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
 public class StudentEntity {
 
-    private String name;
+    private final String name;
 
-    private String lastName;
+    private final String lastName;
 
-    private int id;
+    private final int id;
 
-    private double grades;
+    private final double grades;
 
     public StudentEntity ( String name, String lastName, int id, double grades ) {
 
@@ -24,6 +28,20 @@ public class StudentEntity {
 
     }
 
+    List < StudentEntity > entityList = new ArrayList<>();
+
+    public void addStudent ( StudentEntity student ) {
+
+        entityList.add( student );
+
+    }
+
+    public void removeStudent ( StudentEntity student ) {
+
+        entityList.remove( student );
+
+    }
+
     @Override
     public String toString () {
 
@@ -31,10 +49,18 @@ public class StudentEntity {
 
         sb = new StringBuilder();
 
-        sb.append( "Name: " ).append( name )
-                .append( " Last Name: " ).append( lastName )
-                .append( " Id: " ).append( id )
-                .append( " Grades: " ).append( grades );
+        sb.append("Students: ");
+
+        for (StudentEntity student: entityList) {
+
+            System.out.println(student);
+
+            if (student.grades < 7) StudentStatus.valueOf( "FAILED" );
+
+            StudentStatus.valueOf( "APPROVED" );
+        }
+
+        return sb.toString();
 
     }
 
