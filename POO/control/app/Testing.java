@@ -22,9 +22,9 @@ public class Testing {
 
         int totalStudentsGrade = 0;
 
-        numberOfStudents = init.nextInt();
+        numberOfStudents = 1;
 
-        while ( numberOfStudents <= 9 ) {
+        while ( numberOfStudents <= 10 ) {
 
             System.out.println ( "Enter the grade for this student: ");
 
