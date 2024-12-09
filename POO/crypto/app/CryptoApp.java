@@ -30,23 +30,23 @@ public class CryptoApp {
 
         }
 
-        char firstDigit = sb.charAt(0);
+        char firstDigit = sb.charAt( 0 );
 
-        char secondDigit = sb.charAt(1);
+        char secondDigit = sb.charAt( 1 );
 
-        char thirdDigit = sb.charAt(2);
+        char thirdDigit = sb.charAt( 2 );
 
-        char fourthDigit = sb.charAt(3);
+        char fourthDigit = sb.charAt( 3 );
 
-        sb.setCharAt(0, thirdDigit);
+        sb.setCharAt( 0, thirdDigit );
 
-        sb.setCharAt(1, fourthDigit);
+        sb.setCharAt( 1, fourthDigit );
 
-        sb.setCharAt(2, firstDigit);
+        sb.setCharAt( 2, firstDigit );
 
-        sb.setCharAt(3, secondDigit);
+        sb.setCharAt( 3, secondDigit );
 
-        System.out.println(sb);
+        System.out.println( sb );
 
     }
 
