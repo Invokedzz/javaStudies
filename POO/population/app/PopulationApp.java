@@ -20,11 +20,12 @@ public class PopulationApp {
 
         for ( int i = 0; i < certainTime; i++ ) {
 
-            long addSomePplInTheUniverse = ( long ) (demographicValue * 0.011) * i;
+            long addSomePplInTheUniverse = ( long ) ( demographicValue * 0.011 );
 
-            long getAddedValue = demographicValue - addSomePplInTheUniverse;
+            demographicValue += addSomePplInTheUniverse;
 
-            System.out.printf("Year: %s | Total: %s | Added value: %s \n", i + 1, addSomePplInTheUniverse, getAddedValue);
+            System.out.printf( "Year: %s | Total: %s | Added value: %s \n",
+                    i + 1, demographicValue, addSomePplInTheUniverse );
 
         }
 
