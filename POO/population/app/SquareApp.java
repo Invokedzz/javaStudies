@@ -20,10 +20,12 @@ public class SquareApp {
 
             for ( int j = 0; j < chooseSquareSize; j++ ) {
 
-                System.out.println("*");
+                System.out.print( "*" ); // Dude, this ignores the line skip :000
 
             }
-            
+
+            System.out.println();
+
         }
 
     }
