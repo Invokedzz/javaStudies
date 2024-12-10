@@ -14,7 +14,11 @@ public class Program {
 
     private static void mainApplication () {
 
-    //     BusinessAccount account = new BusinessAccount();
+         Account accountBasis = new Account( "Mr. Duck", 1000.0, 10284 );
+
+         BusinessAccount accountBusiness = new BusinessAccount( "Mr. Goose", 2000.0, 10293, 1000 );
+
+         System.out.printf( "%s\n%s", accountBasis, accountBusiness );
 
     }
 

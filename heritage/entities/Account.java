@@ -6,13 +6,13 @@ public class Account {
 
     // functions: withdraw ( amount: double): double, deposit ( amount: double): double.
 
-    private String holder;
+    private final String holder;
 
     protected double balance;
 
-    private int number;
+    private final int number;
 
-    public Account () {}
+  //  public Account () {}
 
     public Account ( String holder, double balance, int number ) {
 
