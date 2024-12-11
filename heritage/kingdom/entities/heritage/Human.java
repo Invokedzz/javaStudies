@@ -7,6 +7,8 @@ public class Human {
     // feelings ( String ), appearance ( String )
     // age ( int ), accessory ( String ), specialAbility ( String )
 
+    private int level;
+
     private String appearance;
 
     private String feelings;
@@ -19,7 +21,9 @@ public class Human {
 
     public Human () {}
 
-    public Human ( String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
+    public Human ( int level, String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
+
+        this.level = level;
 
         this.appearance = appearance;
 
@@ -39,7 +43,8 @@ public class Human {
 
         sb = new StringBuilder();
 
-        sb.append("Appearance: ").append( appearance )
+        sb.append("Level: ").append( level )
+                .append( " Appearance: " ).append( appearance )
                 .append( " Feelings: " ).append( feelings )
                 .append( " Age: " ).append( age )
                 .append( " Accessory: " ).append( accessory )

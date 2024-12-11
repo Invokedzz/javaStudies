@@ -1,6 +1,7 @@
 package heritage.kingdom.entities.main;
 
 import heritage.kingdom.entities.heritage.Human;
+
 import heritage.kingdom.entities.heritage.abilities.Abilities;
 
 public class Knight extends Human {
@@ -20,9 +21,9 @@ public class Knight extends Human {
     private double defensePoints;
 
     public Knight ( String armor, String weapon, double attackPoints, double defensePoints, String feelings,
-                    String appearance, int age, String accessory, Abilities specialAbility ) {
+                    int level, String appearance, int age, String accessory, Abilities specialAbility ) {
 
-        super ( feelings, appearance, age, accessory, specialAbility );
+        super ( level, appearance, feelings, age, accessory, specialAbility );
 
         this.armor = armor;
 
@@ -31,6 +32,47 @@ public class Knight extends Human {
         this.attackPoints = attackPoints;
 
         this.defensePoints = defensePoints;
+
+    }
+
+    public double declareAttack () {
+
+
+
+    }
+
+    public double blockAttack () {
+
+
+
+    }
+
+    public void setAttackPoints ( double attackPoints ) {
+
+        // attack points, min: 5, max: 100
+
+
+
+    }
+
+    public void setDefensePoints ( double defensePoints ) {
+
+
+
+    }
+
+    public String toString () {
+
+        StringBuilder sb;
+
+        sb = new StringBuilder();
+
+        sb.append( " Armor: " ).append( armor )
+                .append( " Weapon: " ).append( weapon )
+                .append( " Attack Points: " ).append( attackPoints )
+                .append( " Defense Points: " ).append( defensePoints );
+
+        return sb.toString();
 
     }
 
