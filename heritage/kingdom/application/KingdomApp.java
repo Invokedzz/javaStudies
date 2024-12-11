@@ -1,6 +1,6 @@
 package heritage.kingdom.application;
 
-import heritage.kingdom.entities.heritage.Human;
+// import heritage.kingdom.entities.heritage.Human;
 
 import heritage.kingdom.entities.main.Knight;
 
@@ -16,14 +16,14 @@ public class KingdomApp {
 
     private static void createDuel () {
 
-        Knight knight = new Knight( "Dark Armor", "Sword", 100.0, 50.0, 1000, 1000,
-                "idk", "an honest person LOL", 30, "a pendulum", Abilities.STRENGTH_BOOST );
+        Knight knight = new Knight( 1000.0, "Dark Armor", "Sword", 100.0, 200.0, 100, "idk",
+                "idk", 34, "pendulum", Abilities.STRENGTH_BOOST );
 
         double getAttackPoints = knight.declareAttack();
 
         double getDefensePoints = knight.blockAttack();
 
-        System.out.printf( "%s\n%s\n%s", knight, getAttackPoints, getDefensePoints );
+        System.out.printf( "%s\nAtk: %s\nDef: %s", knight, getAttackPoints, getDefensePoints );
 
     }
 

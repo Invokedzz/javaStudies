@@ -23,9 +23,7 @@ public class Human {
 
     public Human () {}
 
-    public Human ( int lifePoints, int level, String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
-
-        this.lifePoints = lifePoints;
+    public Human ( int level, String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
 
         this.level = level;
 
