@@ -2,6 +2,7 @@ package heritage.kingdom.application;
 
 // import heritage.kingdom.entities.heritage.Human;
 
+import heritage.kingdom.entities.main.Barbarian;
 import heritage.kingdom.entities.main.Knight;
 
 import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
@@ -26,6 +27,16 @@ public class KingdomApp {
         double getLifePoints = knight.declareLifePoints();
 
         System.out.printf( "%s\nAtk: %s\nDef: %s\nLife Points: %s", knight, getAttackPoints, getDefensePoints, getLifePoints );
+
+    }
+
+    private static void testingOtherClasses () {
+
+       // Barbarian barbarian = new Barbarian();
+
+        // double getAttackPoints = barbarian.declareLifePoints();
+
+        // double getDefensePoints = barbarian.declareAttack();
 
     }
 

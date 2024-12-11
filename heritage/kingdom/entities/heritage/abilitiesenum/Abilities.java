@@ -8,6 +8,8 @@ public enum Abilities {
 
     DEFENSE_BOOST, // Tank, Paladin -> extends Human
 
+    HEALING_BOOST, // Paladin, Healer
+
     COOKING_BOOST, // General
 
     FISHING_BOOST, // General

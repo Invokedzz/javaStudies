@@ -7,8 +7,6 @@ public class Human {
     // feelings ( String ), appearance ( String )
     // age ( int ), accessory ( String ), specialAbility ( String )
 
-    protected int lifePoints;
-
     protected int level;
 
     private String appearance;

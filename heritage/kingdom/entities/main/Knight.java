@@ -43,6 +43,20 @@ public class Knight extends Human {
 
     }
 
+    public Knight ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints ) {
+
+        this.lifePoints = lifePoints;
+
+        this.armor = armor;
+
+        this.weapon = weapon;
+
+        this.attackPoints = attackPoints;
+
+        this.defensePoints = defensePoints;
+
+    }
+
     AbilitiesCharacter character = new AbilitiesCharacter();
 
     // STRENGTH_BOOST: raises the atk by 50% for 3 turns;
@@ -100,6 +114,12 @@ public class Knight extends Human {
         }
 
         return getLifePoints;
+
+    }
+
+    public double getLifePoints () {
+
+        return lifePoints;
 
     }
 
