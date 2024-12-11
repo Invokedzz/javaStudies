@@ -87,10 +87,10 @@ public class Knight extends Human {
 
         sb = new StringBuilder();
 
-        sb.append( " Armor: " ).append( armor )
-                .append( " Weapon: " ).append( weapon )
-                .append( " Attack Points: " ).append( attackPoints )
-                .append( " Defense Points: " ).append( defensePoints );
+        sb.append( "Armor: " ).append( armor )
+                .append( ", Weapon: " ).append( weapon )
+                .append( ", Attack Points: " ).append( attackPoints )
+                .append( ", Defense Points: " ).append( defensePoints );
 
         return sb.toString();
 
