@@ -2,7 +2,9 @@ package heritage.kingdom.entities.main;
 
 import heritage.kingdom.entities.heritage.Human;
 
-import heritage.kingdom.entities.heritage.abilities.Abilities;
+import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
+
+import heritage.kingdom.entities.heritage.abilities.AbilitiesCharacter;
 
 public class Knight extends Human {
 
@@ -37,27 +39,15 @@ public class Knight extends Human {
 
     public double declareAttack () {
 
-
+        // attack points, min: 5, max: 300 -> default,
+        // without considering any kind of boosts or abilities
 
     }
 
     public double blockAttack () {
 
-
-
-    }
-
-    public void setAttackPoints ( double attackPoints ) {
-
-        // attack points, min: 5, max: 100
-
-
-
-    }
-
-    public void setDefensePoints ( double defensePoints ) {
-
-
+        // defense points, min: 1, max: 250 -> default,
+        // without considering any kind of boosts or abilities
 
     }
 

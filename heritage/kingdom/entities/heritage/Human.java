@@ -1,6 +1,6 @@
 package heritage.kingdom.entities.heritage;
 
-import heritage.kingdom.entities.heritage.abilities.Abilities;
+import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
 
 public class Human {
 
