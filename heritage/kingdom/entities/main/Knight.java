@@ -39,6 +39,10 @@ public class Knight extends Human {
 
     AbilitiesCharacter character = new AbilitiesCharacter();
 
+    // STRENGTH_BOOST: raises the atk by 50% for 3 turns;
+    // DEFENSE_BOOST: the user can't take damage for 2 turns,
+    // but his atk drops by 80%.
+
     public double declareAttack () {
 
         // attack points, min: 5, max: 300 -> default,
@@ -46,7 +50,7 @@ public class Knight extends Human {
 
         double getAttackPoints = character.validateAttackPoints( attackPoints, level );
 
-        double getValues = 0;
+        double getValues = 0.0;
 
         for ( int i = 0; i < level; i++ ) {
 
@@ -64,6 +68,16 @@ public class Knight extends Human {
         // without considering any kind of boosts or abilities
 
         double getDefensePoints = character.validateDefensePoints( defensePoints, level );
+
+        double getValues = 0.0;
+
+        for ( int i = 0; i < level; i++ ) {
+
+            getValues += i + Math.floor(Math.random() + 1.0);
+
+        }
+
+        return getDefensePoints + getValues;
 
     }
 

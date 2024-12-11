@@ -22,7 +22,7 @@ public class AbilitiesCharacter {
 
             attackPoints = 300;
 
-            return attackPoints; // thinking about
+            return attackPoints;
 
         }
 
@@ -36,7 +36,7 @@ public class AbilitiesCharacter {
 
         }
 
-        return attackPoints; // thinking about
+        return attackPoints;
 
     }
 
@@ -53,7 +53,25 @@ public class AbilitiesCharacter {
 
         }
 
-        return defensePoints; // thinking about
+        if ( level == 1000 ) {
+
+            defensePoints = 250;
+
+            return defensePoints;
+
+        }
+
+        if ( level < 1 || level > 1000 ) {
+
+            defensePoints = 0.0;
+
+            level = 1;
+
+            return defensePoints * level;
+
+        }
+
+        return defensePoints;
 
     }
 

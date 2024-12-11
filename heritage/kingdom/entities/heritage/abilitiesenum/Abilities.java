@@ -12,4 +12,11 @@ public enum Abilities {
 
     FISHING_BOOST, // General
 
+    // For the Knight class,
+    // we're going to use the STRENGTH_BOOST AND DEFENSE_BOOST
+
+    // STRENGTH_BOOST: raises the atk by 50% for 3 turns;
+    // DEFENSE_BOOST: the user can't take damage for 2 turns,
+    // but his atk drops by 80%.
+
 }
