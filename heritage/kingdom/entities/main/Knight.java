@@ -24,6 +24,8 @@ public class Knight extends Human {
 
     private double defensePoints;
 
+    public Knight () {}
+
     public Knight ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints, int level,
                     String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
 
@@ -82,6 +84,22 @@ public class Knight extends Human {
         }
 
         return getDefensePoints + getValues;
+
+    }
+
+    public double declareLifePoints () {
+
+        lifePoints = 8.000;
+
+        double getLifePoints = 0;
+
+        for ( int i = 0; i < level; i++ ) {
+
+            getLifePoints += i;
+
+        }
+
+        return getLifePoints;
 
     }
 

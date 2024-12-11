@@ -23,7 +23,9 @@ public class KingdomApp {
 
         double getDefensePoints = knight.blockAttack();
 
-        System.out.printf( "%s\nAtk: %s\nDef: %s", knight, getAttackPoints, getDefensePoints );
+        double getLifePoints = knight.declareLifePoints();
+
+        System.out.printf( "%s\nAtk: %s\nDef: %s\nLife Points: %s", knight, getAttackPoints, getDefensePoints, getLifePoints );
 
     }
 
