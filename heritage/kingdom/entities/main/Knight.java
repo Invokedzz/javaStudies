@@ -22,10 +22,10 @@ public class Knight extends Human {
 
     private double defensePoints;
 
-    public Knight ( String armor, String weapon, double attackPoints, double defensePoints, String feelings,
-                    int level, String appearance, int age, String accessory, Abilities specialAbility ) {
+    public Knight ( String armor, String weapon, double attackPoints, double defensePoints, int lifePoints, int level,
+                    String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
 
-        super ( level, appearance, feelings, age, accessory, specialAbility );
+        super ( lifePoints, level, appearance, feelings, age, accessory, specialAbility );
 
         this.armor = armor;
 
@@ -37,10 +37,14 @@ public class Knight extends Human {
 
     }
 
+    AbilitiesCharacter character = new AbilitiesCharacter();
+
     public double declareAttack () {
 
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
+
+        double getAttackPoints = character.validateAttackPoints( attackPoints );
 
     }
 
@@ -48,6 +52,8 @@ public class Knight extends Human {
 
         // defense points, min: 1, max: 250 -> default,
         // without considering any kind of boosts or abilities
+
+        double getDefensePoints = character.validateDefensePoints( defensePoints );
 
     }
 

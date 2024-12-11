@@ -7,6 +7,8 @@ public class Human {
     // feelings ( String ), appearance ( String )
     // age ( int ), accessory ( String ), specialAbility ( String )
 
+    private int lifePoints;
+
     private int level;
 
     private String appearance;
@@ -21,7 +23,9 @@ public class Human {
 
     public Human () {}
 
-    public Human ( int level, String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
+    public Human ( int lifePoints, int level, String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
+
+        this.lifePoints = lifePoints;
 
         this.level = level;
 
