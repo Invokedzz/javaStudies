@@ -44,7 +44,17 @@ public class Knight extends Human {
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
-        double getAttackPoints = character.validateAttackPoints( attackPoints );
+        double getAttackPoints = character.validateAttackPoints( attackPoints, level );
+
+        double getValues = 0;
+
+        for ( int i = 0; i < level; i++ ) {
+
+            getValues += i + Math.ceil(Math.random());
+
+        }
+
+        return getAttackPoints + getValues;
 
     }
 
@@ -53,7 +63,7 @@ public class Knight extends Human {
         // defense points, min: 1, max: 250 -> default,
         // without considering any kind of boosts or abilities
 
-        double getDefensePoints = character.validateDefensePoints( defensePoints );
+        double getDefensePoints = character.validateDefensePoints( defensePoints, level );
 
     }
 

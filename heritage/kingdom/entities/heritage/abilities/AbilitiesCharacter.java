@@ -53,7 +53,7 @@ public class AbilitiesCharacter {
 
         }
 
-        return defensePoints;
+        return defensePoints; // thinking about
 
     }
 
