@@ -26,6 +26,14 @@ public class Account {
 
     public double withdraw ( double amount ) {
 
+        if ( balance < amount ) {
+
+            System.out.println("You can't withdraw an amount bigger than your balance!");
+
+            return balance;
+
+        }
+
         return balance -= amount;
 
     }

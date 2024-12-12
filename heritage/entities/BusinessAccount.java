@@ -6,12 +6,6 @@ public class BusinessAccount extends Account {
 
     private double loanLimit;
 
-     public BusinessAccount () {
-
-        super();
-
-    }
-
     public BusinessAccount ( String holder, double balance, int number, double loanLimit ) {
 
         super ( holder, balance, number );
@@ -31,6 +25,13 @@ public class BusinessAccount extends Account {
         }
 
         System.out.println("invalid amount!");
+
+    }
+
+    @Override
+    public double withdraw ( double amount ) {
+
+         return balance -= amount + 300;
 
     }
 
