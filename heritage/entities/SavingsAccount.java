@@ -26,4 +26,13 @@ public class SavingsAccount extends Account {
 
     }
 
+    @Override
+    public double withdraw ( double amount ) {
+
+        super.withdraw( amount );
+
+        return balance -= 2.0;
+
+    }
+
 }

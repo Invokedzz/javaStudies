@@ -26,11 +26,17 @@ public class Program {
         BusinessAccount businessAccount = new BusinessAccount( "Mr.Goose", 3000.0,
                 948, 1000 );
 
+        SavingsAccount savingsAccount = new SavingsAccount( "Mr.Cookie Monster", 1200.0,
+                100, 0.01 );
+
         double getWithdrawValue = account.withdraw( 1300 );
 
         double getWithdrawValueBusiness = businessAccount.withdraw( 1000.0 );
 
-        System.out.printf("Remaining value: %s\nRemaining value: %s", getWithdrawValue, getWithdrawValueBusiness);
+        double withdrawDuh = savingsAccount.withdraw( 1000 );
+
+        System.out.printf( "Remaining value: %s\nRemaining value: %s\nRemaining value: %s"
+                , getWithdrawValue, getWithdrawValueBusiness, withdrawDuh );
 
     }
 
