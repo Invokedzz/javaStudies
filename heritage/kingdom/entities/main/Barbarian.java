@@ -2,7 +2,7 @@ package heritage.kingdom.entities.main;
 
 import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
 
-public class Barbarian extends Knight {
+public final class Barbarian extends Knight {
 
     // barbarian is pure gas. great life points and attack damage.
 
@@ -14,5 +14,7 @@ public class Barbarian extends Knight {
         // thinking about methods/variables for the Barbarian class
 
     }
+
+    // barbarian is going to have a whole system for attack, defense and life points
 
 }

@@ -1,7 +1,9 @@
 package heritage.kingdom.entities.main;
 
-public class Paladin extends Knight {
+public final class Paladin extends Knight {
 
-    // paladin have a great defense, a ok attack, but the capacity of healing during battle
+    // paladin have a great defense, an ok attack, but the capacity of healing during battle
+
+    // paladin is going to have a whole system for attack, defense and life points
 
 }

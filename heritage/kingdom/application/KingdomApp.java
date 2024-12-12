@@ -1,11 +1,22 @@
 package heritage.kingdom.application;
 
-// import heritage.kingdom.entities.heritage.Human;
+import heritage.kingdom.entities.heritage.Human;
 
 import heritage.kingdom.entities.main.Barbarian;
+
+import heritage.kingdom.entities.main.Mage;
+
+import heritage.kingdom.entities.main.Paladin;
+
 import heritage.kingdom.entities.main.Knight;
 
 import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
+
+import java.util.Scanner;
+
+import java.util.ArrayList;
+
+import java.util.List;
 
 public class KingdomApp {
 

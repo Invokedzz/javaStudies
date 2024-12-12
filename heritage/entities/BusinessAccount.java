@@ -1,6 +1,8 @@
 package heritage.entities;
 
-public class BusinessAccount extends Account {
+// final means that no other class can extends from BusinessAccount
+
+public final class BusinessAccount extends Account {
 
     // holder ( String ), balance ( double ), number ( int )
 
