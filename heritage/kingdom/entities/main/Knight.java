@@ -66,22 +66,30 @@ public class Knight extends Human {
     // DEFENSE_BOOST: the user can't take damage for 2 turns,
     // but his atk drops by 80%.
 
+    public double getLifePoints () {
+
+        return lifePoints;
+
+    }
+
+    public double getAttackPoints () {
+
+        return attackPoints;
+
+    }
+
+    public double getDefensePoints () {
+
+        return defensePoints;
+
+    }
+
     public double declareAttack () {
 
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
-        double getAttackPoints = character.validateAttackPoints( attackPoints, level );
 
-        double getValues = 0.0;
-
-        for ( int i = 0; i < level; i++ ) {
-
-            getValues += Math.ceil(Math.random() * (level + 1));
-
-        }
-
-        return getAttackPoints + getValues;
 
     }
 
@@ -94,31 +102,11 @@ public class Knight extends Human {
 
         double getDefensePoints = character.validateDefensePoints( defensePoints, level );
 
-        double getValues = 0.0;
-
-        for ( int i = 0; i < level; i++ ) {
-
-            getValues += Math.floor(Math.random() * (level + 1));
-
-        }
-
-        return getDefensePoints + getValues;
 
     }
 
     public double calculateLifePoints () {
-
-        lifePoints = 8.000;
-
-        double getLifePoints = 0;
-
-        for ( int i = 0; i < level; i++ ) {
-
-            getLifePoints += i;
-
-        }
-
-        return getLifePoints;
+        
 
     }
 

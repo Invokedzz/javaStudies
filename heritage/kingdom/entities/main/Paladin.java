@@ -10,14 +10,18 @@ public final class Paladin extends Knight {
 
     // paladin is going to have a whole system for attack, defense and life points
 
+    private double divineStrike;
+
     public Paladin ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints,
-                  int level, String appearance, String accessory, Abilities specialAbility ) {
+                  int level, String appearance, String accessory, Abilities specialAbility, double divineStrike ) {
 
         // constructor for other classes
 
         super ( lifePoints, armor, weapon, attackPoints, defensePoints, level, appearance, accessory, specialAbility );
 
         // thinking about methods/variables for the Paladin class
+
+        this.divineStrike = divineStrike;
 
     }
 
@@ -27,17 +31,7 @@ public final class Paladin extends Knight {
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
-        double getAttackPoints = character.validateAttackPoints( attackPoints, level );
 
-        double getValues = 0.0;
-
-        for ( int i = 0; i < level; i++ ) {
-
-            getValues += Math.ceil(Math.random() * (level + 1));
-
-        }
-
-        return getAttackPoints + getValues;
 
     }
 
@@ -49,34 +43,19 @@ public final class Paladin extends Knight {
 
         // getValues += Math.floor(Math.random() * (level + 1));
 
-        double getDefensePoints = character.validateDefensePoints( defensePoints, level );
-
-        double getValues = 0.0;
-
-        for ( int i = 0; i < level; i++ ) {
-
-            getValues += Math.floor(Math.random() * (level + 1));
-
-        }
-
-        return getDefensePoints + getValues;
 
     }
 
     @Override
     public double calculateLifePoints () {
 
-        lifePoints = 8.000;
 
-        double getLifePoints = 0;
 
-        for ( int i = 0; i < level; i++ ) {
+    }
 
-            getLifePoints += i;
+    public double getDivineStrike () {
 
-        }
-
-        return getLifePoints;
+        return divineStrike;
 
     }
 

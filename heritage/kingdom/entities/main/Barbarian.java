@@ -31,17 +31,7 @@ public final class Barbarian extends Knight {
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
-        double getAttackPoints = character.validateAttackPoints( attackPoints, level );
 
-        double getValues = 0.0;
-
-        for ( int i = 0; i < level; i++ ) {
-
-            getValues += Math.ceil(Math.random() * (level + 1));
-
-        }
-
-        return getAttackPoints + getValues;
 
     }
 
@@ -53,34 +43,20 @@ public final class Barbarian extends Knight {
 
         // getValues += Math.floor(Math.random() * (level + 1));
 
-        double getDefensePoints = character.validateDefensePoints( defensePoints, level );
 
-        double getValues = 0.0;
-
-        for ( int i = 0; i < level; i++ ) {
-
-            getValues += Math.floor(Math.random() * (level + 1));
-
-        }
-
-        return getDefensePoints + getValues;
 
     }
 
     @Override
     public double calculateLifePoints () {
 
-        lifePoints = 8.000;
 
-        double getLifePoints = 0;
 
-        for ( int i = 0; i < level; i++ ) {
+    }
 
-            getLifePoints += i;
+    public double getFury () {
 
-        }
-
-        return getLifePoints;
+        return fury;
 
     }
 
