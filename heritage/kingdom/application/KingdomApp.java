@@ -28,16 +28,24 @@ public class KingdomApp {
 
     private static void createDuel () {
 
-        Knight knight = new Knight( 1000.0, "Dark Armor", "Sword", 100.0, 200.0, 100, "idk",
-                "idk", 34, "pendulum", Abilities.STRENGTH_BOOST );
+        Knight knight = new Knight( 1000.0, "Dark Armor", "Sword", 100.0, 200.0,
+                1000, "idk", "idk", 34, "pendulum", Abilities.STRENGTH_BOOST );
 
         double getAttackPoints = knight.declareAttack();
 
         double getDefensePoints = knight.blockAttack();
 
-        double getLifePoints = knight.declareLifePoints();
+        double getLifePoints = knight.calculateLifePoints();
 
-        System.out.printf( "%s\nAtk: %s\nDef: %s\nLife Points: %s", knight, getAttackPoints, getDefensePoints, getLifePoints );
+        double getResolution = knight.resolveAttackImpact();
+
+        System.out.printf( "%s\nAtk: %s\nDef: %s\nLife Points: %s\n", knight, getAttackPoints, getDefensePoints, getLifePoints );
+
+        System.out.printf( "Resolution damage: %s\n", getResolution );
+
+        boolean isHeAlive = knight.isAlive();
+
+        System.out.println( isHeAlive );
 
     }
 

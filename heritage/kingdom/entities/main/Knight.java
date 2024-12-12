@@ -77,7 +77,7 @@ public class Knight extends Human {
 
         for ( int i = 0; i < level; i++ ) {
 
-            getValues += i + Math.ceil(Math.random());
+            getValues += Math.ceil(Math.random() * (level + 1));
 
         }
 
@@ -90,13 +90,15 @@ public class Knight extends Human {
         // defense points, min: 1, max: 250 -> default,
         // without considering any kind of boosts or abilities
 
+        // getValues += Math.floor(Math.random() * (level + 1));
+
         double getDefensePoints = character.validateDefensePoints( defensePoints, level );
 
         double getValues = 0.0;
 
         for ( int i = 0; i < level; i++ ) {
 
-            getValues += i + Math.floor(Math.random() + 1.0);
+            getValues += Math.floor(Math.random() * (level + 1));
 
         }
 
@@ -104,7 +106,7 @@ public class Knight extends Human {
 
     }
 
-    public double declareLifePoints () {
+    public double calculateLifePoints () {
 
         lifePoints = 8.000;
 
@@ -120,9 +122,15 @@ public class Knight extends Human {
 
     }
 
-    public double getLifePoints () {
+    public double resolveAttackImpact () {
 
-        return lifePoints;
+        return calculateLifePoints () - (blockAttack() - declareAttack());
+
+    }
+
+    public boolean isAlive () {
+
+        return resolveAttackImpact () > 0;
 
     }
 
@@ -140,5 +148,6 @@ public class Knight extends Human {
         return sb.toString();
 
     }
+
 
 }
