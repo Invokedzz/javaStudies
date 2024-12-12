@@ -37,6 +37,18 @@ public class Human {
 
     }
 
+    public Human ( int level, String appearance, String accessory, Abilities specialAbility ) {
+
+        this.level = level;
+
+        this.appearance = appearance;
+
+        this.accessory = accessory;
+
+        this.specialAbility = specialAbility;
+
+    }
+
     public String toString () {
 
         StringBuilder sb;

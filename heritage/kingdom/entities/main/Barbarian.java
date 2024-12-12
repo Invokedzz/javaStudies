@@ -1,17 +1,17 @@
 package heritage.kingdom.entities.main;
 
+import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
+
 public class Barbarian extends Knight {
 
     // barbarian is pure gas. great life points and attack damage.
 
-    // armor ( String ), weapon ( String ),
-    // attackPoints ( double ), defensePoints ( double )
+    public Barbarian ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints,
+                    int level, String appearance, String accessory, Abilities specialAbility ) { // constructor for other classes
 
-    public Barbarian () {}
+        super ( lifePoints, armor, weapon, attackPoints, defensePoints, level, appearance, accessory, specialAbility );
 
-    public Barbarian ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints ) {
-
-        super ( lifePoints, armor, weapon, attackPoints, defensePoints );
+        // thinking about methods/variables for the Barbarian class
 
     }
 

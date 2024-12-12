@@ -27,7 +27,7 @@ public class Knight extends Human {
     public Knight () {}
 
     public Knight ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints, int level,
-                    String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
+                    String appearance, String feelings, int age, String accessory, Abilities specialAbility ) { // constructor for knight class
 
         super ( level, appearance, feelings, age, accessory, specialAbility );
 
@@ -43,7 +43,10 @@ public class Knight extends Human {
 
     }
 
-    public Knight ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints ) {
+    public Knight ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints,
+                    int level, String appearance, String accessory, Abilities specialAbility ) { // constructor for other classes
+
+        super ( level, appearance, accessory, specialAbility);
 
         this.lifePoints = lifePoints;
 
