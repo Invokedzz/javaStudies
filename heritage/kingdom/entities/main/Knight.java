@@ -14,15 +14,15 @@ public class Knight extends Human {
     // feelings ( String ), appearance ( String )
     // age ( int ), accessory ( String ), specialAbility ( String )
 
-    private double lifePoints;
+    protected double lifePoints;
 
     private String armor;
 
     private String weapon;
 
-    private double attackPoints;
+    protected double attackPoints;
 
-    private double defensePoints;
+    protected double defensePoints;
 
     public Knight () {}
 

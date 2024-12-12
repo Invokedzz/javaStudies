@@ -29,7 +29,7 @@ public class KingdomApp {
     private static void createDuel () {
 
         Knight knight = new Knight( 1000.0, "Dark Armor", "Sword", 100.0, 200.0,
-                1000, "idk", "idk", 34, "pendulum", Abilities.STRENGTH_BOOST );
+                200, "idk", "idk", 34, "pendulum", Abilities.STRENGTH_BOOST );
 
         double getAttackPoints = knight.declareAttack();
 
