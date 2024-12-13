@@ -8,9 +8,9 @@ public class Employee {
 
     private String name;
 
-    private Integer hours;
+    protected Integer hours;
 
-    private Double valuePerHour;
+    protected Double valuePerHour;
 
     public Employee () {}
 
