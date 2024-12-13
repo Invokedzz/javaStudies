@@ -22,7 +22,41 @@ public class Application {
 
     private static void mainOperation ( Scanner init ) {
 
+        List < Employee > employeeList = new ArrayList<>(); // name, hours, valuePerHour
 
+        List < OutsourcedEmployee > outsourcedEmployeesList = new ArrayList<>();
+
+        double employeePayment = 0.0;
+
+        System.out.println( "Enter the number of employees: " );
+
+        int employeesValue = init.nextInt();
+
+        for ( int i = 0; i < employeesValue; i++ ) {
+
+            System.out.println( "Enter the name of the employee: " );
+
+            String name = init.next();
+
+            System.out.println( "Enter the number of hours they work: " );
+
+            int hours = init.nextInt();
+
+            System.out.println( "What's the value per hour? " );
+
+            double valuePerHour = init.nextDouble();
+
+            Employee employee = new Employee( name, hours, valuePerHour );
+
+            employeeList.add( employee );
+
+            employeePayment = employee.payment();
+
+            System.out.println( employeeList );
+
+        }
+
+        System.out.printf( "They receive: $%s", employeePayment );
 
     }
 
