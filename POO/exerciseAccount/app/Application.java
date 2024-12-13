@@ -58,7 +58,7 @@ public class Application {
 
             }
 
-            employeeList.add(new Employee( name, hours, valuePerHour ));
+            if ( outsourced == 'n' ) employeeList.add(new Employee( name, hours, valuePerHour ));
 
         }
 
