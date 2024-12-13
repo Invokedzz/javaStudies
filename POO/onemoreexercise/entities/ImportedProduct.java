@@ -1,6 +1,6 @@
 package POO.onemoreexercise.entities;
 
-public class ImportedProduct extends Product {
+public final class ImportedProduct extends Product {
 
     private double customsFee;
 
