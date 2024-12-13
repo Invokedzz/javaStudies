@@ -24,15 +24,17 @@ public class Application {
 
         List < Employee > employeeList = new ArrayList<>(); // name, hours, valuePerHour
 
-        List < OutsourcedEmployee > outsourcedEmployeesList = new ArrayList<>();
-
-        double employeePayment = 0.0;
+    //    List < OutsourcedEmployee > outsourcedEmployeesList = new ArrayList<>();
 
         System.out.println( "Enter the number of employees: " );
 
         int employeesValue = init.nextInt();
 
         for ( int i = 0; i < employeesValue; i++ ) {
+
+            System.out.println( "Outsourced?" );
+
+            char outsourced = init.next().charAt(0);
 
             System.out.println( "Enter the name of the employee: " );
 
@@ -46,17 +48,25 @@ public class Application {
 
             double valuePerHour = init.nextDouble();
 
-            Employee employee = new Employee( name, hours, valuePerHour );
+            if ( outsourced == 'y') {
 
-            employeeList.add( employee );
+                System.out.println( "Additional charge: " );
 
-            employeePayment = employee.payment();
+                double additionalCharge = init.nextDouble();
 
-            System.out.println( employeeList );
+                employeeList.add(new OutsourcedEmployee( name, hours, valuePerHour, additionalCharge ));
+
+            }
+
+            employeeList.add(new Employee( name, hours, valuePerHour ));
 
         }
 
-        System.out.printf( "They receive: $%s", employeePayment );
+        for ( Employee emp : employeeList) {
+
+            System.out.println( emp );
+
+        }
 
     }
 
