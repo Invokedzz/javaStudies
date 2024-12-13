@@ -24,4 +24,25 @@ public class Employee {
 
     }
 
+    public double payment () {
+
+        return hours * valuePerHour;
+
+    }
+
+    @Override
+    public String toString () {
+
+        StringBuilder sb;
+
+        sb = new StringBuilder();
+
+        sb.append( "Name: " ).append( name )
+                .append( " Hours: " ).append( hours )
+                .append( " Value per hour: " ).append( valuePerHour );
+
+        return sb.toString();
+
+    }
+
 }
