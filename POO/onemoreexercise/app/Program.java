@@ -21,7 +21,7 @@ public class Program {
     }
 
     private static void mainOperation ( Scanner init ) {
-        
+
     }
 
 }

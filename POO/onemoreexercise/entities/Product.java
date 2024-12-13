@@ -16,10 +16,23 @@ public class Product {
 
     }
 
+    public String getName () {
+
+        return name;
+
+    }
+
+    public double getPrice () {
+
+        return price;
+
+    }
+
     public String priceTag () {
 
-        return name +
-                " $ " + price;
+        return name
+                + " $ "
+                + String.format("%.2f", price);
 
     }
 
