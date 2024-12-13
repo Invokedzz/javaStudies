@@ -1,4 +1,7 @@
 package POO.exerciseAccount.entities;
 
-public class OutsourcedEmployee {
+public class OutsourcedEmployee extends Employee {
+
+    // additionalCharge (): double
+
 }
