@@ -4,7 +4,7 @@ import heritage.kingdom.entities.heritage.Human;
 
 import heritage.kingdom.entities.main.Barbarian;
 
-import heritage.kingdom.entities.main.Mage;
+//import heritage.kingdom.entities.main.Mage;
 
 import heritage.kingdom.entities.main.Paladin;
 

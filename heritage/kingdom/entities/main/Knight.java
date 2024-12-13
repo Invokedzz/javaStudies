@@ -89,7 +89,7 @@ public class Knight extends Human {
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
-
+        return getAttackPoints() * Math.ceil(Math.pow(1.2, level));
 
     }
 
@@ -100,19 +100,23 @@ public class Knight extends Human {
 
         // getValues += Math.floor(Math.random() * (level + 1));
 
-        double getDefensePoints = character.validateDefensePoints( defensePoints, level );
+    //    double getDefensePoints = character.validateDefensePoints( defensePoints, level );
+        //    don't forget about the validations!
 
+        return getDefensePoints() + (level * 5);
 
     }
 
     public double calculateLifePoints () {
-        
+
+        return getLifePoints() + (level * 10);
 
     }
 
     public double resolveAttackImpact () {
 
-        return calculateLifePoints () - (blockAttack() - declareAttack());
+        double damageMitigated = declareAttack() * (1 - (blockAttack() / 100));
+        return Math.max(damageMitigated, 0);
 
     }
 

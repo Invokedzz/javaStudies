@@ -31,7 +31,7 @@ public final class Paladin extends Knight {
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
-
+        return 1;
 
     }
 
@@ -43,13 +43,14 @@ public final class Paladin extends Knight {
 
         // getValues += Math.floor(Math.random() * (level + 1));
 
+        return 1;
 
     }
 
     @Override
     public double calculateLifePoints () {
 
-
+        return 1;
 
     }
 
