@@ -71,7 +71,7 @@ public class Program {
 
             char getOrInsertValue = init.next().charAt( 0 );
 
-            depositOrWithdraw ( businessAccount, getOrInsertValue );
+            depositOrWithdraw ( businessAccount, getOrInsertValue, init );
 
         }
 
@@ -89,7 +89,7 @@ public class Program {
 
             char getOrInsertValue = init.next().charAt( 0 );
 
-            depositOrWithdraw ( savingsAccount, getOrInsertValue );
+            depositOrWithdraw ( savingsAccount, getOrInsertValue, init );
 
         }
 
@@ -101,14 +101,30 @@ public class Program {
 
     }
 
-    private static void depositOrWithdraw ( Account account, char getOrInsertValue ) {
+    private static void depositOrWithdraw ( Account account, char getOrInsertValue, Scanner init ) {
 
         if ( getOrInsertValue == 'w' ) {
+
+            System.out.println( "Select the amount you want to withdraw: " );
+
+            double withdrawValue = init.nextDouble();
+
+            double getNewValue = account.withdraw( withdrawValue );
+
+            System.out.println( getNewValue );
 
         }
 
         if ( getOrInsertValue == 'd' ) {
-            
+
+            System.out.println( "Select the amount you want to deposit: " );
+
+            double depositValue = init.nextDouble();
+
+            double getNewValue = account.deposit( depositValue );
+
+            System.out.println( getNewValue );
+
         }
 
     }
