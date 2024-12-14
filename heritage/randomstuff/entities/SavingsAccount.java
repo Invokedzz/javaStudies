@@ -32,4 +32,20 @@ public class SavingsAccount extends Account {
 
     }
 
+    @Override
+    public String toString () {
+
+        StringBuilder sb;
+
+        sb = new StringBuilder();
+
+        sb.append( "Holder: " ).append( getHolder() )
+                .append( " Number: " ).append( getNumber() )
+                .append( " Balance: " ).append( getBalance() )
+                .append( " Interest Rate: " ).append( updateBalance() );
+
+        return sb.toString();
+
+    }
+
 }

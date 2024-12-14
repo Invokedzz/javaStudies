@@ -1,5 +1,8 @@
 package heritage.randomstuff.entities;
 
+// Using the 'abstract' method makes impossible to use the default Account;
+// so the user would need to choose between BusinessAccount or SavingsAccount
+
 public abstract class Account {
 
     private String holder;
