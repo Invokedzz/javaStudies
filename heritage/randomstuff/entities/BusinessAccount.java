@@ -18,6 +18,12 @@ public class BusinessAccount extends Account {
 
     }
 
+    public double getLoanLimit () {
+
+        return loanLimit;
+
+    }
+
     public double loan ( double amount ) {
 
         if ( loanLimit <= amount ) {
@@ -25,7 +31,7 @@ public class BusinessAccount extends Account {
             double balance = getBalance();
 
             return balance - amount;
-            
+
         }
 
         return getBalance();
