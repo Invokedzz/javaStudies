@@ -59,17 +59,37 @@ public class Program {
 
         if ( userChoice == 'b' ) {
 
+            System.out.println( "Select the loan limit: " );
+
             double loanLimit = init.nextDouble();
 
-            accountList.add( new BusinessAccount( holder, number, balance, loanLimit ) );
+            BusinessAccount businessAccount = new BusinessAccount( holder, number, balance, loanLimit );
+
+            accountList.add( businessAccount );
+
+            System.out.println( "Withdraw or deposit? (w/d): " );
+
+            char getOrInsertValue = init.next().charAt( 0 );
+
+            depositOrWithdraw ( businessAccount, getOrInsertValue );
 
         }
 
         if ( userChoice == 's' ) {
 
+            System.out.println( "Select the interest rate: " );
+
             double interestRate = init.nextDouble();
 
-            accountList.add( new SavingsAccount( holder, number, balance, interestRate ) );
+            SavingsAccount savingsAccount = new SavingsAccount( holder, number, balance, interestRate );
+
+            accountList.add( savingsAccount );
+
+            System.out.println( "Withdraw or deposit? (w/d): " );
+
+            char getOrInsertValue = init.next().charAt( 0 );
+
+            depositOrWithdraw ( savingsAccount, getOrInsertValue );
 
         }
 
@@ -77,6 +97,18 @@ public class Program {
 
             System.out.println( account );
 
+        }
+
+    }
+
+    private static void depositOrWithdraw ( Account account, char getOrInsertValue ) {
+
+        if ( getOrInsertValue == 'w' ) {
+
+        }
+
+        if ( getOrInsertValue == 'd' ) {
+            
         }
 
     }
