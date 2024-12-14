@@ -39,6 +39,28 @@ public class BusinessAccount extends Account {
     }
 
     @Override
+    public double withdraw ( double amount ) {
+
+        super.withdraw( amount );
+
+        double balance = getBalance();
+
+        return balance - amount + 10;
+
+    }
+
+    @Override
+    public double deposit ( double amount ) {
+
+        super.deposit( amount );
+
+        double balance = getBalance();
+
+        return balance + amount - 10;
+
+    }
+
+    @Override
     public String toString () {
 
         StringBuilder sb;
