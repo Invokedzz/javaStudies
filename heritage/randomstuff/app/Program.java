@@ -73,6 +73,12 @@ public class Program {
 
         }
 
+        for ( Account account : accountList) {
+
+            System.out.println( account );
+
+        }
+
     }
 
 }

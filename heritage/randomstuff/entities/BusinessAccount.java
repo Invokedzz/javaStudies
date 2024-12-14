@@ -69,7 +69,8 @@ public class BusinessAccount extends Account {
 
         sb.append( "Holder: " ).append( getHolder() )
                 .append( " Number: " ).append( getNumber() )
-                .append( " Balance: " ).append( getBalance() );
+                .append( " Balance: " ).append( getBalance() )
+                .append( " Loan Limit: " ).append( loanLimit );
 
         return sb.toString();
 
