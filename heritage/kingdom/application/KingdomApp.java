@@ -59,4 +59,30 @@ public class KingdomApp {
 
     }
 
+    private static void userOptionTowardsTheirCharacter ( char userOption ) {
+
+        switch ( userOption ) {
+
+            case 'm' | 'M':
+
+                System.out.println( "Ask him a bunch of stuff" );
+
+                break;
+
+            case 'b' | 'B':
+
+            case 'k' | 'K':
+
+            case 'p' | 'P':
+
+            default:
+
+                System.out.println( "Invalid bla bla" );
+
+                break;
+
+        }
+
+    }
+
 }
