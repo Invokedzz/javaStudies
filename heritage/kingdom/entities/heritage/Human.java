@@ -21,7 +21,8 @@ public abstract class Human {
 
     public Human () {}
 
-    public Human ( int level, String appearance, String feelings, int age, String accessory, Abilities specialAbility ) {
+    public Human ( int level, String appearance, String feelings, int age, String accessory,
+                   Abilities specialAbility ) {
 
         this.level = level;
 
@@ -61,13 +62,14 @@ public abstract class Human {
 
     }
 
+    @Override
     public String toString () {
 
         StringBuilder sb;
 
         sb = new StringBuilder();
 
-        sb.append("Level: ").append( level )
+        sb.append( "Level: " ).append( level )
                 .append( " Appearance: " ).append( appearance )
                 .append( " Feelings: " ).append( feelings )
                 .append( " Age: " ).append( age )

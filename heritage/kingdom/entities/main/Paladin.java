@@ -21,7 +21,8 @@ public final class Paladin extends Knight {
 
         // constructor for other classes
 
-        super ( lifePoints, armor, weapon, attackPoints, defensePoints, level, appearance, accessory, specialAbility );
+        super ( lifePoints, armor, weapon, attackPoints, defensePoints, level, appearance, accessory,
+                specialAbility );
 
         // thinking about methods/variables for the Paladin class
 

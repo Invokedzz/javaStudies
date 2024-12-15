@@ -106,13 +106,13 @@ public class Knight extends Human {
     //    double getDefensePoints = character.validateDefensePoints( defensePoints, level );
         //    don't forget about the validations!
 
-        return getDefensePoints() + (level * 4);
+        return getDefensePoints() + ( level * 4 );
 
     }
 
     public double calculateLifePoints () {
 
-        return getLifePoints() + (level * 14);
+        return getLifePoints() + ( level * 14 );
 
     }
 
@@ -128,6 +128,7 @@ public class Knight extends Human {
 
     }
 
+    @Override
     public String toString () {
 
         StringBuilder sb;
@@ -137,7 +138,8 @@ public class Knight extends Human {
         sb.append( "Armor: " ).append( armor )
                 .append( ", Weapon: " ).append( weapon )
                 .append( ", Attack Points: " ).append( attackPoints )
-                .append( ", Defense Points: " ).append( defensePoints );
+                .append( ", Defense Points: " ).append( defensePoints )
+                .append( " Special Ability: " ).append( getSpecialAbility() );
 
         return sb.toString();
 
