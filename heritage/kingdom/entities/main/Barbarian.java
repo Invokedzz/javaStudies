@@ -10,6 +10,12 @@ public final class Barbarian extends Knight {
 
     private double fury;
 
+    public Barbarian () {
+
+        super ();
+
+    }
+
     public Barbarian ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints,
                     int level, String appearance, String accessory, Abilities specialAbility, double fury ) {
 
@@ -31,6 +37,8 @@ public final class Barbarian extends Knight {
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
+        super.declareAttack();
+
         return 1;
 
     }
@@ -43,12 +51,16 @@ public final class Barbarian extends Knight {
 
         // getValues += Math.floor(Math.random() * (level + 1));
 
+        super.blockAttack();
+
         return 1;
 
     }
 
     @Override
     public double calculateLifePoints () {
+
+        super.calculateLifePoints();
 
         return 1;
 

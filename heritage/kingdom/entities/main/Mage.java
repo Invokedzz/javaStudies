@@ -12,6 +12,12 @@ public final class Mage extends Knight {
 
     private double mana;
 
+    public Mage () {
+
+        super ();
+
+    }
+
     public Mage ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints,
                        int level, String appearance, String accessory, Abilities specialAbility, double mana ) {
 
