@@ -12,6 +12,12 @@ public final class Paladin extends Knight {
 
     private double divineStrike;
 
+    public Paladin () {
+
+        super ();
+
+    }
+
     public Paladin ( double lifePoints, String armor, String weapon, double attackPoints, double defensePoints,
                   int level, String appearance, String accessory, Abilities specialAbility, double divineStrike ) {
 
@@ -31,6 +37,8 @@ public final class Paladin extends Knight {
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
+        super.declareAttack();
+
         return 1;
 
     }
@@ -43,12 +51,16 @@ public final class Paladin extends Knight {
 
         // getValues += Math.floor(Math.random() * (level + 1));
 
+        super.blockAttack();
+
         return 1;
 
     }
 
     @Override
     public double calculateLifePoints () {
+
+        super.calculateLifePoints();
 
         return 1;
 
