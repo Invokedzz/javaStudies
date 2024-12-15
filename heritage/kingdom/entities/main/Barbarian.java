@@ -2,8 +2,6 @@ package heritage.kingdom.entities.main;
 
 import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
 
-import heritage.kingdom.entities.heritage.abilitiesenum.PassiveAbilities;
-
 public final class Barbarian extends Knight {
 
     // barbarian is pure gas. great life points and attack damage.

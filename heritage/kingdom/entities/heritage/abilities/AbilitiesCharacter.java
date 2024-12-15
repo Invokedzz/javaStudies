@@ -18,21 +18,11 @@ public class AbilitiesCharacter {
             return 0.0;
         }
 
-        if ( level == 1000 ) {
+        if ( level >= 30 ) {
 
             attackPoints = 300;
 
             return attackPoints;
-
-        }
-
-        if ( level < 1 || level > 1000 ) {
-
-            attackPoints = 0.0;
-
-            level = 1;
-
-            return attackPoints * level;
 
         }
 
@@ -53,21 +43,11 @@ public class AbilitiesCharacter {
 
         }
 
-        if ( level == 1000 ) {
+        if ( level >= 30 ) {
 
             defensePoints = 250;
 
             return defensePoints;
-
-        }
-
-        if ( level < 1 || level > 1000 ) {
-
-            defensePoints = 0.0;
-
-            level = 1;
-
-            return defensePoints * level;
 
         }
 

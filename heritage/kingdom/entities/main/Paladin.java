@@ -2,8 +2,6 @@ package heritage.kingdom.entities.main;
 
 import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
 
-import heritage.kingdom.entities.heritage.abilitiesenum.PassiveAbilities;
-
 public final class Paladin extends Knight {
 
     // paladin have a great defense, an ok attack, but the capacity of healing during battle
