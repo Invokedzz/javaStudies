@@ -2,7 +2,7 @@ package heritage.kingdom.entities.heritage;
 
 import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
 
-public class Human {
+public abstract class Human {
 
     // feelings ( String ), appearance ( String )
     // age ( int ), accessory ( String ), specialAbility ( String )
@@ -46,6 +46,18 @@ public class Human {
         this.accessory = accessory;
 
         this.specialAbility = specialAbility;
+
+    }
+
+    public int getLevel () {
+
+        return level;
+
+    }
+
+    public Abilities getSpecialAbility () {
+
+        return specialAbility;
 
     }
 

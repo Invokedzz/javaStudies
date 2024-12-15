@@ -84,6 +84,9 @@ public class Knight extends Human {
 
     }
 
+    // Battle methods
+    // declareAttack, blockAttack, calculateLifePoints, resolveAttackImpact & isAlive
+
     public double declareAttack () {
 
         // attack points, min: 5, max: 300 -> default,
