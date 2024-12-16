@@ -16,6 +16,12 @@ public abstract class TaxPayer {
 
     }
 
+    public Double getIncome () {
+
+        return income;
+
+    }
+
     public abstract Double tax ();
 
 }
