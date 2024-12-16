@@ -33,6 +33,8 @@ public class IDontKnow {
 
             System.out.println( handleError [ 1 ] );
 
+        //    e.printStackTrace(); // displays the exception
+
             return;
 
         } catch ( ArrayIndexOutOfBoundsException e ) {
