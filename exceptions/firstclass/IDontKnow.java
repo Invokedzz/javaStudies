@@ -27,13 +27,23 @@ public class IDontKnow {
 
             System.out.println(vector[certainElement]);
 
-        } catch (InputMismatchException e) {
+        } catch ( InputMismatchException e ) {
 
             String [] handleError = new String[] { "James", "Paul", "Peter" };
 
             System.out.println( handleError [ 1 ] );
 
+            return;
+
+        } catch ( ArrayIndexOutOfBoundsException e ) {
+
+            System.out.println( "Enter a valid number in order to access the index correctly!" );
+
+            return;
+
         }
+
+        System.out.println( "End of program!" );
 
     }
 
