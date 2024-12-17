@@ -16,4 +16,30 @@ public class Employees {
 
     }
 
+    public String getName () {
+
+        return name;
+
+    }
+
+    public String getId () {
+
+        return id;
+
+    }
+
+    @Override
+    public String toString () {
+
+        StringBuilder sb;
+
+        sb = new StringBuilder();
+
+        sb.append( "Name: " ).append( name )
+                .append( " Id: " ).append( id );
+
+        return sb.toString();
+
+    }
+
 }
