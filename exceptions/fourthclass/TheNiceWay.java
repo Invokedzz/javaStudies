@@ -48,15 +48,19 @@ public class TheNiceWay {
 
     }
 
-    private static String nameMatching ( Scanner init ) {;
+    private static String nameMatching ( Scanner init ) {
 
-        while ( !init.next().matches( "[a-zA-Z]+" ) ) {
+        String name;
+
+        while ( true ) {
+
+            name = init.next().trim();
+
+            if ( name.matches( "[a-zA-Z]+" ) ) return name;
 
             System.out.println( "Enter a valid name!" );
 
         }
-
-        return init.next();
 
     }
 
