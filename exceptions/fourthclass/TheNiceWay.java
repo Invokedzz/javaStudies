@@ -30,7 +30,7 @@ public class TheNiceWay {
 
             System.out.println( "Enter the employee id: " );
 
-            String id = init.next();
+            String id = validateId( init );
 
             Employees employees = new Employees( name, id );
 
@@ -38,7 +38,13 @@ public class TheNiceWay {
 
         }
 
+        for ( Employees employees : employeesList ) {
 
+            System.out.printf( "Employees: %s", employees.getName() );
+
+            System.out.printf( " Id's: %s", employees.getId() );
+
+        }
 
     }
 
@@ -59,6 +65,26 @@ public class TheNiceWay {
             if ( name.matches( "[a-zA-Z]+" ) ) return name;
 
             System.out.println( "Enter a valid name!" );
+
+        }
+
+    }
+
+    private static String validateId ( Scanner init ) {
+
+        String id;
+
+        while ( true ) {
+
+            id = init.next().trim();
+
+            if ( id.matches( "\\d+" ) ) {
+
+                if ( id.length() == 4 ) return id;
+
+            }
+
+            System.out.println( "Enter a valid id!" );
 
         }
 
