@@ -53,6 +53,8 @@ public class MoreExceptionsWow {
 
                init.next();
 
+               if ( init.next().isBlank() ) break;
+
            } finally {
 
                for ( Employees emp : employeesList ) {
@@ -66,7 +68,6 @@ public class MoreExceptionsWow {
            }
 
        }
-
 
     }
 
