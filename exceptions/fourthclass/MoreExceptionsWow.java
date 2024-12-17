@@ -1,8 +1,7 @@
 package exceptions.fourthclass;
 
-import exceptions.fourthclass.Employees;
-
 import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 import java.util.ArrayList;
@@ -26,42 +25,48 @@ public class MoreExceptionsWow {
 
         List < Employees > employeesList = new ArrayList<>();
 
-            try {
+       while ( true ) {
 
-                int numberOfEmployees = init.nextInt();
+           try {
 
-                for ( int index = 0; index < numberOfEmployees; index ++ ) {
+               int numberOfEmployees = init.nextInt();
 
-                    System.out.println( "Enter the employee name: " );
+               for ( int index = 0; index < numberOfEmployees; index ++ ) {
 
-                    String name = init.next();
+                   System.out.println( "Enter the employee name: " );
 
-                    System.out.println( "Enter the employee id: " );
+                   String name = init.next();
 
-                    String id = init.next();
+                   System.out.println( "Enter the employee id: " );
 
-                    Employees employees = new Employees( name, id );
+                   String id = init.next();
 
-                    employeesList.add( employees );
+                   Employees employees = new Employees( name, id );
 
-                }
+                   employeesList.add( employees );
 
-            } catch ( InputMismatchException error ) {
+               }
 
-                System.out.println( "Enter a valid number!" );
+           } catch ( InputMismatchException error ) {
 
-                init.next();
+               System.out.println( "Enter a valid number!" );
 
-            }
+               init.next();
 
+           } finally {
 
-        for ( Employees emp : employeesList ) {
+               for ( Employees emp : employeesList ) {
 
-            System.out.printf( "Names: %s", emp.getName() );
+                   System.out.printf( "Names: %s", emp.getName() );
 
-            System.out.printf( " Ids: %s ", emp.getId() );
+                   System.out.printf( " Ids: %s ", emp.getId() );
 
-        }
+               }
+
+           }
+
+       }
+
 
     }
 
