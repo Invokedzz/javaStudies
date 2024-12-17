@@ -1,10 +1,11 @@
 package exceptions.fifthclass.model.entities;
 
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 
 import java.util.concurrent.TimeUnit;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import exceptions.fifthclass.model.exceptions.DomainException;
 
@@ -12,13 +13,15 @@ public class Reservation {
 
     private Integer roomNumber;
 
-    private LocalDate checkIn;
+    private Date checkIn;
 
-    private LocalDate checkOut;
+    private Date checkOut;
+
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat( "dd/MM/yyyy" );
 
     public Reservation () {}
 
-    public Reservation ( Integer roomNumber, LocalDate checkIn, LocalDate checkOut ) {
+    public Reservation ( Integer roomNumber, Date checkIn, Date checkOut ) {
 
         this.roomNumber = roomNumber;
 
@@ -34,15 +37,31 @@ public class Reservation {
 
     }
 
-    public LocalDate getCheckIn () {
+    public Date getCheckIn () {
 
         return checkIn;
 
     }
 
-    public LocalDate getCheckOut () {
+    public Date getCheckOut () {
 
         return checkOut;
+
+    }
+
+    public long duration () {
+
+        long differenceBetweenTheElements = checkOut.getTime() - checkIn.getTime();
+
+        return TimeUnit.DAYS.convert( differenceBetweenTheElements, TimeUnit.MILLISECONDS );
+
+    }
+
+    public void updateDates ( Date checkIn, Date checkOut ) {
+
+        this.checkIn = checkIn;
+
+        this.checkOut = checkOut;
 
     }
 
@@ -54,8 +73,9 @@ public class Reservation {
         sb = new StringBuilder();
 
         sb.append( "Reservation: Room " ).append( getRoomNumber() )
-                .append( "," ).append( " check-in: " ).append( getCheckIn() )
-                .append( "," ).append( " check-out: " ).append( getCheckOut() );
+                .append( "," ).append( " check-in: " ).append( simpleDateFormat.format( getCheckIn() ) )
+                .append( "," ).append( " check-out: " ).append( simpleDateFormat.format( getCheckOut() ) )
+                .append( ", " ).append( duration() ).append( " nights " );
 
         return sb.toString();
 
