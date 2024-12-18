@@ -11,14 +11,19 @@ import java.util.Scanner;
 public class AbilitiesCharacter {
 
     // class created to validate attack/defense points
-    // attack points, min: 5, max: 300 -> default,
+    // attack points, min: 5, max: 100 -> default,
     // without considering any kind of boosts or abilities
-    // level limit: 1000 <-> if level == 1000, attackPoints = 300
-    // if level < 1000, attackPoints = ?
+    // level limit: 100
 
-    private boolean verifyInt ( Scanner init ) {
+    private boolean hasInt ( Scanner init ) {
 
         return init.hasNextInt();
+
+    }
+
+    private boolean hasDouble ( Scanner init ) {
+
+        return init.hasNextDouble();
 
     }
 
@@ -28,7 +33,7 @@ public class AbilitiesCharacter {
 
         System.out.println( "Enter your character level: " );
 
-        while ( !verifyInt ( level ) ) {
+        while ( !hasInt ( level ) ) {
 
             System.out.println( "Enter a valid level!" );
 
@@ -42,7 +47,7 @@ public class AbilitiesCharacter {
 
             System.out.println( "Enter a valid level! (max: 100/min: 1)" );
 
-            while ( !verifyInt ( level ) ) {
+            while ( !hasInt ( level ) ) {
 
                 System.out.println( "Enter a valid integer level!" );
 
@@ -58,11 +63,41 @@ public class AbilitiesCharacter {
 
     }
 
-    /*public double attackValidation ( double attackPoints ) {
+    public double attackValidation ( Scanner attackPoints ) {
 
-        if ( attackPoints < 0)
+        double verifyAttack;
 
-    } */
+        System.out.println( "Enter your character level: " );
+
+        while ( !hasDouble ( attackPoints ) ) {
+
+            System.out.println( "Enter a valid level!" );
+
+            attackPoints.next();
+
+        }
+
+        verifyAttack = attackPoints.nextDouble();
+
+        while ( verifyAttack <= 0 || verifyAttack > 100 ) {
+
+            System.out.println( "Enter a valid level! (max: 100/min: 1)" );
+
+            while ( !hasInt ( attackPoints ) ) {
+
+                System.out.println( "Enter a valid integer level!" );
+
+                attackPoints.next();
+
+            }
+
+            verifyAttack = attackPoints.nextDouble();
+
+        }
+
+        return verifyAttack;
+
+    }
 
     /*public double defensePoints ( double defensePoints ) {
 
