@@ -102,9 +102,8 @@ public class Knight extends Human {
         // without considering any kind of boosts or abilities
 
         // getValues += Math.floor(Math.random() * (level + 1));
-
-    //    double getDefensePoints = character.validateDefensePoints( defensePoints, level );
         //    don't forget about the validations!
+        //    double getDefensePoints = character.validateDefensePoints( defensePoints, level );
 
         return getDefensePoints() + ( level * 4 );
 
@@ -112,7 +111,7 @@ public class Knight extends Human {
 
     public double calculateLifePoints () {
 
-        return getLifePoints() + ( level * 14 );
+        return getLifePoints() + ( level * 8 );
 
     }
 

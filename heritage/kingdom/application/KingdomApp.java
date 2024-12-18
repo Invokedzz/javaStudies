@@ -1,7 +1,5 @@
 package heritage.kingdom.application;
 
-import heritage.kingdom.entities.heritage.Human;
-
 import heritage.kingdom.entities.main.Barbarian;
 
 //import heritage.kingdom.entities.main.Mage;
@@ -23,6 +21,10 @@ public class KingdomApp {
     public static void main ( String[] args ) {
 
         createDuel();
+
+        System.out.println( "##############################################\n" );
+
+        testBarbarian();
 
     }
 
@@ -49,17 +51,39 @@ public class KingdomApp {
 
     }
 
-    private static void testingOtherClasses () {
+    private static void testBarbarian () {
 
-       // Barbarian barbarian = new Barbarian();
+        Barbarian barbarian = new Barbarian( 1000.0, "Armor", "Sword",
+                100.0, 100.0, 1000, "idk",
+                "idk", Abilities.COOKING_BOOST, 100.0  );
 
-        // double getAttackPoints = barbarian.declareLifePoints();
+        double getAttackPoints = barbarian.declareAttack();
 
-        // double getDefensePoints = barbarian.declareAttack();
+        double getDefensePoints = barbarian.blockAttack();
+
+        double getLifePoints = barbarian.calculateLifePoints();
+
+        double getResolution = barbarian.resolveAttackImpact();
+
+        System.out.printf( "%s\nAtk: %s\nDef: %s\nLife Points: %s\n", barbarian, getAttackPoints, getDefensePoints, getLifePoints );
+
+        System.out.printf( "Resolution damage: %s\n", getResolution );
+
+        boolean isHeAlive = barbarian.isAlive();
+
+        System.out.println( isHeAlive );
 
     }
 
-    private static void userOptionTowardsTheirCharacter ( char userOption ) {
+    private static void testPaladin () {
+
+    }
+
+    private static void testMage () {
+
+    }
+
+   /* private static void userOptionTowardsTheirCharacter ( char userOption ) {
 
         switch ( userOption ) {
 
@@ -83,6 +107,6 @@ public class KingdomApp {
 
         }
 
-    }
+    } */
 
 }

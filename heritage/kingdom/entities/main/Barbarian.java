@@ -67,7 +67,7 @@ public final class Barbarian extends Knight {
 
         super.calculateLifePoints();
 
-        return 1;
+        return getLifePoints() + ( level * 14 );
 
     }
 
