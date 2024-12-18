@@ -33,7 +33,7 @@ public class Program {
 
         System.out.println( "Enter the number of rooms you want to rent: " );
 
-        int numberOfRooms = init.nextInt();
+        int numberOfRooms = validateInt( init );
 
         try {
 
@@ -41,11 +41,11 @@ public class Program {
 
                 System.out.println( "Enter the room number: " );
 
-                Integer roomNumber = init.nextInt();
+                Integer roomNumber = validateInt( init );
 
                 System.out.println( "Enter the check-in: " );
 
-                Date checkIn = simpleDateFormat.parse( init.next());
+                Date checkIn = simpleDateFormat.parse( init.next() );
 
                 System.out.println( "Enter the check-out: " );
 
@@ -88,6 +88,26 @@ public class Program {
         if ( checkIn.after( checkOut ) ) throw new InvalidDatePeriod( "Enter a valid date!" );
 
         System.out.println();
+
+    }
+
+    private static boolean hasNextInt ( Scanner init ) {
+
+        return init.hasNextInt();
+
+    }
+
+    private static int validateInt ( Scanner init ) {
+
+        while ( !hasNextInt( init ) ) {
+
+            System.out.println( "Enter a valid number!" );
+
+            init.next();
+
+        }
+
+        return init.nextInt();
 
     }
 
