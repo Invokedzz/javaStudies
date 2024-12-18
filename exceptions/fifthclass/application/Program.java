@@ -65,7 +65,13 @@ public class Program {
 
                 Date getCheckOut = reservationList.get( index ).getCheckOut();
 
-                
+                System.out.println( "Enter the updated check-in: " );
+
+                Date updatedCheckIn = simpleDateFormat.parse( init.next() );
+
+                System.out.println( "Enter the updated check-out: " );
+
+                Date updatedCheckOut = simpleDateFormat.parse( init.next() );
 
             }
 

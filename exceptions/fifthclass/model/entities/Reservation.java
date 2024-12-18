@@ -1,13 +1,12 @@
 package exceptions.fifthclass.model.entities;
 
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 
 import java.util.concurrent.TimeUnit;
 
 import java.util.Date;
 
-import exceptions.fifthclass.model.exceptions.DomainException;
+import exceptions.fifthclass.model.exceptions.InvalidDatePeriod;
 
 public class Reservation {
 
@@ -57,11 +56,17 @@ public class Reservation {
 
     }
 
-    public void updateDates ( Date checkIn, Date checkOut ) {
+    public void updateDates ( Date checkIn, Date checkOut ) throws InvalidDatePeriod {
 
-        this.checkIn = checkIn;
+       Date now = new Date();
 
-        this.checkOut = checkOut;
+       if ( checkIn.before ( now ) || checkOut.before ( now ) ) throw new InvalidDatePeriod( "Check-in/Check-out must be future dates" );
+
+       if ( checkIn.after ( checkOut ) ) throw new InvalidDatePeriod( "Enter a valid check-in/check-out" );
+
+       this.checkIn = checkIn;
+
+       this.checkOut = checkOut;
 
     }
 
