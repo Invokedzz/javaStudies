@@ -117,7 +117,9 @@ public class Knight extends Human {
 
     public double resolveAttackImpact () {
 
-        return declareAttack() + attackPoints - blockAttack();
+        // double lifePoints = calculateLifePoints();
+
+        return  declareAttack() - blockAttack();
 
     }
 

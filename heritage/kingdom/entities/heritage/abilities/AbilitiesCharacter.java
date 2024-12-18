@@ -1,57 +1,36 @@
 package heritage.kingdom.entities.heritage.abilities;
 
+import heritage.kingdom.entities.exceptions.InvalidLevelException;
+
+import heritage.kingdom.entities.exceptions.AttackPointsException;
+
+import heritage.kingdom.entities.exceptions.DefensePointsException;
+
 public class AbilitiesCharacter {
 
     // class created to validate attack/defense points
+    // attack points, min: 5, max: 300 -> default,
+    // without considering any kind of boosts or abilities
+    // level limit: 1000 <-> if level == 1000, attackPoints = 300
+    // if level < 1000, attackPoints = ?
 
-    public double validateAttackPoints ( double attackPoints, int level ) {
+    public double levelValidation ( int level ) {
 
-        // attack points, min: 5, max: 300 -> default,
-        // without considering any kind of boosts or abilities
-        // level limit: 1000 <-> if level == 1000, attackPoints = 300
-        // if level < 1000, attackPoints = ?
+        if ( level <= 0 || level > 100 ) throw new InvalidLevelException( "Enter a valid level! min: 1 / max: 100" );
 
-        if ( attackPoints < 5 || attackPoints > 300 ) {
-
-            System.out.println( "You can't do any damage, LOL" );
-
-            return 0.0;
-        }
-
-        if ( level >= 30 ) {
-
-            attackPoints = 300;
-
-            return attackPoints;
-
-        }
-
-        return attackPoints;
+        return level;
 
     }
 
-    public double validateDefensePoints ( double defensePoints, int level ) {
+    public double attackValidation ( double attackPoints ) {
 
-        // defense points, min: 1, max: 250 -> default,
-        // without considering any kind of boosts or abilities
 
-        if ( defensePoints < 1 || defensePoints > 250 ) {
 
-            System.out.println( "Oh, you're taking a LOT of damage LOL" );
+    }
 
-            return 0.0;
+    public double defensePoints ( double defensePoints ) {
 
-        }
-
-        if ( level >= 30 ) {
-
-            defensePoints = 250;
-
-            return defensePoints;
-
-        }
-
-        return defensePoints;
+        
 
     }
 

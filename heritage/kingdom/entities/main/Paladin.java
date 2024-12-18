@@ -58,7 +58,7 @@ public final class Paladin extends Knight {
 
         super.blockAttack();
 
-        return getDefensePoints() + ( level * 12 );
+        return getDefensePoints() + ( level * 4 );
 
     }
 
@@ -67,7 +67,7 @@ public final class Paladin extends Knight {
 
         super.calculateLifePoints();
 
-        return getLifePoints() + ( level * 16 );
+        return getLifePoints() + ( level * 20 );
 
     }
 
