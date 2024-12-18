@@ -6,6 +6,8 @@ import heritage.kingdom.entities.exceptions.AttackPointsException;
 
 import heritage.kingdom.entities.exceptions.DefensePointsException;
 
+import java.util.Scanner;
+
 public class AbilitiesCharacter {
 
     // class created to validate attack/defense points
@@ -14,23 +16,55 @@ public class AbilitiesCharacter {
     // level limit: 1000 <-> if level == 1000, attackPoints = 300
     // if level < 1000, attackPoints = ?
 
-    public double levelValidation ( int level ) {
+    private boolean verifyInt ( Scanner init ) {
 
-        if ( level <= 0 || level > 100 ) throw new InvalidLevelException( "Enter a valid level! min: 1 / max: 100" );
+        return init.hasNextInt();
 
-        return level;
+    }
+
+    public int levelValidation ( Scanner level ) {
+
+        int verifyLevel;
+
+        while ( !verifyInt ( level ) ) {
+
+            System.out.println( "Enter a valid level!" );
+
+            level.next();
+
+        }
+
+        verifyLevel = level.nextInt();
+
+        while ( level.nextInt() <= 0 || level.nextInt() > 100 ) {
+
+            System.out.println( "Enter a valid level! (max: 100/min: 1)" );
+
+            while ( verifyInt ( level ) ) {
+
+                System.out.println( "Enter a valid integer level!" );
+
+                level.next();
+
+            }
+
+            verifyLevel = level.nextInt();
+
+        }
+
+        return verifyLevel;
 
     }
 
     public double attackValidation ( double attackPoints ) {
 
-
+        if ( attackPoints < 0)
 
     }
 
     public double defensePoints ( double defensePoints ) {
 
-        
+
 
     }
 
