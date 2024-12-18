@@ -67,11 +67,11 @@ public class AbilitiesCharacter {
 
         double verifyAttack;
 
-        System.out.println( "Enter your character level: " );
+        System.out.println( "Enter your character attack points: " );
 
         while ( !hasDouble ( attackPoints ) ) {
 
-            System.out.println( "Enter a valid level!" );
+            System.out.println( "Enter valid attack points!" );
 
             attackPoints.next();
 
@@ -79,13 +79,13 @@ public class AbilitiesCharacter {
 
         verifyAttack = attackPoints.nextDouble();
 
-        while ( verifyAttack <= 0 || verifyAttack > 100 ) {
+        while ( verifyAttack < 5 || verifyAttack > 100 ) {
 
-            System.out.println( "Enter a valid level! (max: 100/min: 1)" );
+            System.out.println( "Enter valid attack points (max: 100/min: 5)" );
 
-            while ( !hasInt ( attackPoints ) ) {
+            while ( !hasDouble ( attackPoints ) ) {
 
-                System.out.println( "Enter a valid integer level!" );
+                System.out.println( "Enter valid attack points!" );
 
                 attackPoints.next();
 
@@ -99,10 +99,40 @@ public class AbilitiesCharacter {
 
     }
 
-    /*public double defensePoints ( double defensePoints ) {
+    public double defensePoints ( Scanner defensePoints ) {
 
+        double verifyDefense;
 
+        System.out.println( "Enter your character defense points (max: 100/min: 5): " );
 
-    }*/
+        while ( !hasDouble ( defensePoints ) ) {
+
+            System.out.println( "Enter valid defense points!" );
+
+            defensePoints.next();
+
+        }
+
+        verifyDefense = defensePoints.nextDouble();
+
+        while ( verifyDefense < 5 || verifyDefense > 100 ) {
+
+            System.out.println( "Enter valid defense points! (max: 100/min: 1)" );
+
+            while ( !hasDouble ( defensePoints ) ) {
+
+                System.out.println( "Enter valid defense points!" );
+
+                defensePoints.next();
+
+            }
+
+            verifyDefense = defensePoints.nextDouble();
+
+        }
+
+        return verifyDefense;
+
+    }
 
 }
