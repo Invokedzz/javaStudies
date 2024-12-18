@@ -12,9 +12,9 @@ public class Reservation {
 
     private Integer roomNumber;
 
-    private Date checkIn;
+    private static Date checkIn;
 
-    private Date checkOut;
+    private static Date checkOut;
 
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat( "dd/MM/yyyy" );
 
@@ -24,9 +24,9 @@ public class Reservation {
 
         this.roomNumber = roomNumber;
 
-        this.checkIn = checkIn;
+        Reservation.checkIn = checkIn;
 
-        this.checkOut = checkOut;
+        Reservation.checkOut = checkOut;
 
     }
 
@@ -56,7 +56,7 @@ public class Reservation {
 
     }
 
-    public void updateDates ( Date checkIn, Date checkOut ) throws InvalidDatePeriod {
+    public static void updateDates ( Date checkIn, Date checkOut ) throws InvalidDatePeriod {
 
        Date now = new Date();
 
@@ -64,9 +64,9 @@ public class Reservation {
 
        if ( checkIn.after ( checkOut ) ) throw new InvalidDatePeriod( "Enter a valid check-in/check-out" );
 
-       this.checkIn = checkIn;
+       Reservation.checkIn = checkIn;
 
-       this.checkOut = checkOut;
+       Reservation.checkOut = checkOut;
 
     }
 

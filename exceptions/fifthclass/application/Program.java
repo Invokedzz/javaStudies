@@ -1,6 +1,7 @@
 package exceptions.fifthclass.application;
 
 import exceptions.fifthclass.model.entities.Reservation;
+
 import exceptions.fifthclass.model.exceptions.InvalidDatePeriod;
 
 import java.text.ParseException;
@@ -61,9 +62,9 @@ public class Program {
 
             for ( int index = 0; index < reservationList.size(); index ++ ) {
 
-                Date getCheckIn = reservationList.get( index ).getCheckIn();
+            //    Date getCheckIn = reservationList.get( index ).getCheckIn();
 
-                Date getCheckOut = reservationList.get( index ).getCheckOut();
+            //    Date getCheckOut = reservationList.get( index ).getCheckOut();
 
                 System.out.println( "Enter the updated check-in: " );
 
@@ -72,6 +73,8 @@ public class Program {
                 System.out.println( "Enter the updated check-out: " );
 
                 Date updatedCheckOut = simpleDateFormat.parse( init.next() );
+
+                Reservation.updateDates( updatedCheckIn, updatedCheckOut );
 
             }
 
