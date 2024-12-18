@@ -26,6 +26,8 @@ public class AbilitiesCharacter {
 
         int verifyLevel;
 
+        System.out.println( "Enter your character level: " );
+
         while ( !verifyInt ( level ) ) {
 
             System.out.println( "Enter a valid level!" );
@@ -36,11 +38,11 @@ public class AbilitiesCharacter {
 
         verifyLevel = level.nextInt();
 
-        while ( level.nextInt() <= 0 || level.nextInt() > 100 ) {
+        while ( verifyLevel <= 0 || verifyLevel > 100 ) {
 
             System.out.println( "Enter a valid level! (max: 100/min: 1)" );
 
-            while ( verifyInt ( level ) ) {
+            while ( !verifyInt ( level ) ) {
 
                 System.out.println( "Enter a valid integer level!" );
 
@@ -56,16 +58,16 @@ public class AbilitiesCharacter {
 
     }
 
-    public double attackValidation ( double attackPoints ) {
+    /*public double attackValidation ( double attackPoints ) {
 
         if ( attackPoints < 0)
 
-    }
+    } */
 
-    public double defensePoints ( double defensePoints ) {
+    /*public double defensePoints ( double defensePoints ) {
 
 
 
-    }
+    }*/
 
 }
