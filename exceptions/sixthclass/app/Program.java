@@ -1,6 +1,7 @@
 package exceptions.sixthclass.app;
 
 import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 
 import java.util.Scanner;
@@ -14,7 +15,6 @@ import java.util.ArrayList;
 import exceptions.sixthclass.model.entities.Reservations;
 
 import exceptions.sixthclass.model.entities.ScannerValidate;
-import exceptions.sixthclass.model.exceptions.RandomException;
 
 public class Program {
 
