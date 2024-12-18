@@ -30,13 +30,21 @@ public final class Mage extends Knight {
 
     }
 
+    public double getMana () {
+
+        return mana;
+
+    }
+
     @Override
     public double declareAttack () {
 
         // attack points, min: 5, max: 300 -> default,
         // without considering any kind of boosts or abilities
 
-        return 1;
+        super.declareAttack();
+
+        return getAttackPoints() + ( level * 10 ) + getMana();
 
     }
 
@@ -48,20 +56,18 @@ public final class Mage extends Knight {
 
         // getValues += Math.floor(Math.random() * (level + 1));
 
-        return 1;
+        super.blockAttack();
+
+        return getDefensePoints() + ( level * 1.2 );
 
     }
 
     @Override
     public double calculateLifePoints () {
 
-        return 1;
+        super.calculateLifePoints();
 
-    }
-
-    public double getMana () {
-
-        return mana;
+        return getLifePoints() + ( level * 5 );
 
     }
 

@@ -30,6 +30,12 @@ public final class Paladin extends Knight {
 
     }
 
+    public double getDivineStrike () {
+
+        return divineStrike;
+
+    }
+
     @Override
     public double declareAttack () {
 
@@ -38,7 +44,7 @@ public final class Paladin extends Knight {
 
         super.declareAttack();
 
-        return 1;
+        return getAttackPoints() + ( level * 2 );
 
     }
 
@@ -52,7 +58,7 @@ public final class Paladin extends Knight {
 
         super.blockAttack();
 
-        return 1;
+        return getDefensePoints() + ( level * 12 );
 
     }
 
@@ -61,13 +67,13 @@ public final class Paladin extends Knight {
 
         super.calculateLifePoints();
 
-        return 1;
+        return getLifePoints() + ( level * 16 );
 
     }
 
-    public double getDivineStrike () {
+    public double heal () {
 
-        return divineStrike;
+        return calculateLifePoints() + getDivineStrike();
 
     }
 

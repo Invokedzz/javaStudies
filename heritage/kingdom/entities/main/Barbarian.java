@@ -30,6 +30,12 @@ public final class Barbarian extends Knight {
 
     // barbarian is going to have a whole system for attack, defense and life points
 
+    public double getFury () {
+
+        return fury;
+
+    }
+
     @Override
     public double declareAttack () {
 
@@ -38,7 +44,7 @@ public final class Barbarian extends Knight {
 
         super.declareAttack();
 
-        return 1;
+        return getAttackPoints() + ( level * 4.5 ) + getFury();
 
     }
 
@@ -52,7 +58,7 @@ public final class Barbarian extends Knight {
 
         super.blockAttack();
 
-        return 1;
+        return getDefensePoints() + ( level * 4 ) + getFury();
 
     }
 
@@ -62,12 +68,6 @@ public final class Barbarian extends Knight {
         super.calculateLifePoints();
 
         return 1;
-
-    }
-
-    public double getFury () {
-
-        return fury;
 
     }
 
