@@ -2,7 +2,7 @@ package heritage.kingdom.application;
 
 import heritage.kingdom.entities.main.Barbarian;
 
-//import heritage.kingdom.entities.main.Mage;
+import heritage.kingdom.entities.main.Mage;
 
 import heritage.kingdom.entities.main.Paladin;
 
@@ -26,12 +26,20 @@ public class KingdomApp {
 
         testBarbarian();
 
+        System.out.println( "##############################################\n" );
+
+        testPaladin();
+
+        System.out.println( "##############################################\n" );
+
+        testMage();
+
     }
 
     private static void createDuel () {
 
         Knight knight = new Knight( 1000.0, "Dark Armor", "Sword", 100.0, 200.0,
-                1000, "idk", "idk", 34, "pendulum", Abilities.STRENGTH_BOOST );
+                100, "idk", "idk", 34, "pendulum", Abilities.STRENGTH_BOOST );
 
         double getAttackPoints = knight.declareAttack();
 
@@ -54,7 +62,7 @@ public class KingdomApp {
     private static void testBarbarian () {
 
         Barbarian barbarian = new Barbarian( 1000.0, "Armor", "Sword",
-                100.0, 100.0, 1000, "idk",
+                100.0, 100.0, 100, "idk",
                 "idk", Abilities.COOKING_BOOST, 100.0  );
 
         double getAttackPoints = barbarian.declareAttack();
@@ -77,9 +85,49 @@ public class KingdomApp {
 
     private static void testPaladin () {
 
+        Paladin paladin = new Paladin( 1000.0, "Armor", "Sword",
+                100.0, 100.0, 100, "idk",
+                "idk", Abilities.COOKING_BOOST, 100.0  );
+
+        double getAttackPoints = paladin.declareAttack();
+
+        double getDefensePoints = paladin.blockAttack();
+
+        double getLifePoints = paladin.calculateLifePoints();
+
+        double getResolution = paladin.resolveAttackImpact();
+
+        System.out.printf( "%s\nAtk: %s\nDef: %s\nLife Points: %s\n", paladin, getAttackPoints, getDefensePoints, getLifePoints );
+
+        System.out.printf( "Resolution damage: %s\n", getResolution );
+
+        boolean isHeAlive = paladin.isAlive();
+
+        System.out.println( isHeAlive );
+
     }
 
     private static void testMage () {
+
+        Mage mage = new Mage( 1000.0, "Armor", "Sword",
+                100.0, 100.0, 100, "idk",
+                "idk", Abilities.COOKING_BOOST, 100.0  );
+
+        double getAttackPoints = mage.declareAttack();
+
+        double getDefensePoints = mage.blockAttack();
+
+        double getLifePoints = mage.calculateLifePoints();
+
+        double getResolution = mage.resolveAttackImpact();
+
+        System.out.printf( "%s\nAtk: %s\nDef: %s\nLife Points: %s\n", mage, getAttackPoints, getDefensePoints, getLifePoints );
+
+        System.out.printf( "Resolution damage: %s\n", getResolution );
+
+        boolean isHeAlive = mage.isAlive();
+
+        System.out.println( isHeAlive );
 
     }
 
