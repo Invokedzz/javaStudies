@@ -59,6 +59,16 @@ public class Program {
 
             }
 
+            for ( int index = 0; index < reservationList.size(); index ++ ) {
+
+                Date getCheckIn = reservationList.get( index ).getCheckIn();
+
+                Date getCheckOut = reservationList.get( index ).getCheckOut();
+
+                
+
+            }
+
             for ( Reservation reservation : reservationList ) {
 
                 System.out.printf( "Stats: %s ", reservation );
