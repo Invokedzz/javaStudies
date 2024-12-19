@@ -4,7 +4,7 @@ import heritage.kingdom.entities.heritage.Human;
 
 import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
 
-import heritage.kingdom.entities.heritage.abilities.AbilitiesCharacter;
+import heritage.kingdom.entities.heritage.abilities.validateStats;
 
 public class Knight extends Human {
 
@@ -60,7 +60,7 @@ public class Knight extends Human {
 
     }
 
-    AbilitiesCharacter character = new AbilitiesCharacter();
+    validateStats character = new validateStats();
 
     // STRENGTH_BOOST: raises the atk by 50% for 3 turns;
     // DEFENSE_BOOST: the user can't take damage for 2 turns,

@@ -1,8 +1,10 @@
 package heritage.kingdom.application;
 
 import heritage.kingdom.entities.exceptions.AttackPointsException;
+
 import heritage.kingdom.entities.exceptions.InvalidLevelException;
-import heritage.kingdom.entities.heritage.abilities.AbilitiesCharacter;
+
+import heritage.kingdom.entities.heritage.abilities.validateStats;
 
 import java.util.Scanner;
 
@@ -22,7 +24,7 @@ public class TestingMethods {
 
         try {
 
-            AbilitiesCharacter character = new AbilitiesCharacter();
+            validateStats character = new validateStats();
 
             int level = character.levelValidation ( init );
 
@@ -32,7 +34,7 @@ public class TestingMethods {
 
             character.validateAllMethods( level, attackPoints, defensePoints );
 
-        } catch (InvalidLevelException | AttackPointsException error ) {
+        } catch ( InvalidLevelException | AttackPointsException error ) {
 
             System.out.printf( "Error message: %s", error.getMessage() );
 

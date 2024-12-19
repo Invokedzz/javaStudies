@@ -4,11 +4,9 @@ import heritage.kingdom.entities.exceptions.InvalidLevelException;
 
 import heritage.kingdom.entities.exceptions.AttackPointsException;
 
-import heritage.kingdom.entities.exceptions.DefensePointsException;
-
 import java.util.Scanner;
 
-public class AbilitiesCharacter {
+public class validateStats {
 
     // class created to validate attack/defense points
     // attack points, min: 5, max: 100 -> default,
