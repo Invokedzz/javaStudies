@@ -12,9 +12,7 @@ public enum Abilities {
 
     HEALING_BOOST, // Paladin, Healer
 
-    COOKING_BOOST, // General
-
-    FISHING_BOOST, // General
+    NONE,
 
     // For the Knight class,
     // we're going to use the STRENGTH_BOOST AND DEFENSE_BOOST
