@@ -4,7 +4,9 @@ import heritage.kingdom.entities.exceptions.AttackPointsException;
 
 import heritage.kingdom.entities.exceptions.InvalidLevelException;
 
-import heritage.kingdom.entities.heritage.abilities.validateStats;
+import heritage.kingdom.entities.heritage.abilities.ValidateStats;
+
+import heritage.kingdom.entities.heritage.abilities.ValidateUniqueAttributes;
 
 import java.util.Scanner;
 
@@ -18,13 +20,15 @@ public class TestingMethods {
 
         System.out.println( "##############################" );
 
+        testCharacterAttributes ( init );
+
     }
 
     private static void testLevelOfCharacter ( Scanner init ) {
 
         try {
 
-            validateStats character = new validateStats();
+            ValidateStats character = new ValidateStats();
 
             int level = character.levelValidation ( init );
 
@@ -39,6 +43,20 @@ public class TestingMethods {
             System.out.printf( "Error message: %s", error.getMessage() );
 
         }
+
+    }
+
+    private static void testCharacterAttributes ( Scanner init ) {
+
+        ValidateUniqueAttributes validateUniqueAttributes = new ValidateUniqueAttributes();
+
+        double fury = validateUniqueAttributes.validateFury( init );
+
+        double mana = validateUniqueAttributes.validateMana( init );
+
+        double divineStrike = validateUniqueAttributes.validateDivineStrike( init );
+
+        System.out.printf( "Fury: %s\nMana: %s\nDivine Strike: %s\n", fury, mana, divineStrike );
 
     }
 

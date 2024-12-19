@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // fury (double), mana (double), divineStrike (double) -> Barbarian, Mage, Paladin
 
-public class validateUniqueAttributes {
+public class ValidateUniqueAttributes {
 
     private boolean hasDouble ( Scanner init ) {
 
@@ -16,9 +16,11 @@ public class validateUniqueAttributes {
 
         double validFury;
 
+        System.out.println( "Enter the value for Fury stats (max: 100 / min: 1)" );
+
         while ( !hasDouble ( furyPoints ) ) {
 
-            System.out.println( "Enter a valid number for fury stat!" );
+            System.out.println( "Enter a valid number for Fury stat!" );
 
             furyPoints.next();
 
@@ -26,13 +28,13 @@ public class validateUniqueAttributes {
 
         validFury = furyPoints.nextDouble();
 
-        while ( validFury < 0 || validFury > 100 ) {
+        while ( validFury <= 0 || validFury > 100 ) {
 
-            System.out.println( "Enter a valid fury value! (max: 100 / min: 0)" );
+            System.out.println( "Enter a valid Fury value! (max: 100 / min: 1)" );
 
             while ( !hasDouble( furyPoints ) ) {
 
-                System.out.println( "Enter a double number for fury stat!" );
+                System.out.println( "Enter a double number for Fury stat!" );
 
                 furyPoints.next();
 
@@ -50,9 +52,11 @@ public class validateUniqueAttributes {
 
         double validMana;
 
+        System.out.println( "Enter the value for Mana stats (max: 100 / min: 1)" );
+
         while ( !hasDouble ( manaPoints ) ) {
 
-            System.out.println( "Enter a valid number for mana stat!" );
+            System.out.println( "Enter a valid number for Mana stat!" );
 
             manaPoints.next();
 
@@ -60,13 +64,13 @@ public class validateUniqueAttributes {
 
         validMana = manaPoints.nextDouble();
 
-        while ( validMana < 0 || validMana > 100 ) {
+        while ( validMana <= 0 || validMana > 100 ) {
 
-            System.out.println( "Enter a valid mana value! (max: 100 / min: 0)" );
+            System.out.println( "Enter a valid Mana value! (max: 100 / min: 1)" );
 
             while ( !hasDouble( manaPoints ) ) {
 
-                System.out.println( "Enter a double number for mana stat!" );
+                System.out.println( "Enter a double number for Mana stat!" );
 
                 manaPoints.next();
 
@@ -84,9 +88,11 @@ public class validateUniqueAttributes {
 
         double validDivineStrike;
 
+        System.out.println( "Enter the value for Divine Strike stat (max: 100 / min: 1)" );
+
         while ( !hasDouble ( divineStrikePoints ) ) {
 
-            System.out.println( "Enter a valid number for fury stat!" );
+            System.out.println( "Enter a valid number for Divine Strike stat!" );
 
             divineStrikePoints.next();
 
@@ -94,13 +100,13 @@ public class validateUniqueAttributes {
 
         validDivineStrike = divineStrikePoints.nextDouble();
 
-        while ( validDivineStrike < 0 || validDivineStrike > 100 ) {
+        while ( validDivineStrike <= 0 || validDivineStrike > 100 ) {
 
-            System.out.println( "Enter a valid fury value! (max: 100 / min: 0)" );
+            System.out.println( "Enter a valid Divine Strike value! (max: 100 / min: 1)" );
 
             while ( !hasDouble( divineStrikePoints ) ) {
 
-                System.out.println( "Enter a double number for fury stat!" );
+                System.out.println( "Enter a double number for Divine Strike stat!" );
 
                 divineStrikePoints.next();
 
