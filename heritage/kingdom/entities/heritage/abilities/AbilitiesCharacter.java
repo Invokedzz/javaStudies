@@ -67,7 +67,7 @@ public class AbilitiesCharacter {
 
         double verifyAttack;
 
-        System.out.println( "Enter your character attack points: " );
+        System.out.println( "Enter your character attack points: (max: 100/min: 5)" );
 
         while ( !hasDouble ( attackPoints ) ) {
 
@@ -132,6 +132,30 @@ public class AbilitiesCharacter {
         }
 
         return verifyDefense;
+
+    }
+
+    // level, attack, defense must be equal
+
+    public void validateAllMethods () {
+
+        Scanner init = new Scanner ( System.in );
+
+        int level = levelValidation( init );
+
+        double attackPoints = attackValidation( init );
+
+        double defensePoints = defensePoints( init );
+
+        if ( level != attackPoints || level != defensePoints ) {
+
+            if ( attackPoints != defensePoints ) throw new AttackPointsException( "Level, Attack and Defense must be equals." );
+
+            throw new InvalidLevelException( "Level, Attack and Defense must be equals." );
+
+        }
+
+        System.out.println( "All stats validated!\n" );
 
     }
 

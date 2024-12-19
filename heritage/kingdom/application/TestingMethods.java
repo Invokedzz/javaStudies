@@ -14,11 +14,11 @@ public class TestingMethods {
 
         System.out.println( "##############################" );
 
-        testAttackOfCharacter ( init );
+   //     testAttackOfCharacter ( init );
 
         System.out.println( "##############################" );
 
-        testDefenseOfCharacter ( init );
+    //    testDefenseOfCharacter ( init );
 
         System.out.println( "##############################" );
 
@@ -26,31 +26,9 @@ public class TestingMethods {
 
     private static void testLevelOfCharacter ( Scanner init ) {
 
-        AbilitiesCharacter abilitiesCharacter = new AbilitiesCharacter();
-
-        int getLevel = abilitiesCharacter.levelValidation ( init );
-
-        System.out.printf ( "Level: %s", getLevel );
-
-    }
-
-    private static void testAttackOfCharacter ( Scanner init ) {
-
-        AbilitiesCharacter abilitiesCharacter = new AbilitiesCharacter();
-
-        double getAttackPoints = abilitiesCharacter.attackValidation ( init );
-
-        System.out.printf ( "Attack Points: %s", getAttackPoints );
-
-    }
-
-    private static void testDefenseOfCharacter ( Scanner init ) {
-
         AbilitiesCharacter character = new AbilitiesCharacter();
 
-        double getDefensePoints = character.defensePoints ( init );
-
-        System.out.printf ( "Defense Points: %s", getDefensePoints );
+        character.validateAllMethods();
 
     }
 
