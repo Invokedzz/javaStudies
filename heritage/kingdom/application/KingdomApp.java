@@ -1,20 +1,14 @@
 package heritage.kingdom.application;
 
-import heritage.kingdom.entities.main.Barbarian;
+import heritage.kingdom.model.entities.Barbarian;
 
-import heritage.kingdom.entities.main.Mage;
+import heritage.kingdom.model.entities.Mage;
 
-import heritage.kingdom.entities.main.Paladin;
+import heritage.kingdom.model.entities.Paladin;
 
-import heritage.kingdom.entities.main.Knight;
+import heritage.kingdom.model.entities.Knight;
 
-import heritage.kingdom.entities.heritage.abilitiesenum.Abilities;
-
-import java.util.Scanner;
-
-import java.util.ArrayList;
-
-import java.util.List;
+import heritage.kingdom.model.inheritance.abilitiesenum.Abilities;
 
 public class KingdomApp {
 

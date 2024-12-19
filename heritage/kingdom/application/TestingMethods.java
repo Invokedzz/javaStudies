@@ -1,12 +1,12 @@
 package heritage.kingdom.application;
 
-import heritage.kingdom.entities.exceptions.AttackPointsException;
+import heritage.kingdom.model.exceptions.AttackPointsException;
 
-import heritage.kingdom.entities.exceptions.InvalidLevelException;
+import heritage.kingdom.model.exceptions.InvalidLevelException;
 
-import heritage.kingdom.entities.heritage.abilities.ValidateStats;
+import heritage.kingdom.model.inheritance.abilities.ValidateStats;
 
-import heritage.kingdom.entities.heritage.abilities.ValidateUniqueAttributes;
+import heritage.kingdom.model.inheritance.abilities.ValidateUniqueAttributes;
 
 import java.util.Scanner;
 
