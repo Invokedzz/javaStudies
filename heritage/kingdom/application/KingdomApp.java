@@ -57,7 +57,7 @@ public class KingdomApp {
 
         Barbarian barbarian = new Barbarian( 1000.0, "Armor", "Sword",
                 100.0, 100.0, 100, "idk",
-                "idk", Abilities.COOKING_BOOST, 100.0  );
+                "idk", Abilities.WRATH_BOOST, 100.0  );
 
         double getAttackPoints = barbarian.declareAttack();
 
@@ -81,7 +81,7 @@ public class KingdomApp {
 
         Paladin paladin = new Paladin( 1000.0, "Armor", "Sword",
                 100.0, 100.0, 100, "idk",
-                "idk", Abilities.COOKING_BOOST, 100.0  );
+                "idk", Abilities.HEALING_BOOST, 100.0  );
 
         double getAttackPoints = paladin.declareAttack();
 
@@ -105,7 +105,7 @@ public class KingdomApp {
 
         Mage mage = new Mage( 1000.0, "Armor", "Sword",
                 100.0, 100.0, 100, "idk",
-                "idk", Abilities.COOKING_BOOST, 100.0  );
+                "idk", Abilities.MAGICAL_BOOST, 100.0  );
 
         double getAttackPoints = mage.declareAttack();
 

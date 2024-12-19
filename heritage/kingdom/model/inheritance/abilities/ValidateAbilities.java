@@ -8,6 +8,7 @@ import heritage.kingdom.model.entities.Mage;
 
 import heritage.kingdom.model.entities.Paladin;
 
+import heritage.kingdom.model.exceptions.InvalidAbilityInput;
 import heritage.kingdom.model.inheritance.abilitiesenum.Abilities;
 
 // MAGICAL_BOOST, STRENGTH_BOOST, WRATH_BOOST,
@@ -22,8 +23,9 @@ public class ValidateAbilities {
 
         if ( knight.getSpecialAbility().equals ( Abilities.DEFENSE_BOOST ) ) return knight.getDefensePoints() + 30.0;
 
-        return knight.getAttackPoints();
+        if ( knight.getSpecialAbility().equals( Abilities.NONE ) ) return knight.getAttackPoints();
 
+        throw new InvalidAbilityInput( "Enter a valid ability! (STRENGTH_BOOST, DEFENSE_BOOST or NONE)" );
     }
 
     public double abilitiesBarbarian ( Barbarian barbarian ) {
@@ -32,7 +34,9 @@ public class ValidateAbilities {
 
         if ( barbarian.getSpecialAbility().equals ( Abilities.STRENGTH_BOOST ) ) return barbarian.getAttackPoints() + 50.0;
 
-        return barbarian.getAttackPoints();
+        if ( barbarian.getSpecialAbility().equals ( Abilities.NONE ) ) return barbarian.getAttackPoints();
+
+        throw new InvalidAbilityInput( "Enter a valid ability! (WRATH_BOOST, STRENGTH_BOOST or NONE)" );
 
     }
 
@@ -40,7 +44,9 @@ public class ValidateAbilities {
 
         if ( mage.getSpecialAbility().equals ( Abilities.MAGICAL_BOOST ) ) return mage.getAttackPoints() + mage.getMana();
 
-        return mage.getAttackPoints();
+        if ( mage.getSpecialAbility().equals ( Abilities.NONE ) ) return mage.getAttackPoints();
+
+        throw new InvalidAbilityInput( "Enter a valid ability! (MAGICAL_BOOST or NONE)" );
 
     }
 
@@ -50,7 +56,9 @@ public class ValidateAbilities {
 
         if ( paladin.getSpecialAbility().equals ( Abilities.HEALING_BOOST ) ) return paladin.getAttackPoints() + paladin.getDivineStrike();
 
-        return paladin.getAttackPoints();
+        if ( paladin.getSpecialAbility().equals( Abilities.NONE ) ) return paladin.getAttackPoints();
+
+        throw new InvalidAbilityInput( "Enter a valid ability! (DEFENSE_BOOST, HEALING_BOOST or NONE)" );
 
     }
 

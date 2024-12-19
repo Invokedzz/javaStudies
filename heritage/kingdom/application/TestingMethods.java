@@ -8,6 +8,17 @@ import heritage.kingdom.model.inheritance.abilities.ValidateStats;
 
 import heritage.kingdom.model.inheritance.abilities.ValidateUniqueAttributes;
 
+import heritage.kingdom.model.inheritance.abilities.ValidateAbilities;
+
+import heritage.kingdom.model.entities.Barbarian;
+
+import heritage.kingdom.model.entities.Knight;
+
+import heritage.kingdom.model.entities.Mage;
+
+import heritage.kingdom.model.entities.Paladin;
+import heritage.kingdom.model.inheritance.abilitiesenum.Abilities;
+
 import java.util.Scanner;
 
 public class TestingMethods {
@@ -16,11 +27,15 @@ public class TestingMethods {
 
         Scanner init = new Scanner ( System.in );
 
-        testLevelOfCharacter ( init );
+    //    testLevelOfCharacter ( init );
 
         System.out.println( "##############################" );
 
-        testCharacterAttributes ( init );
+    //    testCharacterAttributes ( init );
+
+        System.out.println( "##############################" );
+
+        testCharactersAbilitiesKnight ( init );
 
     }
 
@@ -57,6 +72,31 @@ public class TestingMethods {
         double divineStrike = validateUniqueAttributes.validateDivineStrike( init );
 
         System.out.printf( "Fury: %s\nMana: %s\nDivine Strike: %s\n", fury, mana, divineStrike );
+
+    }
+
+    private static void testCharactersAbilitiesKnight ( Scanner init ) {
+
+        ValidateAbilities validateAbilities = new ValidateAbilities();
+
+        // Exceptions registered: IllegalArgumentException
+
+        try {
+
+            Abilities value = Abilities.valueOf( init.next() );
+
+            Knight knight = new Knight( 1000.0, "Armor", "Sword", 100.0,
+                    100.0, 100, "idk", "idk", value );
+
+            double getValue = validateAbilities.abilitiesKnight ( knight );
+
+            System.out.printf( "Attack Points: %s", getValue );
+
+        } catch ( IllegalArgumentException error ) {
+
+            System.out.println( error.getMessage() );
+
+        }
 
     }
 
