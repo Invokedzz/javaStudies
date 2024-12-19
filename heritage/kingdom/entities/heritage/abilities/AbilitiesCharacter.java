@@ -137,15 +137,7 @@ public class AbilitiesCharacter {
 
     // level, attack, defense must be equal
 
-    public void validateAllMethods () {
-
-        Scanner init = new Scanner ( System.in );
-
-        int level = levelValidation( init );
-
-        double attackPoints = attackValidation( init );
-
-        double defensePoints = defensePoints( init );
+    public void validateAllMethods ( int level, double attackPoints, double defensePoints ) {
 
         if ( level != attackPoints || level != defensePoints ) {
 
