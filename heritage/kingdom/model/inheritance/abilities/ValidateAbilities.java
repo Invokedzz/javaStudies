@@ -9,6 +9,7 @@ import heritage.kingdom.model.entities.Mage;
 import heritage.kingdom.model.entities.Paladin;
 
 import heritage.kingdom.model.exceptions.InvalidAbilityInput;
+
 import heritage.kingdom.model.inheritance.abilitiesenum.Abilities;
 
 // MAGICAL_BOOST, STRENGTH_BOOST, WRATH_BOOST,
