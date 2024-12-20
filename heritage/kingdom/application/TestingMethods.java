@@ -17,6 +17,7 @@ import heritage.kingdom.model.entities.Knight;
 import heritage.kingdom.model.entities.Mage;
 
 import heritage.kingdom.model.entities.Paladin;
+
 import heritage.kingdom.model.inheritance.abilitiesenum.Abilities;
 
 import java.util.Scanner;
@@ -100,17 +101,29 @@ public class TestingMethods {
 
             if ( value.equals( Abilities.valueOf ( "DEFENSE_BOOST" ) ) ) {
 
-                double getValue = validateAbilities.abilitiesKnight( knight );
+                double getBonusStats = validateAbilities.abilitiesKnight( knight );
 
-                System.out.printf( "Defense Points: %s", getValue );
+                double attackDeclaration = knight.declareAttack();
+
+                double blockAttack = knight.blockAttack() + getBonusStats;
+
+                double lifePoints = knight.calculateLifePoints();
+
+                System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\n", attackDeclaration, blockAttack, lifePoints );
 
                 return;
 
             }
 
-            double getValue = validateAbilities.abilitiesKnight ( knight );
+            double getBonusStats = validateAbilities.abilitiesKnight( knight );
 
-            System.out.printf( "Attack Points: %s", getValue );
+            double attackDeclaration = knight.declareAttack() + getBonusStats;
+
+            double blockAttack = knight.blockAttack();
+
+            double lifePoints = knight.calculateLifePoints();
+
+            System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\n", attackDeclaration, blockAttack, lifePoints );
 
         } catch ( IllegalArgumentException error ) {
 
@@ -118,6 +131,18 @@ public class TestingMethods {
 
         }
 
+    }
+
+    private static void testCharactersAbilitiesBarbarian ( Scanner init ) {
+
+    }
+
+    private static void testCharactersAbilitiesMage ( Scanner init ) {
+
+    }
+
+    private static void testCharactersAbilitiesPaladin ( Scanner init ) {
+        
     }
 
 }

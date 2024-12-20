@@ -2,6 +2,7 @@ package heritage.kingdom.model.entities;
 
 import heritage.kingdom.model.inheritance.Human;
 
+import heritage.kingdom.model.inheritance.abilities.ValidateAbilities;
 import heritage.kingdom.model.inheritance.abilitiesenum.Abilities;
 
 import heritage.kingdom.model.inheritance.abilities.ValidateStats;
@@ -117,7 +118,7 @@ public class Knight extends Human {
 
         // double lifePoints = calculateLifePoints();
 
-        return  declareAttack() - blockAttack();
+        return declareAttack() - blockAttack();
 
     }
 
