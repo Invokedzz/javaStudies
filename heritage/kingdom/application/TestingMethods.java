@@ -88,6 +88,16 @@ public class TestingMethods {
             Knight knight = new Knight( 1000.0, "Armor", "Sword", 100.0,
                     100.0, 100, "idk", "idk", value );
 
+            if ( value.equals( Abilities.valueOf ( "DEFENSE_BOOST" ) ) ) {
+
+                double getValue = validateAbilities.abilitiesKnight( knight );
+
+                System.out.printf( "Defense Points: %s", getValue );
+
+                return;
+
+            }
+
             double getValue = validateAbilities.abilitiesKnight ( knight );
 
             System.out.printf( "Attack Points: %s", getValue );
