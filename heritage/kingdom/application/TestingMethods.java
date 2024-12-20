@@ -40,7 +40,9 @@ public class TestingMethods {
 
     //    testCharactersAbilitiesBarbarian( init );
 
-        testCharactersAbilitiesMage( init );
+    //     testCharactersAbilitiesMage( init );
+
+        testCharactersAbilitiesPaladin( init );
 
     }
 
@@ -289,6 +291,82 @@ public class TestingMethods {
 
         // healing_boost, defense_boost, none;
 
+        ValidateAbilities validateAbilities = new ValidateAbilities();
+
+        // Exceptions registered: IllegalArgumentException
+
+        ValidateStats validateStats = new ValidateStats();
+
+        int level = validateStats.levelValidation( init );
+
+        double attackPoints = validateStats.attackValidation( init );
+
+        double defensePoints = validateStats.defensePoints( init );
+
+        validateStats.validateAllMethods( level, attackPoints, defensePoints );
+
+        try {
+
+            Abilities value = Abilities.valueOf ( init.next() );
+
+            ValidateUniqueAttributes validateUniqueAttributes = new ValidateUniqueAttributes();
+
+            double divineStrike = validateUniqueAttributes.validateDivineStrike( init );
+
+            Paladin paladin = new Paladin( 1000.0, "Armor", "Staff",
+                    attackPoints, defensePoints, level, "idk", "idk", value, divineStrike );
+
+            if ( value.equals( Abilities.valueOf ( "HEALING_BOOST" ) ) ) {
+
+                double getBonusStats = validateAbilities.abilitiesPaladin( paladin );
+
+                double attackDeclaration = paladin.declareAttack() + getBonusStats;
+
+                double blockAttack = paladin.blockAttack();
+
+                double lifePoints = paladin.calculateLifePoints();
+
+                double getDivineStrike = paladin.getDivineStrike();
+
+                System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\nDivine Strike: %s\n", attackDeclaration, blockAttack, lifePoints, getDivineStrike );
+
+                return;
+
+            }
+
+            if ( value.equals( Abilities.valueOf ( "DEFENSE_BOOST" ) ) ) {
+
+                double getBonusStats = validateAbilities.abilitiesPaladin( paladin );
+
+                double attackDeclaration = paladin.declareAttack();
+
+                double blockAttack = paladin.blockAttack() + getBonusStats;
+
+                double lifePoints = paladin.calculateLifePoints();
+
+                double getDivineStrike = paladin.getDivineStrike();
+
+                System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\nDivine Strike: %s\n", attackDeclaration, blockAttack, lifePoints, getDivineStrike );
+
+                return;
+
+            }
+
+            double getDivineStrike = paladin.getDivineStrike();
+
+            double attackDeclaration = paladin.declareAttack();
+
+            double blockAttack = paladin.blockAttack();
+
+            double lifePoints = paladin.calculateLifePoints();
+
+            System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\nMana: %s\n", attackDeclaration, blockAttack, lifePoints, getDivineStrike );
+
+        } catch ( IllegalArgumentException error ) {
+
+            System.out.println( error.getMessage() );
+
+        }
 
     }
 
