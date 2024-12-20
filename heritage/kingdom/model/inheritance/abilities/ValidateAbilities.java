@@ -16,7 +16,7 @@ import heritage.kingdom.model.inheritance.abilitiesenum.Abilities;
 
 // DEFENSE_BOOST, HEALING_BOOST
 
-public class ValidateAbilities {
+public final class ValidateAbilities {
 
     public double abilitiesKnight ( Knight knight ) {
 

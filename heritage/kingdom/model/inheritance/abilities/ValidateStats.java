@@ -6,7 +6,7 @@ import heritage.kingdom.model.exceptions.AttackPointsException;
 
 import java.util.Scanner;
 
-public class ValidateStats {
+public final class ValidateStats {
 
     // class created to validate attack/defense points
     // attack points, min: 5, max: 100 -> default,

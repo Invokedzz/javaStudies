@@ -81,12 +81,22 @@ public class TestingMethods {
 
         // Exceptions registered: IllegalArgumentException
 
+        ValidateStats validateStats = new ValidateStats();
+
+        int level = validateStats.levelValidation( init );
+
+        double attackPoints = validateStats.attackValidation( init );
+
+        double defensePoints = validateStats.defensePoints( init );
+
+        validateStats.validateAllMethods( level, attackPoints, defensePoints );
+
         try {
 
-            Abilities value = Abilities.valueOf( init.next() );
+            Abilities value = Abilities.valueOf ( init.next() );
 
-            Knight knight = new Knight( 1000.0, "Armor", "Sword", 100.0,
-                    100.0, 100, "idk", "idk", value );
+            Knight knight = new Knight( 1000.0, "Armor", "Sword", attackPoints,
+                    defensePoints, level, "idk", "idk", value );
 
             if ( value.equals( Abilities.valueOf ( "DEFENSE_BOOST" ) ) ) {
 

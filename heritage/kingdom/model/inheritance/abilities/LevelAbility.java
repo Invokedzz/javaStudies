@@ -6,7 +6,7 @@ import heritage.kingdom.model.exceptions.InvalidAbilityInput;
 
 // fury, divineStrike, mana;
 
-public class LevelAbility {
+public final class LevelAbility {
 
     // I'm going to think about this class for some time, for now, I'm not doing anything here
 

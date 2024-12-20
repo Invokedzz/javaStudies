@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // fury (double), mana (double), divineStrike (double) -> Barbarian, Mage, Paladin
 
-public class ValidateUniqueAttributes {
+public final class ValidateUniqueAttributes {
 
     private boolean hasDouble ( Scanner init ) {
 
