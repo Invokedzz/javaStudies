@@ -31,7 +31,7 @@ public final class ValidateAbilities {
 
     public double abilitiesBarbarian ( Barbarian barbarian ) {
 
-        if ( barbarian.getSpecialAbility().equals ( Abilities.WRATH_BOOST ) ) return barbarian.getFury() + 100.0;
+        if ( barbarian.getSpecialAbility().equals ( Abilities.WRATH_BOOST ) ) return barbarian.getFury();
 
         if ( barbarian.getSpecialAbility().equals ( Abilities.STRENGTH_BOOST ) ) return barbarian.getAttackPoints() + 50.0;
 

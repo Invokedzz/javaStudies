@@ -36,7 +36,9 @@ public class TestingMethods {
 
         System.out.println( "##############################" );
 
-        testCharactersAbilitiesKnight ( init );
+    //    testCharactersAbilitiesKnight ( init );
+
+        testCharactersAbilitiesBarbarian( init );
 
     }
 
@@ -135,14 +137,87 @@ public class TestingMethods {
 
     private static void testCharactersAbilitiesBarbarian ( Scanner init ) {
 
+        // wrath_boost, strength_boost, none
+
+        ValidateAbilities validateAbilities = new ValidateAbilities();
+
+        // Exceptions registered: IllegalArgumentException
+
+        ValidateStats validateStats = new ValidateStats();
+
+        int level = validateStats.levelValidation( init );
+
+        double attackPoints = validateStats.attackValidation( init );
+
+        double defensePoints = validateStats.defensePoints( init );
+
+        validateStats.validateAllMethods( level, attackPoints, defensePoints );
+
+        try {
+
+            Abilities value = Abilities.valueOf ( init.next() );
+
+            ValidateUniqueAttributes validateUniqueAttributes = new ValidateUniqueAttributes();
+
+            double fury = validateUniqueAttributes.validateFury( init );
+
+            Barbarian barbarian = new Barbarian( 1000.0, "Armor", "Club",
+                                attackPoints, defensePoints, level, "idk", "idk", value, fury );
+
+            if ( value.equals( Abilities.valueOf ( "STRENGTH_BOOST" ) ) ) {
+
+                double getBonusStats = validateAbilities.abilitiesBarbarian( barbarian );
+
+                double attackDeclaration = barbarian.declareAttack() + getBonusStats;
+
+                double blockAttack = barbarian.blockAttack();
+
+                double lifePoints = barbarian.calculateLifePoints();
+
+                double getFury = barbarian.getFury();
+
+                System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\nFury: %s\n", attackDeclaration, blockAttack, lifePoints, getFury );
+
+                return;
+
+            }
+
+            if ( value.equals( Abilities.valueOf ( "WRATH_BOOST" ) ) ) {
+
+                double getBonusStats = validateAbilities.abilitiesBarbarian( barbarian );
+
+                double getFury = barbarian.getFury() + getBonusStats;
+
+                double attackDeclaration = barbarian.declareAttack() + getFury;
+
+                double blockAttack = barbarian.blockAttack() + getFury;
+
+                double lifePoints = barbarian.calculateLifePoints() + getFury;
+
+                System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\nFury: %s\n", attackDeclaration, blockAttack, lifePoints, getFury );
+
+                return;
+
+            }
+
+        } catch ( IllegalArgumentException error ) {
+
+            System.out.println( error.getMessage() );
+
+        }
+
     }
 
     private static void testCharactersAbilitiesMage ( Scanner init ) {
 
+        // magical_boost, none
+
     }
 
     private static void testCharactersAbilitiesPaladin ( Scanner init ) {
-        
+
+        // healing_boost, defense_boost, none;
+
     }
 
 }

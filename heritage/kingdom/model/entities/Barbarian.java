@@ -44,7 +44,7 @@ public final class Barbarian extends Knight {
 
         super.declareAttack();
 
-        return getAttackPoints() + ( level * 4.5 ) + getFury();
+        return getAttackPoints() + ( level * 5 ) + getFury();
 
     }
 
