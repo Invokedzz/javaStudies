@@ -38,7 +38,9 @@ public class TestingMethods {
 
     //    testCharactersAbilitiesKnight ( init );
 
-        testCharactersAbilitiesBarbarian( init );
+    //    testCharactersAbilitiesBarbarian( init );
+
+        testCharactersAbilitiesMage( init );
 
     }
 
@@ -200,6 +202,16 @@ public class TestingMethods {
 
             }
 
+            double getFury = barbarian.getFury();
+
+            double attackDeclaration = barbarian.declareAttack();
+
+            double blockAttack = barbarian.blockAttack();
+
+            double lifePoints = barbarian.calculateLifePoints();
+
+            System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\nFury: %s\n", attackDeclaration, blockAttack, lifePoints, getFury );
+
         } catch ( IllegalArgumentException error ) {
 
             System.out.println( error.getMessage() );
@@ -212,11 +224,71 @@ public class TestingMethods {
 
         // magical_boost, none
 
+        ValidateAbilities validateAbilities = new ValidateAbilities();
+
+        // Exceptions registered: IllegalArgumentException
+
+        ValidateStats validateStats = new ValidateStats();
+
+        int level = validateStats.levelValidation( init );
+
+        double attackPoints = validateStats.attackValidation( init );
+
+        double defensePoints = validateStats.defensePoints( init );
+
+        validateStats.validateAllMethods( level, attackPoints, defensePoints );
+
+        try {
+
+            Abilities value = Abilities.valueOf ( init.next() );
+
+            ValidateUniqueAttributes validateUniqueAttributes = new ValidateUniqueAttributes();
+
+            double mana = validateUniqueAttributes.validateMana( init );
+
+            Mage mage = new Mage( 1000.0, "Armor", "Staff",
+                    attackPoints, defensePoints, level, "idk", "idk", value, mana );
+
+            if ( value.equals( Abilities.valueOf ( "MAGICAL_BOOST" ) ) ) {
+
+                double getBonusStats = validateAbilities.abilitiesMage( mage );
+
+                double attackDeclaration = mage.declareAttack() + getBonusStats;
+
+                double blockAttack = mage.blockAttack();
+
+                double lifePoints = mage.calculateLifePoints();
+
+                double getMana = mage.getMana();
+
+                System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\nMana: %s\n", attackDeclaration, blockAttack, lifePoints, getMana );
+
+                return;
+
+            }
+
+            double getMana = mage.getMana();
+
+            double attackDeclaration = mage.declareAttack();
+
+            double blockAttack = mage.blockAttack();
+
+            double lifePoints = mage.calculateLifePoints();
+
+            System.out.printf( "Attack: %s\nDefense: %s\nLife Points: %s\nMana: %s\n", attackDeclaration, blockAttack, lifePoints, getMana );
+
+        } catch ( IllegalArgumentException error ) {
+
+            System.out.println( error.getMessage() );
+
+        }
+
     }
 
     private static void testCharactersAbilitiesPaladin ( Scanner init ) {
 
         // healing_boost, defense_boost, none;
+
 
     }
 
