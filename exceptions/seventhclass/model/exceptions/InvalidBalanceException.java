@@ -7,5 +7,5 @@ public class InvalidBalanceException extends RuntimeException {
         super( message );
 
     }
-    
+
 }

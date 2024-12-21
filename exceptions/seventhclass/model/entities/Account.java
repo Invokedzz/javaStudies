@@ -1,5 +1,9 @@
 package exceptions.seventhclass.model.entities;
 
+import exceptions.seventhclass.model.exceptions.InvalidBalanceException;
+
+import exceptions.seventhclass.model.exceptions.InvalidLimitException;
+
 public class Account {
 
     private Integer number;
@@ -55,6 +59,12 @@ public class Account {
     }
 
     public double withdraw ( double amount ) {
+
+        if ( getBalance() == 0 ) throw new InvalidBalanceException( "Withdraw error: Not enough balance" );
+
+        if ( amount > getWithdrawLimit() ) throw new InvalidLimitException( "Withdraw error: The amount exceeds withdraw limit" );
+
+        return balance - amount;
 
     }
 
