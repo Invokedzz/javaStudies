@@ -1,8 +1,12 @@
 package exceptions.seventhclass.application;
 
 import exceptions.seventhclass.model.entities.Account;
+
 import exceptions.seventhclass.model.exceptions.InvalidBalanceException;
+
 import exceptions.seventhclass.model.exceptions.InvalidLimitException;
+
+import exceptions.seventhclass.model.exceptions.InvalidUserOption;
 
 import java.util.Scanner;
 
@@ -44,13 +48,47 @@ public class Application {
 
             Account account = new Account( number, holder, balance, withdrawLimit );
 
-            System.out.println("Enter amount for withdraw: ");
+            System.out.println( "Withdraw or Deposit (w/d)?" );
+
+            char userChoice = init.next().charAt( 0 );
+
+            depositOrWithdraw( userChoice, account, init );
+
+        } catch ( InvalidBalanceException | InvalidLimitException error ) {
+
+            System.out.println( error.getMessage() );
+
+        }
+
+    }
+
+    private static void depositOrWithdraw ( char userChoice, Account account, Scanner init ) {
+
+        try {
+
+            System.out.println( "Enter amount: " );
 
             double amount = init.nextDouble();
 
-            System.out.println( account.withdraw( amount ) );
+            if ( userChoice == 'w' ) {
 
-        } catch ( InvalidBalanceException | InvalidLimitException error ) {
+                double withdraw = account.withdraw( amount );
+
+                System.out.println( withdraw );
+
+            }
+
+            if ( userChoice == 'd' ) {
+
+                double deposit = account.deposit( amount );
+
+                System.out.println( deposit );
+
+            }
+
+            throw new InvalidUserOption( "Enter a valid input!" );
+
+        } catch ( InvalidUserOption error ) {
 
             System.out.println( error.getMessage() );
 
