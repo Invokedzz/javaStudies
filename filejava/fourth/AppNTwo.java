@@ -18,7 +18,7 @@ public class AppNTwo {
 
         String path = "/Users/samunoinv/Documents/GitHub/javaStudies/filejava/fourth/noradiotoomuchhead";
 
-        try ( BufferedWriter bufferedWriter = new BufferedWriter( new FileWriter( path ) ) ){
+        try ( BufferedWriter bufferedWriter = new BufferedWriter ( new FileWriter ( path ) ) ){
 
             System.out.println( "How many words you want to write?" );
 
@@ -29,6 +29,22 @@ public class AppNTwo {
                 bufferedWriter.write( init.next() );
 
                 bufferedWriter.newLine();
+
+            }
+
+            bufferedWriter.close();
+
+            try ( BufferedReader bufferedReader = new BufferedReader( new FileReader ( path ) ) ) {
+
+                String line = bufferedReader.readLine();
+
+                while ( line != null ) {
+
+                    System.out.println( line );
+
+                    line = bufferedReader.readLine();
+
+                }
 
             }
 
