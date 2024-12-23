@@ -8,7 +8,7 @@ import heritage.kingdom.model.entities.Mage;
 
 import heritage.kingdom.model.entities.Paladin;
 
-import heritage.kingdom.model.exceptions.InvalidAbilityInput;
+import heritage.kingdom.model.exceptions.InvalidAbilityException;
 
 import heritage.kingdom.model.inheritance.abilitiesenum.Abilities;
 
@@ -26,7 +26,7 @@ public final class ValidateAbilities {
 
         if ( knight.getSpecialAbility().equals( Abilities.NONE ) ) return knight.getAttackPoints();
 
-        throw new InvalidAbilityInput( "Enter a valid ability! (STRENGTH_BOOST, DEFENSE_BOOST or NONE)" );
+        throw new InvalidAbilityException( "Enter a valid ability! (STRENGTH_BOOST, DEFENSE_BOOST or NONE)" );
     }
 
     public double abilitiesBarbarian ( Barbarian barbarian ) {
@@ -37,7 +37,7 @@ public final class ValidateAbilities {
 
         if ( barbarian.getSpecialAbility().equals ( Abilities.NONE ) ) return barbarian.getAttackPoints();
 
-        throw new InvalidAbilityInput( "Enter a valid ability! (WRATH_BOOST, STRENGTH_BOOST or NONE)" );
+        throw new InvalidAbilityException( "Enter a valid ability! (WRATH_BOOST, STRENGTH_BOOST or NONE)" );
 
     }
 
@@ -47,7 +47,7 @@ public final class ValidateAbilities {
 
         if ( mage.getSpecialAbility().equals ( Abilities.NONE ) ) return mage.getAttackPoints();
 
-        throw new InvalidAbilityInput( "Enter a valid ability! (MAGICAL_BOOST or NONE)" );
+        throw new InvalidAbilityException( "Enter a valid ability! (MAGICAL_BOOST or NONE)" );
 
     }
 
@@ -59,7 +59,7 @@ public final class ValidateAbilities {
 
         if ( paladin.getSpecialAbility().equals( Abilities.NONE ) ) return paladin.getAttackPoints();
 
-        throw new InvalidAbilityInput( "Enter a valid ability! (DEFENSE_BOOST, HEALING_BOOST or NONE)" );
+        throw new InvalidAbilityException( "Enter a valid ability! (DEFENSE_BOOST, HEALING_BOOST or NONE)" );
 
     }
 

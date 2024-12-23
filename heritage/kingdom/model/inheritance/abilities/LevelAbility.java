@@ -1,9 +1,5 @@
 package heritage.kingdom.model.inheritance.abilities;
 
-import java.util.Scanner;
-
-import heritage.kingdom.model.exceptions.InvalidAbilityInput;
-
 // fury, divineStrike, mana;
 
 public final class LevelAbility {
