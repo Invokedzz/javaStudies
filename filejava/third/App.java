@@ -6,6 +6,7 @@ import java.io.FileWriter;
 
 import java.io.IOException;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import java.util.Locale;
@@ -26,21 +27,31 @@ public class App {
 
         BufferedWriter bufferedWriter;
 
-        FileWriter fileReader;
+        FileWriter fileWriter;
 
         String path = "/Users/samunoinv/Documents/GitHub/javaStudies/filejava/third/randomfileagain";
 
         try {
 
-            fileReader = new FileWriter( path );
+            fileWriter = new FileWriter( path );
 
-            bufferedWriter = new BufferedWriter( fileReader );
+            bufferedWriter = new BufferedWriter( fileWriter );
 
-            bufferedWriter.write( init.next() );
+            System.out.println( "How many words do you want to write?" );
+
+            int numberOfWords = init.nextInt();
+
+            for ( int index = 0; index < numberOfWords; index++ ) {
+
+                bufferedWriter.write( init.next() );
+
+                bufferedWriter.newLine();
+
+            }
 
             bufferedWriter.close();
 
-        } catch ( IOException error ) {
+        } catch ( IOException | InputMismatchException error ) {
 
             System.out.printf( "Error: %s", error.getMessage() );
 
