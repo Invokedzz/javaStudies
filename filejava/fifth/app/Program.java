@@ -46,7 +46,7 @@ public class Program {
 
                 System.out.println( "Enter an id: " );
 
-                Integer id = validateInt( init );
+                int id = validateInt( init );
 
                 System.out.println( "Enter a department: " );
 
@@ -54,9 +54,17 @@ public class Program {
 
                 while ( verifyWorkers( workerList, name ) ) {
 
-                    System.out.println( "Enter a valid worker" );
+                    System.out.println( "This name already exists! Try again." );
 
                     name = init.next();
+
+                }
+
+                while ( verifyWorkersId( workerList, id ) ) {
+
+                    System.out.println( "This id already exists! Try again." );
+
+                    id = validateInt( init );
 
                 }
 
@@ -97,6 +105,14 @@ public class Program {
        Worker findWorker = workerList.stream().filter( x -> x.getWorker().equals( worker ) ).findFirst().orElse( null );
 
        return findWorker != null;
+
+    }
+
+    private static boolean verifyWorkersId ( List < Worker > workerList, Integer id ) {
+
+        Worker findId = workerList.stream().filter( x -> x.getId().equals( id ) ).findFirst().orElse( null );
+
+        return findId != null;
 
     }
 

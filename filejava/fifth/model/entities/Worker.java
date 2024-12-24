@@ -47,7 +47,7 @@ public class Worker {
 
         sb.append( "Name: " ).append( getWorker() )
                 .append( " id: " ).append( getId() )
-                .append( " Department: " ).append( getDepartment() ).append( "//" );
+                .append( " Department: " ).append( getDepartment() ).append( "//\n" );
 
         return sb.toString();
 
