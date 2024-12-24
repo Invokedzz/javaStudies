@@ -30,13 +30,13 @@ public class Program {
 
         try ( BufferedWriter bufferedWriter = new BufferedWriter( new FileWriter ( path, true ) ) ) {
 
-            int numberOfWorkers = init.nextInt();
+            int numberOfWorkers = validateInt( init );
 
             for ( int index = 0; index < numberOfWorkers; index ++ ) {
 
                 String name = init.next();
 
-                Integer id = init.nextInt();
+                Integer id = validateInt( init );
 
                 String department = init.next();
 
@@ -67,6 +67,26 @@ public class Program {
             System.out.printf( "Error: %s", error.getMessage() );
 
         }
+
+    }
+
+    private static boolean hasNextInt ( Scanner init ) {
+
+        return init.hasNextInt();
+
+    }
+
+    private static int validateInt ( Scanner init ) {
+
+        while ( !hasNextInt( init ) ) {
+
+            System.out.println( "Enter a valid value!" );
+
+            init.next();
+
+        }
+
+        return init.nextInt();
 
     }
 
