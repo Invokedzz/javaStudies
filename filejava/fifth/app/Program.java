@@ -2,6 +2,10 @@ package filejava.fifth.app;
 
 import filejava.fifth.model.entities.Worker;
 
+import java.util.List;
+
+import java.util.ArrayList;
+
 import java.io.IOException;
 
 import java.io.BufferedReader;
@@ -28,19 +32,37 @@ public class Program {
 
         String path = "/Users/samunoinv/Documents/GitHub/javaStudies/filejava/fifth/model/entities/workerfile";
 
+        List < Worker > workerList = new ArrayList<>();
+
         try ( BufferedWriter bufferedWriter = new BufferedWriter( new FileWriter ( path, true ) ) ) {
 
             int numberOfWorkers = validateInt( init );
 
             for ( int index = 0; index < numberOfWorkers; index ++ ) {
 
+                System.out.println( "Enter a name: " );
+
                 String name = init.next();
+
+                System.out.println( "Enter an id: " );
 
                 Integer id = validateInt( init );
 
+                System.out.println( "Enter a department: " );
+
                 String department = init.next();
 
+                while ( verifyWorkers( workerList, name ) ) {
+
+                    System.out.println( "Enter a valid worker" );
+
+                    name = init.next();
+
+                }
+
                 Worker worker = new Worker( name, id, department );
+
+                workerList.add( worker );
 
                 bufferedWriter.write( worker.toString() );
 
@@ -67,6 +89,14 @@ public class Program {
             System.out.printf( "Error: %s", error.getMessage() );
 
         }
+
+    }
+
+    private static boolean verifyWorkers ( List < Worker > workerList, String worker ) {
+
+       Worker findWorker = workerList.stream().filter( x -> x.getWorker().equals( worker ) ).findFirst().orElse( null );
+
+       return findWorker != null;
 
     }
 
