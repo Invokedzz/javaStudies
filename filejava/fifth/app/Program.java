@@ -46,6 +46,22 @@ public class Program {
 
             }
 
+            bufferedWriter.close();
+
+            try ( BufferedReader bufferedReader = new BufferedReader( new FileReader( path ) ) ) {
+
+                String line = bufferedReader.readLine();
+
+                while ( line != null ) {
+
+                    System.out.println( line );
+
+                    line = bufferedReader.readLine();
+
+                }
+
+            }
+
         } catch ( IOException error ) {
 
             System.out.printf( "Error: %s", error.getMessage() );
