@@ -20,11 +20,35 @@ public class Application {
 
     private static void runProgram ( Scanner init ) {
 
+        String path = "/Users/samunoinv/Documents/GitHub/javaStudies/filejava/exercise/model/out/productslist";
+
         int numberOfProducts = returnValidatedInt( init );
 
-        int getValidatedValue = aboveZeroYouIdiot( numberOfProducts );
+        int validatedValue = aboveZeroYouIdiot( numberOfProducts );
 
-        System.out.println( getValidatedValue );
+        try ( BufferedWriter bufferedWriter = new BufferedWriter( new FileWriter( path ) ) ) {
+
+            for ( int index = 0; index < validatedValue; index ++ ) {
+
+                // productName, productPrice, productQuantity;
+
+                String productName = init.next();
+
+                double productPrice = init.nextDouble();
+
+                int productQuantity = returnValidatedInt( init );
+
+                Product product = new Product( productName, productPrice, productQuantity );
+
+                bufferedWriter.write( product.toString() );
+
+            }
+
+        } catch ( IOException error ) {
+
+            System.out.printf( "Error: %s", error.getMessage() );
+
+        }
 
     }
 

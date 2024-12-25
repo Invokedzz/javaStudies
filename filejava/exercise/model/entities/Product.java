@@ -52,7 +52,7 @@ public class Product {
         sb = new StringBuilder();
 
         sb.append( "Name: " ).append( getProductName() )
-                .append( " Price: " ).append( getProductPrice() );
+                .append( " Price: " ).append( pricePerQuantity() ).append( "\n" );
 
         return sb.toString();
 
