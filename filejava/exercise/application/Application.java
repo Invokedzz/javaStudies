@@ -20,33 +20,39 @@ public class Application {
 
     private static void runProgram ( Scanner init ) {
 
-        String path = "/Users/samunoinv/Documents/GitHub/javaStudies/filejava/exercise/model/out/productslist";
+        File file = new File( "/Users/samunoinv/Documents/GitHub/javaStudies/filejava/exercise/model/out/productslist" );
 
         int numberOfProducts = returnValidatedInt( init );
 
         int validatedValue = aboveZeroYouIdiot( numberOfProducts );
 
-        try ( BufferedWriter bufferedWriter = new BufferedWriter( new FileWriter( path ) ) ) {
+        if ( file.isFile() || file.canRead() ) {
 
-            for ( int index = 0; index < validatedValue; index ++ ) {
+            try ( BufferedWriter bufferedWriter = new BufferedWriter( new FileWriter( file, true ) ) ) {
 
-                // productName, productPrice, productQuantity;
+                for ( int index = 0; index < validatedValue; index ++ ) {
 
-                String productName = init.next();
+                    // productName, productPrice, productQuantity;
 
-                double productPrice = init.nextDouble();
+                    String productName = init.next();
 
-                int productQuantity = returnValidatedInt( init );
+                    double productPrice = init.nextDouble();
 
-                Product product = new Product( productName, productPrice, productQuantity );
+                    int productQuantity = returnValidatedInt( init );
 
-                bufferedWriter.write( product.toString() );
+                    Product product = new Product( productName, productPrice, productQuantity );
+
+                    bufferedWriter.write( product.toString() );
+
+                }
+
+                System.out.println( "Success! The product was sent to the system!" );
+
+            } catch ( IOException error ) {
+
+                System.out.printf( "Error: %s", error.getMessage() );
 
             }
-
-        } catch ( IOException error ) {
-
-            System.out.printf( "Error: %s", error.getMessage() );
 
         }
 
