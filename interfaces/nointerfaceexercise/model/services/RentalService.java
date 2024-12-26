@@ -54,7 +54,7 @@ public class RentalService {
 
         if ( hours <= 12.0 ) basicPayment = pricePerHour * Math.ceil( hours );
 
-        if ( hours > 12.0 ) basicPayment = pricePerDay * Math.ceil(hours / 24);
+        if ( hours > 12.0 ) basicPayment = pricePerDay * Math.ceil( hours / 24 );
 
         double tax = getBrazilTaxService().tax( basicPayment );
 
