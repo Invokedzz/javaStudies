@@ -21,7 +21,17 @@ public class Application {
     }
 
     private static void letsRunThisProgram ( Scanner sc ) {
-        
+
+        File filePath = new File( "/Users/samunoinv/Documents/GitHub/javaStudies/filejava/secondexercise/model/input.csv" );
+
+        String getFolderPath = filePath.getParent();
+
+        File prepareANewPath = new File( getFolderPath + "/out" );
+
+        boolean wasFolderCreated = prepareANewPath.mkdir();
+
+        System.out.println( "Created: " + wasFolderCreated );
+
     }
 
 }
