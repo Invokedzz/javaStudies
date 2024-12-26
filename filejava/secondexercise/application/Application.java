@@ -32,6 +32,30 @@ public class Application {
 
         System.out.println( "Created: " + wasFolderCreated );
 
+        try ( BufferedWriter bufferedWriter = new BufferedWriter( new FileWriter ( prepareANewPath + "/cool" ) ) ) {
+
+            int numberOfProducts = sc.nextInt();
+
+            for ( int index = 0; index < numberOfProducts; index ++ ) {
+
+                String productName = sc.next();
+
+                Double productPrice = sc.nextDouble();
+
+                Integer productQuantity = sc.nextInt();
+
+                Product product = new Product( productName, productPrice, productQuantity );
+
+                bufferedWriter.write( product.toString() );
+
+            }
+
+        } catch ( IOException error ) {
+
+            System.out.printf( "Error: %s", error.getMessage() );
+
+        }
+
     }
 
 }
