@@ -1,9 +1,13 @@
 package interfaces.nointerfaceexercise.application;
 
 import interfaces.nointerfaceexercise.model.entities.CarRental;
+
 import interfaces.nointerfaceexercise.model.entities.Invoice;
+
 import interfaces.nointerfaceexercise.model.entities.Vehicle;
+
 import interfaces.nointerfaceexercise.model.services.BrazilTaxService;
+
 import interfaces.nointerfaceexercise.model.services.RentalService;
 
 import java.time.LocalDateTime;
