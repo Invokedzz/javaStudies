@@ -12,7 +12,6 @@ import java.time.format.DateTimeFormatter;
 
 import java.time.LocalDateTime;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 import java.util.ArrayList;
@@ -37,7 +36,7 @@ public class Program {
 
         LocalDateTime finish = endOfTheRent( sc );
 
-        Vehicle vehicle = new Vehicle( VehicleModel.KAWASAKI, VehicleColor.BLACK, 123 );
+        Vehicle vehicle = chooseVehicle( sc );
 
         MotorcycleRent motorcycleRent = new MotorcycleRent( start, finish, new Invoice(), vehicle );
 
@@ -65,6 +64,9 @@ public class Program {
 
         VehicleColor vehicleColor = VehicleColor.valueOf( sc.next() );
 
+        String id = cryptId( sc );
+
+        return new Vehicle( vehicleModel, vehicleColor, id );
 
     }
 

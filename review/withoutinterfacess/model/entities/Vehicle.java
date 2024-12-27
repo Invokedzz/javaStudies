@@ -8,11 +8,11 @@ public class Vehicle {
 
     private VehicleColor color;
 
-    private Integer id;
+    private String id;
 
     public Vehicle () {}
 
-    public Vehicle ( VehicleModel model, VehicleColor color, Integer id ) {
+    public Vehicle ( VehicleModel model, VehicleColor color, String id ) {
 
         this.model = model;
 
@@ -34,7 +34,7 @@ public class Vehicle {
 
     }
 
-    public Integer getId () {
+    public String getId () {
 
         return id;
 
