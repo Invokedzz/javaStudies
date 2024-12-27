@@ -28,15 +28,17 @@ public class Program {
 
         LocalDateTime finish = LocalDateTime.parse( sc.nextLine(), dateTimeFormatter );
 
-        Invoice invoice = new Invoice(0.0, 0.0);
-
-        CarRental carRental = new CarRental( start, finish, invoice, new Vehicle() );
+        CarRental carRental = new CarRental( start, finish, new Invoice(), new Vehicle() );
 
         RentalService rentalService = new RentalService(100.0, 10.0, new BrazilTaxService() );
 
         rentalService.processInvoice( carRental );
 
-        System.out.println( invoice.totalPayment() );
+        System.out.println( carRental.getInvoice().getBasicPayment() );
+
+        System.out.println( carRental.getInvoice().getTax() );
+
+        System.out.println( carRental.getInvoice().totalPayment() );
 
     }
 
