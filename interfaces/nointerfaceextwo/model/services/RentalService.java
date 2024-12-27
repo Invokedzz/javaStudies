@@ -1,6 +1,6 @@
 package interfaces.nointerfaceextwo.model.services;
 
-import interfaces.nointerfaceexercise.model.services.BrazilTaxService;
+import interfaces.nointerfaceextwo.model.services.BrazilTaxService;
 
 import interfaces.nointerfaceextwo.model.entities.CarRental;
 
@@ -27,6 +27,7 @@ public class RentalService {
         this.brazilTaxService = brazilTaxService;
 
     }
+
 
     public Double getPricePerDay () {
 
@@ -58,7 +59,7 @@ public class RentalService {
 
         if ( hours > 12.0 ) basicPayment = pricePerDay * Math.ceil( hours / 24.0 );
 
-        double tax = getBrazilTaxService().tax( basicPayment );
+        double tax = getBrazilTaxService().taxValue( basicPayment );
 
         carRental.setInvoice( new Invoice ( basicPayment, tax ));
 
