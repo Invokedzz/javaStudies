@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 
 import java.time.LocalDateTime;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import java.util.ArrayList;
@@ -55,6 +56,66 @@ public class Program {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern( "dd/MM/yyy HH:mm" );
 
         return LocalDateTime.parse( sc.nextLine(), dateTimeFormatter );
+
+    }
+
+    private static Vehicle chooseVehicle ( Scanner sc ) {
+
+        VehicleModel vehicleModel = VehicleModel.valueOf( sc.next() );
+
+        VehicleColor vehicleColor = VehicleColor.valueOf( sc.next() );
+
+
+    }
+
+    private static String cryptId ( Scanner sc ) {
+
+        String input = sc.next();
+
+        StringBuilder sb;
+
+        sb = new StringBuilder();
+
+        try {
+                if ( input.length() == 4 ) {
+
+                    for ( char digits : input.toCharArray() ) {
+
+                        int value = Character.getNumericValue( digits );
+
+                        int newValues = (value + 173) % 10;
+
+                        sb.append( newValues );
+
+                    }
+
+                    char firstDigit = sb.charAt( 0 );
+
+                    char secondDigit = sb.charAt( 1 );
+
+                    char thirdDigit = sb.charAt( 2 );
+
+                    char fourthDigit = sb.charAt( 3 );
+
+                    sb.setCharAt( 0, fourthDigit );
+
+                    sb.setCharAt( 1, secondDigit );
+
+                    sb.setCharAt( 2, thirdDigit );
+
+                    sb.setCharAt( 3, firstDigit );
+
+                    return sb.toString();
+
+                }
+
+        } catch ( InvalidIdInputException error ) {
+
+            System.out.printf( "Error: %s", error.getMessage() );
+
+        }
+
+        throw new InvalidIdInputException( "Id length must have 4 characters!" );
 
     }
 
