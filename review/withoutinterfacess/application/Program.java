@@ -14,10 +14,6 @@ import java.time.LocalDateTime;
 
 import java.util.Scanner;
 
-import java.util.ArrayList;
-
-import java.util.List;
-
 public class Program {
 
     public static void main ( String[] args ) {
@@ -30,8 +26,6 @@ public class Program {
 
     private static void runProgram ( Scanner sc ) {
 
-        List < MotorcycleRent > motorcycleRents = new ArrayList<>();
-
         LocalDateTime start = startOfTheRent( sc );
 
         LocalDateTime finish = endOfTheRent( sc );
@@ -40,11 +34,17 @@ public class Program {
 
         MotorcycleRent motorcycleRent = new MotorcycleRent( start, finish, new Invoice(), vehicle );
 
+        ListOfRents listOfRents = new ListOfRents();
+
+        listOfRents.addElement( motorcycleRent, vehicle.getId() );
+
     }
 
     private static LocalDateTime startOfTheRent ( Scanner sc ) {
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern( "dd/MM/yyy HH:mm" );
+
+        System.out.println( "Enter the start of the rent: " );
 
         return LocalDateTime.parse( sc.nextLine(), dateTimeFormatter );
 
@@ -54,13 +54,19 @@ public class Program {
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern( "dd/MM/yyy HH:mm" );
 
+        System.out.println( "Enter the end of the rent: " );
+
         return LocalDateTime.parse( sc.nextLine(), dateTimeFormatter );
 
     }
 
     private static Vehicle chooseVehicle ( Scanner sc ) {
 
+        System.out.println( "Enter the model of the vehicle: " );
+
         VehicleModel vehicleModel = VehicleModel.valueOf( sc.next() );
+
+        System.out.println( "Enter the color of the vehicle: " );
 
         VehicleColor vehicleColor = VehicleColor.valueOf( sc.next() );
 
@@ -71,6 +77,8 @@ public class Program {
     }
 
     private static String cryptId ( Scanner sc ) {
+
+        System.out.println( "Enter the id of this chosen vehicle: " );
 
         String input = sc.next();
 
