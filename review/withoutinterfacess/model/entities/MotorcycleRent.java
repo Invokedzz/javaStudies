@@ -1,5 +1,7 @@
 package review.withoutinterfacess.model.entities;
 
+import review.withoutinterfacess.model.exceptions.InvalidDatePeriodException;
+
 import java.time.LocalDateTime;
 
 public class MotorcycleRent {
@@ -59,6 +61,12 @@ public class MotorcycleRent {
     public Vehicle getVehicle () {
 
         return vehicle;
+
+    }
+
+    public void validateDates () {
+
+        if ( getStart().isAfter( getFinish() ) ) throw new InvalidDatePeriodException( "Invalid dates, try again!" );
 
     }
 

@@ -34,6 +34,8 @@ public class Program {
 
         MotorcycleRent motorcycleRent = new MotorcycleRent( start, finish, new Invoice(), vehicle );
 
+        motorcycleRent.validateDates();
+
         ListOfRents listOfRents = new ListOfRents();
 
         listOfRents.addElement( motorcycleRent, vehicle.getId() );
@@ -119,13 +121,15 @@ public class Program {
 
                 }
 
+            throw new InvalidIdInputException( "Id length must have 4 characters!" );
+
         } catch ( InvalidIdInputException error ) {
 
             System.out.printf( "Error: %s", error.getMessage() );
 
         }
 
-        throw new InvalidIdInputException( "Id length must have 4 characters!" );
+        return "";
 
     }
 
