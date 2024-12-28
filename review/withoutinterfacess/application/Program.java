@@ -36,7 +36,13 @@ public class Program {
 
         motorcycleRent.validateDates();
 
+        double valuePerHour = obtainValuePerHour( sc );
+
         ListOfRents listOfRents = new ListOfRents();
+
+        RentalService rentalService = new RentalService( valuePerHour, new USTax());
+
+        rentalService.processInvoice( motorcycleRent );
 
         listOfRents.addElement( motorcycleRent, vehicle.getId() );
 
@@ -130,6 +136,14 @@ public class Program {
         }
 
         return "";
+
+    }
+
+    private static double obtainValuePerHour ( Scanner sc ) {
+
+        ValueTreatments valueTreatments = new ValueTreatments();
+
+        return valueTreatments.verifyInputForDouble( sc );
 
     }
 
