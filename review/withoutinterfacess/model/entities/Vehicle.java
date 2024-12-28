@@ -40,4 +40,19 @@ public class Vehicle {
 
     }
 
+    @Override
+    public String toString () {
+
+        StringBuilder sb;
+
+        sb = new StringBuilder();
+
+        sb.append( "Model: " ).append( getModel() )
+                .append( ", Color: " ).append( getColor() )
+                .append( ", Id: " ).append( getId() );
+
+        return sb.toString();
+
+    }
+
 }

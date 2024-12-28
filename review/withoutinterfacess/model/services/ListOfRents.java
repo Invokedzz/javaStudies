@@ -26,6 +26,8 @@ public class ListOfRents {
 
         motorcycleRentList.add( motorcycleRent );
 
+        System.out.println( motorcycleRentList );
+
     }
 
     public void removeElement ( MotorcycleRent motorcycleRent ) {
