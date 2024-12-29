@@ -111,7 +111,7 @@ public class Program {
 
                         int value = Character.getNumericValue( digits );
 
-                        int newValues = (value + 173) % 10;
+                        int newValues = ( value + 173 ) % 10;
 
                         sb.append( newValues );
 
