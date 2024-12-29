@@ -48,7 +48,8 @@ public class Program {
 
             listOfRents.addElement( motorcycleRent, vehicle.getId() );
 
-        } catch ( InvalidDatePeriodException error ) {
+        } catch ( InvalidDatePeriodException | InvalidVehicleColorException
+                  | InvalidVehicleModelException | IllegalArgumentException error ) {
 
             System.out.printf( "Error: %s", error.getMessage() );
 
@@ -80,13 +81,19 @@ public class Program {
 
         // IllegalArgumentException
 
+        Vehicle vehicle = new Vehicle();
+
         System.out.println( "Enter the model of the vehicle: " );
 
         VehicleModel vehicleModel = VehicleModel.valueOf( sc.next() );
 
+        vehicle.validateVehicleModel( vehicleModel );
+
         System.out.println( "Enter the color of the vehicle: " );
 
         VehicleColor vehicleColor = VehicleColor.valueOf( sc.next() );
+
+        vehicle.validateVehicleColor( vehicleColor );
 
         String id = cryptId( sc );
 
