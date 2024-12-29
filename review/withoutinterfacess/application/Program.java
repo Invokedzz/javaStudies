@@ -26,25 +26,33 @@ public class Program {
 
     private static void runProgram ( Scanner sc ) {
 
-        LocalDateTime start = startOfTheRent( sc );
+        try {
 
-        LocalDateTime finish = endOfTheRent( sc );
+            LocalDateTime start = startOfTheRent( sc );
 
-        Vehicle vehicle = chooseVehicle( sc );
+            LocalDateTime finish = endOfTheRent( sc );
 
-        MotorcycleRent motorcycleRent = new MotorcycleRent( start, finish, new Invoice(), vehicle );
+            Vehicle vehicle = chooseVehicle( sc );
 
-        motorcycleRent.validateDates();
+            MotorcycleRent motorcycleRent = new MotorcycleRent( start, finish, new Invoice(), vehicle );
 
-        double valuePerHour = obtainValuePerHour( sc );
+            motorcycleRent.validateDates();
 
-        ListOfRents listOfRents = new ListOfRents();
+            double valuePerHour = obtainValuePerHour( sc );
 
-        RentalService rentalService = new RentalService( valuePerHour, new USTax());
+            ListOfRents listOfRents = new ListOfRents();
 
-        rentalService.processInvoice( motorcycleRent );
+            RentalService rentalService = new RentalService( valuePerHour, new USTax());
 
-        listOfRents.addElement( motorcycleRent, vehicle.getId() );
+            rentalService.processInvoice( motorcycleRent );
+
+            listOfRents.addElement( motorcycleRent, vehicle.getId() );
+
+        } catch ( InvalidDatePeriodException error ) {
+
+            System.out.printf( "Error: %s", error.getMessage() );
+
+        }
 
     }
 
@@ -69,6 +77,8 @@ public class Program {
     }
 
     private static Vehicle chooseVehicle ( Scanner sc ) {
+
+        // IllegalArgumentException
 
         System.out.println( "Enter the model of the vehicle: " );
 
