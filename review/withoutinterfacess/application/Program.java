@@ -26,34 +26,25 @@ public class Program {
 
     private static void runProgram ( Scanner sc ) {
 
-        try {
+        LocalDateTime start = startOfTheRent( sc );
 
-            LocalDateTime start = startOfTheRent( sc );
+        LocalDateTime finish = endOfTheRent( sc );
 
-            LocalDateTime finish = endOfTheRent( sc );
+        Vehicle vehicle = chooseVehicle( sc );
 
-            Vehicle vehicle = chooseVehicle( sc );
+        MotorcycleRent motorcycleRent = new MotorcycleRent( start, finish, new Invoice(), vehicle );
 
-            MotorcycleRent motorcycleRent = new MotorcycleRent( start, finish, new Invoice(), vehicle );
+        motorcycleRent.validateDates();
 
-            motorcycleRent.validateDates();
+        double valuePerHour = obtainValuePerHour( sc );
 
-            double valuePerHour = obtainValuePerHour( sc );
+        ListOfRents listOfRents = new ListOfRents();
 
-            ListOfRents listOfRents = new ListOfRents();
+        RentalService rentalService = new RentalService( valuePerHour, new USTax() );
+        
+        rentalService.processInvoice( motorcycleRent );
 
-            RentalService rentalService = new RentalService(valuePerHour, new USTax());
-
-            rentalService.processInvoice( motorcycleRent );
-
-            listOfRents.addElement( motorcycleRent, vehicle.getId() );
-
-        } catch ( InvalidDatePeriodException | InvalidVehicleColorException
-                  | InvalidVehicleModelException | IllegalArgumentException error ) {
-
-            System.out.printf( "Error: %s", error.getMessage() );
-
-        }
+        listOfRents.addElement( motorcycleRent, vehicle.getId() );
 
     }
 
@@ -81,19 +72,13 @@ public class Program {
 
         // IllegalArgumentException
 
-        Vehicle vehicle = new Vehicle();
-
         System.out.println( "Enter the model of the vehicle: " );
 
         VehicleModel vehicleModel = VehicleModel.valueOf( sc.next() );
 
-        vehicle.validateVehicleModel( vehicleModel );
-
         System.out.println( "Enter the color of the vehicle: " );
 
         VehicleColor vehicleColor = VehicleColor.valueOf( sc.next() );
-
-        vehicle.validateVehicleColor( vehicleColor );
 
         String id = cryptId( sc );
 

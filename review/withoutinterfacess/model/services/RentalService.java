@@ -28,7 +28,7 @@ public class RentalService {
 
         double hours = valuePerHour * minutes / 60.0;
 
-        double payment = carRental.getInvoice().getPayment() + hours;
+        double payment = valuePerHour * hours;
 
         double tax = taxService.determineTax( payment );
 

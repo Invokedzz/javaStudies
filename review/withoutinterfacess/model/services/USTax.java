@@ -1,8 +1,9 @@
 package review.withoutinterfacess.model.services;
 
-public abstract class USTax implements TaxService {
+public class USTax implements TaxService {
 
-    public double determineTax ( Double amount ) {
+    @Override
+    public double determineTax ( double amount ) {
 
         double dollarConverter = amount * 6.20;
 

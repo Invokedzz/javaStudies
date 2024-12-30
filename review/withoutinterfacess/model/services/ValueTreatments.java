@@ -6,7 +6,7 @@ public class ValueTreatments {
 
     private boolean hasDoubleInput ( Scanner sc ) {
 
-        return sc.hasNextInt();
+        return sc.hasNextDouble();
 
     }
 
