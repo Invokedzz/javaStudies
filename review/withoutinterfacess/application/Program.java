@@ -41,10 +41,14 @@ public class Program {
         ListOfRents listOfRents = new ListOfRents();
 
         RentalService rentalService = new RentalService( valuePerHour, new USTax() );
-        
+
         rentalService.processInvoice( motorcycleRent );
 
         listOfRents.addElement( motorcycleRent, vehicle.getId() );
+
+        System.out.println( motorcycleRent.getInvoice().getPayment() );
+
+        System.out.println( motorcycleRent.getInvoice().totalPayment() );
 
     }
 
