@@ -1,6 +1,6 @@
 package review.withoutinterfacess.model.services;
 
-public class USTax {
+public abstract class USTax implements TaxService {
 
     public double determineTax ( Double amount ) {
 

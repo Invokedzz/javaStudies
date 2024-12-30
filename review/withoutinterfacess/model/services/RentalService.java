@@ -10,15 +10,15 @@ public class RentalService {
 
     private Double valuePerHour;
 
-    private USTax usTax;
+    private TaxService taxService;
 
     public RentalService () {}
 
-    public RentalService ( Double valuePerHour, USTax usTax ) {
+    public RentalService ( Double valuePerHour, TaxService taxService) {
 
         this.valuePerHour = valuePerHour;
 
-        this.usTax = usTax;
+        this.taxService = taxService;
 
     }
 
@@ -30,7 +30,7 @@ public class RentalService {
 
         double payment = carRental.getInvoice().getPayment() + hours;
 
-        double tax = usTax.determineTax( payment );
+        double tax = taxService.determineTax( payment );
 
         carRental.setInvoice( new Invoice ( payment, tax ) );
 

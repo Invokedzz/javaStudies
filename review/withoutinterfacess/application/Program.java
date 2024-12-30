@@ -42,7 +42,7 @@ public class Program {
 
             ListOfRents listOfRents = new ListOfRents();
 
-            RentalService rentalService = new RentalService( valuePerHour, new USTax());
+            RentalService rentalService = new RentalService(valuePerHour, new USTax());
 
             rentalService.processInvoice( motorcycleRent );
 
