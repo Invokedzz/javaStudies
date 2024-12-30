@@ -16,8 +16,6 @@ public class Order {
 
     private Client client;
 
-    List < Order > orderList = new ArrayList<>();
-
     public Order () {}
 
     public Order ( LocalDateTime moment, OrderStatus status, OrderItem orderItem, Client client ) {
@@ -56,16 +54,5 @@ public class Order {
 
     }
 
-    public void addItem ( Order order ) {
-
-        orderList.add( order );
-
-    }
-
-    public void removeItem ( Order order ) {
-
-        orderList.remove( order );
-
-    }
 
 }
