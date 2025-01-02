@@ -1,9 +1,11 @@
 package interfaces.medievalbs.model.services;
 
+import interfaces.medievalbs.model.entities.AbstractCharacter;
+
 public interface Character {
 
-    Double attack ();
+    Integer attack ();
 
-    Double defense ();
+    Integer defense ();
 
 }

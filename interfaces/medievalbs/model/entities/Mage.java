@@ -2,17 +2,40 @@ package interfaces.medievalbs.model.entities;
 
 public class Mage extends AbstractCharacter {
 
-    @Override
-    public Double attack() {
+    private Integer mana;
 
-        return 0.0;
+    public Mage () {
+
+        super ();
+
+    }
+
+    public Mage ( String name, Integer lifePoints, Phobia phobia,
+                  Integer attackPoints, Integer defensePoints, Integer mana ) {
+
+        super ( name, lifePoints, phobia, attackPoints, defensePoints );
+
+        this.mana = mana;
+
+    }
+
+    public Integer getMana () {
+
+        return mana;
 
     }
 
     @Override
-    public Double defense() {
+    public Integer attack () {
 
-        return 0.0;
+        return getAttackPoints() + mana;
+
+    }
+
+    @Override
+    public Integer defense() {
+
+        return getDefensePoints() + mana;
 
     }
 

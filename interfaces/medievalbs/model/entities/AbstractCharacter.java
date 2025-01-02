@@ -36,25 +36,25 @@ public abstract class AbstractCharacter implements Character {
 
     }
 
-    private Integer getLifePoints () {
+    public Integer getLifePoints () {
 
         return lifePoints;
 
     }
 
-    private Phobia getPhobia () {
+    public Phobia getPhobia () {
 
         return phobia;
 
     }
 
-    private Integer getAttackPoints () {
+    public Integer getAttackPoints () {
 
         return attackPoints;
 
     }
 
-    private Integer getDefensePoints () {
+    public Integer getDefensePoints () {
 
         return defensePoints;
 
