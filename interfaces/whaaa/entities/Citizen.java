@@ -41,7 +41,7 @@ public class Citizen implements Comparable <Citizen> {
     @Override
     public int compareTo(Citizen o) {
 
-        return getCash().compareTo( o.getCash() );
+        return -cash.compareTo( o.getCash() );
 
     }
 
