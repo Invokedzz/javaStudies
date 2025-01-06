@@ -1,35 +1,31 @@
 package interfaces.test.services;
 
+import interfaces.test.entities.User;
+
 import java.io.*;
 
 public class DataLoader implements ExecData {
 
+    private User user;
 
+    public DataLoader () {}
+
+    public DataLoader ( User user ) {
+
+        this.user = user;
+
+    }
+
+    public User getUser () {
+
+        return user;
+
+    }
 
     @Override
-    public void load () {
+    public boolean isUserValid () {
 
-        System.out.println( "The file is being loaded. Please wait!" );
-
-        File file = new File( "/Users/samunoinv/Documents/GitHub/javaStudies/interfaces/test/files/Shadow" );
-
-        try ( BufferedReader bufferedReader = new BufferedReader( new FileReader( file ) ) ) {
-
-            String line = bufferedReader.readLine();
-
-            while ( line != null ) {
-
-                System.out.println( line );
-
-                line = bufferedReader.readLine();
-
-            }
-
-        } catch ( IOException error ) {
-
-            System.out.printf( "Error: %s", error.getMessage() );
-
-        }
+        return !getUser().getUsername().isEmpty() && getUser().getId().length() == 5;
 
     }
 
