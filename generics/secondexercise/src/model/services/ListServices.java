@@ -14,6 +14,12 @@ public class ListServices {
 
     List < ListElements > elementsList = new ArrayList<>();
 
+    public List < ListElements > getElementsList () {
+
+        return elementsList;
+
+    }
+
     public void addElementsToTheList ( ListElements elements ) {
 
         elementsList.add( elements );
@@ -28,19 +34,39 @@ public class ListServices {
 
     public void concludeTask ( Scanner sc, int index ) {
 
-        ListElements elements = elementsList.get( index );
+        for ( ListElements element : elementsList ) {
 
-        char askUser = sc.next().charAt( 0 );
+            if ( element.getIsTaskConcluded().equals( true ) ) {
 
-        System.out.println( "Would you like to complete this task?" );
+                System.out.println( "Skip this one" );
 
-        if ( askUser == 'y' || askUser == 'Y' ) {
-
-            if ( elements.getIsTaskConcluded().equals( false ) ) {
-
-                elements.setIsTaskConcluded( true );
+                break;
 
             }
+
+            ListElements elements = elementsList.get( index );
+
+            if ( elements.getIsTaskConcluded().equals( true ) ) break;
+
+            System.out.println( "Would you like to complete this task?" );
+
+            char askUser = sc.next().charAt( 0 );
+
+            if ( askUser == 'y' || askUser == 'Y' ) {
+
+                if ( elements.getIsTaskConcluded().equals( false ) ) {
+
+                    elements.setIsTaskConcluded( true );
+
+                    System.out.println( elements );
+
+                    return;
+
+                }
+
+            }
+
+            System.out.println( "This task was already completed!" );
 
         }
 

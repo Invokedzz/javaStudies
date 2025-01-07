@@ -18,9 +18,7 @@ public class OperationsWithList {
 
             // ListElements -> taskId: Integer, task: String, taskConcluded: Boolean
 
-            System.out.println( "Enter the id of this task: " );
-
-            Integer taskId = sc.nextInt();
+            Integer taskId = index;
 
             System.out.println( "Enter the name of the task: " );
 
@@ -37,6 +35,8 @@ public class OperationsWithList {
             listServices.printList();
 
         }
+
+        listServices.concludeTask( sc, 0 );
 
     }
 
