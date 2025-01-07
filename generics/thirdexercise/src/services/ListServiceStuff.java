@@ -46,7 +46,7 @@ public class ListServiceStuff <T> {
 
             }
 
-            System.out.println( printFirstElement() );
+            System.out.printf( "First element: %s", printFirstElement() );
 
         }
 
