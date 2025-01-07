@@ -36,7 +36,11 @@ public class OperationsWithList {
 
         }
 
-        listServices.concludeTask( sc, 0 );
+            System.out.println( "What's the id of the task you want to update?" );
+
+            int idOfTaskYouWantToReview = sc.nextInt();
+
+            listServices.concludeTask( sc, idOfTaskYouWantToReview );
 
     }
 

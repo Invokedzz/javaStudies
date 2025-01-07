@@ -74,11 +74,11 @@ public class ListServices {
 
     public void printList () {
 
-        if ( !elementsList.isEmpty() ) {
+        if (!elementsList.isEmpty()) {
 
-            for ( ListElements elements : elementsList ) {
+            for (ListElements elements : elementsList) {
 
-                System.out.println( elements );
+                System.out.println(elements);
 
             }
 
@@ -86,7 +86,7 @@ public class ListServices {
 
         }
 
-        throw new EmptyListException( "The current list doesn't have any elements inside in it!" );
+        throw new EmptyListException("The current list doesn't have any elements inside in it!");
 
     }
 
