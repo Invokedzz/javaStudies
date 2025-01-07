@@ -38,6 +38,12 @@ public class ListElements {
 
     }
 
+    public void setIsTaskConcluded ( Boolean isTaskConcluded ) {
+
+        this.isTaskConcluded = isTaskConcluded;
+
+    }
+
     @Override
     public String toString () {
 
