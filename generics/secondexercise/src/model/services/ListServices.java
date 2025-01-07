@@ -56,6 +56,8 @@ public class ListServices {
 
             }
 
+            return;
+
         }
 
         throw new EmptyListException( "The current list doesn't have any elements inside in it!" );
