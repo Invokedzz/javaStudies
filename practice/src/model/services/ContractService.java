@@ -1,6 +1,7 @@
 package practice.src.model.services;
 
 import practice.src.model.entities.Contract;
+
 import practice.src.model.entities.Installment;
 
 import java.time.LocalDate;
@@ -24,6 +25,8 @@ public class ContractService {
     }
 
     public void processContract ( Contract contract, Integer months ) {
+
+        Installment installment = new Installment();
 
         double initialQuota = contract.getTotalValue() / months;
 

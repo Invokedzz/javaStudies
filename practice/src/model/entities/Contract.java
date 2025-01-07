@@ -54,6 +54,12 @@ public class Contract {
 
     }
 
+    public List < Installment > getInstallmentList () {
+
+        return installmentList;
+
+    }
+
     public void removeInstallment ( Installment installment ) {
 
         installmentList.remove( installment );

@@ -38,4 +38,18 @@ public class Installment {
 
     }
 
+    @Override
+    public String toString () {
+
+        StringBuilder stringBuilder;
+
+        stringBuilder = new StringBuilder();
+
+        stringBuilder.append( "Due date: " ).append( getDueDate() )
+                .append( ", Amount: " ).append( getAmount() );
+
+        return stringBuilder.toString();
+
+    }
+
 }
