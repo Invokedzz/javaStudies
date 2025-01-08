@@ -1,6 +1,7 @@
 package generics.sixthexercise.src.application;
 
 import generics.sixthexercise.src.model.services.VerifyHigherNumber;
+
 import generics.sixthexercise.src.model.services.VerifyHigherNumberComplete;
 
 import java.io.BufferedReader;
