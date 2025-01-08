@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CalculationService {
 
-    public static < T extends  Comparable <T>> T max ( List<T> list ) {
+    public static < T extends Comparable <T>> T max ( List<T> list ) {
 
         T max = list.getFirst();
 
@@ -15,6 +15,10 @@ public class CalculationService {
         for ( T item : list ) {
 
             if ( item.compareTo( max ) > 0 ) max = item;
+
+            // item.compareTo( max ) > 0 gets the bigger value
+            // item.compareTo( max ) < 0 gets the lower value
+            // item.compareTo( max ) == 0 gets the middle value
 
         }
 
