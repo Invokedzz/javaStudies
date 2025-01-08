@@ -1,9 +1,5 @@
 package generics.fourthexercise.src.model.entities;
 
-import java.util.ArrayList;
-
-import java.util.List;
-
 public abstract class Employee {
 
     private String name;

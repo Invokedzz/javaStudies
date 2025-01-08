@@ -2,6 +2,8 @@ package generics.fourthexercise.src.model.services;
 
 import generics.fourthexercise.src.model.entities.NormalEmployee;
 
+import generics.fourthexercise.src.model.entities.VipEmployee;
+
 import java.util.Scanner;
 
 public class GenerateSalary {
@@ -22,17 +24,33 @@ public class GenerateSalary {
 
     }
 
-    public void calculateSalaryForNormalEmployees (Scanner sc, NormalEmployee normalEmployee ) {
+    public void calculateSalaryForNormalEmployees ( Scanner sc, NormalEmployee normalEmployee ) {
 
-        double employeeSalary = normalEmployee.getSalary();
+        double normalEmployeeSalary = normalEmployee.getSalary();
 
         int months = obtainMonths( sc );
 
         for ( int index = 1; index <= months; index ++ ) {
 
-            double currentSalary = getEmployeeDifferences().changeNormalEmployeeSalary( employeeSalary, months );
+            double currentSalary = getEmployeeDifferences().changeNormalEmployeeSalary( normalEmployeeSalary, index );
 
-            System.out.printf( "Month: %s, Salary: %s", months, currentSalary );
+            System.out.printf( "Month: %s, Salary: %s\n", index, currentSalary );
+
+        }
+
+    }
+
+    public void calculateSalaryForVipEmployees ( Scanner sc, VipEmployee vipEmployee ) {
+
+        double vipEmployeeSalary = vipEmployee.getSalary();
+
+        int months = obtainMonths( sc );
+
+        for ( int index = 1; index <= months; index ++ ) {
+
+            double currentSalary = getEmployeeDifferences().changeVipEmployeeSalary( vipEmployeeSalary, index );
+
+            System.out.printf( "Month: %s, Salary: %s\n", index, currentSalary );
 
         }
 
