@@ -1,6 +1,7 @@
 package generics.sixthexercise.src.application;
 
 import generics.sixthexercise.src.model.services.VerifyHigherNumber;
+import generics.sixthexercise.src.model.services.VerifyHigherNumberComplete;
 
 import java.io.BufferedReader;
 
@@ -34,7 +35,9 @@ public class RunFile {
 
             }
 
-            System.out.println(VerifyHigherNumber.compareNumbers( list ));
+            System.out.println( VerifyHigherNumber.compareNumbers( list ) );
+
+            System.out.println( VerifyHigherNumberComplete.compareValues( list ) );
 
         } catch ( IOException error ) {
 
