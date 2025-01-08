@@ -1,6 +1,6 @@
 package generics.fourthexercise.src.model.entities;
 
-public class NormalEmployee <T> extends Employee <T> {
+public class NormalEmployee extends Employee {
 
     public NormalEmployee () {
 

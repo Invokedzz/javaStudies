@@ -4,15 +4,13 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-public abstract class Employee <T> {
+public abstract class Employee {
 
     private String name;
 
     private String id;
 
     private Double salary;
-
-    List < T > list = new ArrayList<>();
 
     public Employee () {}
 
@@ -41,18 +39,6 @@ public abstract class Employee <T> {
     public Double getSalary () {
 
         return salary;
-
-    }
-
-    public void addEmployeesToList ( T element ) {
-
-        list.add( element );
-
-    }
-
-    public void removeEmployeesFromList ( T element ) {
-
-        list.remove( element );
 
     }
 

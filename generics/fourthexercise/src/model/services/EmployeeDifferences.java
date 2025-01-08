@@ -6,6 +6,8 @@ public interface EmployeeDifferences {
 
     double VIP_EMPLOYEE_BONUS = 0.20;
 
-    Double changeSalary ( Double amount, int months );
+    Double changeVipEmployeeSalary ( Double amount, int months );
+
+    Double changeNormalEmployeeSalary ( Double amount, int months );
 
 }
