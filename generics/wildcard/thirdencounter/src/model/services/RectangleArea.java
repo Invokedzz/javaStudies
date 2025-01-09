@@ -1,36 +1,36 @@
 package generics.wildcard.thirdencounter.src.model.services;
 
-import generics.wildcard.thirdencounter.src.model.entities.Circle;
+import generics.wildcard.thirdencounter.src.model.entities.Rectangle;
 
-public class CircleArea implements Shape {
+public class RectangleArea implements Shape {
 
-    private Circle circle;
+    private Rectangle rectangle;
 
-    public CircleArea () {}
+    public RectangleArea () {}
 
-    public CircleArea ( Circle circle ) {
+    public RectangleArea ( Rectangle rectangle ) {
 
-        this.circle = circle;
+        this.rectangle = rectangle;
 
     }
 
-    public Circle getCircle () {
+    public Rectangle getRectangle () {
 
-        return circle;
+        return rectangle;
 
     }
 
     @Override
     public Double area () {
 
-        return circle.getRadius() * Math.PI;
+        return getRectangle().getHeight() * getRectangle().getWidth();
 
     }
 
     @Override
     public void createListForFigure () {
 
-        list.add( CircleArea.this );
+        list.add( RectangleArea.this );
 
         for ( Shape item : list ) {
 
