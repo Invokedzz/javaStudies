@@ -1,6 +1,10 @@
 package generics.wildcard.thirdencounter.src.model.services;
 
+import generics.secondexercise.src.model.exceptions.EmptyListException;
+
 import generics.wildcard.thirdencounter.src.model.entities.Rectangle;
+
+import java.util.List;
 
 public class RectangleArea implements Shape {
 
@@ -32,7 +36,15 @@ public class RectangleArea implements Shape {
 
         list.add( RectangleArea.this );
 
-        for ( Shape item : list ) {
+        printList ( list );
+
+    }
+
+    private void printList ( List < ? extends Shape > list ) {
+
+        if ( list.isEmpty() ) throw new EmptyListException( "The list can't be empty!" );
+
+        for ( Shape item : Shape.list) {
 
             System.out.println( item );
 
