@@ -44,7 +44,7 @@ public class RectangleArea implements Shape {
 
         if ( list.isEmpty() ) throw new EmptyListException( "The list can't be empty!" );
 
-        for ( Shape item : Shape.list) {
+        for ( Shape item : list ) {
 
             System.out.println( item );
 
