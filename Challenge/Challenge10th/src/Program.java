@@ -37,7 +37,7 @@ public class Program {
                 System.out.println( "Enter a number higher than 1" );
 
                 return;
-                
+
             }
 
             for ( int index = 0; index < numberOfElements; index ++ ) {
