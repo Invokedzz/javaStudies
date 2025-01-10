@@ -1,5 +1,7 @@
 package Challenge.Challenge10th.src;
 
+import Challenge.Challenge10th.model.validations.ValidationsForScanner;
+
 import java.util.ArrayList;
 
 import java.util.InputMismatchException;
@@ -28,11 +30,19 @@ public class Program {
 
             System.out.println( "Enter the number of rooks you want to analyze!" );
 
-            int numberOfElements = sc.nextInt();
+            int numberOfElements = ValidationsForScanner.validateIntInput( sc );
+
+            if ( numberOfElements < 2 ) {
+
+                System.out.println( "Enter a number higher than 1" );
+
+                return;
+                
+            }
 
             for ( int index = 0; index < numberOfElements; index ++ ) {
 
-                String rook = sc.next();
+                String rook = sc.next().toUpperCase();
 
                 if ( validateRook( rook ) ) {
 
@@ -71,13 +81,13 @@ public class Program {
 
         }
 
-        int firstRookId = sc.nextInt();
+        int firstRookId = ValidationsForScanner.validateIntInput( sc );
 
         String firstRook = listOfRooks.get( firstRookId );
 
         System.out.println( "Good! Now, enter the id of the rook that is going to be under attack: " );
 
-        int secondRookId = sc.nextInt();
+        int secondRookId = ValidationsForScanner.validateIntInput( sc );
 
         String secondRook = listOfRooks.get( secondRookId );
 
