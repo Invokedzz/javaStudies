@@ -2,6 +2,8 @@ package Challenge.Challenge10th.src;
 
 import java.util.ArrayList;
 
+import java.util.InputMismatchException;
+
 import java.util.List;
 
 import java.util.Scanner;
@@ -20,23 +22,33 @@ public class Program {
 
     }
 
-    private static void runProgram ( List < String > list, Scanner sc ) {
+    private static void runProgram ( List < String > listOfRooks, Scanner sc ) {
 
-        System.out.println( "Enter the number of rooks you want to analyze!" );
+        try {
 
-        int numberOfElements = sc.nextInt();
+            System.out.println( "Enter the number of rooks you want to analyze!" );
 
-        for ( int index = 0; index < numberOfElements; index ++ ) {
+            int numberOfElements = sc.nextInt();
 
-           String rook = sc.next();
+            for ( int index = 0; index < numberOfElements; index ++ ) {
 
-           if ( validateRook( rook ) ) list.add( rook );
+                String rook = sc.next();
 
-        }
+                if ( validateRook( rook ) ) {
 
-        for ( String item : list ) {
+                    listOfRooks.add( rook + " " + index );
 
-            System.out.println( item );
+                    System.out.printf( "%s added to the list!\n", rook );
+
+                    queryRooksSentByUser( listOfRooks );
+
+                }
+
+            }
+
+        } catch ( InputMismatchException error ) {
+
+            System.out.printf( "Wrong input. Return: %s\n", error.getMessage() );
 
         }
 
@@ -44,8 +56,18 @@ public class Program {
 
     private static boolean validateRook ( String rook ) {
 
-        return Pattern.matches( "^[0-9]*$", rook.subSequence( 1, 1 )) &&
-                Pattern.matches( "[a-zA-Z]", rook.subSequence( 0, 1 )) && rook.length() == 2;
+        return Pattern.matches( "[1-8]+$", rook.subSequence( 1, 2 )) &&
+                Pattern.matches( "[a-hA-H]", rook.subSequence( 0, 1 )) && rook.length() == 2;
+
+    }
+
+    private static void queryRooksSentByUser ( List < String > listOfRooks ) {
+
+        for ( String item : listOfRooks ) {
+
+            System.out.println( item );
+
+        }
 
     }
 
