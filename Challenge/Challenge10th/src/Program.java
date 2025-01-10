@@ -36,15 +36,15 @@ public class Program {
 
                 if ( validateRook( rook ) ) {
 
-                    listOfRooks.add( rook + " " + index );
+                    listOfRooks.add( rook + ", " + "id: " + index );
 
                     System.out.printf( "%s added to the list!\n", rook );
-
-                    queryRooksSentByUser( listOfRooks );
 
                 }
 
             }
+
+            queryRooksSentByUser( listOfRooks, sc );
 
         } catch ( InputMismatchException error ) {
 
@@ -61,13 +61,33 @@ public class Program {
 
     }
 
-    private static void queryRooksSentByUser ( List < String > listOfRooks ) {
+    private static void queryRooksSentByUser ( List < String > listOfRooks, Scanner sc ) {
+
+        System.out.println( "Select the id of the rook you want to use: " );
 
         for ( String item : listOfRooks ) {
 
             System.out.println( item );
 
         }
+
+        int firstRookId = sc.nextInt();
+
+        String firstRook = listOfRooks.get( firstRookId );
+
+        System.out.println( "Good! Now, enter the id of the rook that is going to be under attack: " );
+
+        int secondRookId = sc.nextInt();
+
+        String secondRook = listOfRooks.get( secondRookId );
+
+        System.out.printf("The first rook manages to attack the second one? Answer: %s", logicForRookInsideOfAGameOfChess( firstRook, secondRook ));
+
+    }
+
+    private static boolean logicForRookInsideOfAGameOfChess ( String firstRook, String secondRook ) {
+
+        return firstRook.charAt(0) == secondRook.charAt(0) || firstRook.charAt(1) == secondRook.charAt(1);
 
     }
 
