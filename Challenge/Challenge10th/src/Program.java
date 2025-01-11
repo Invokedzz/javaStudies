@@ -91,7 +91,23 @@ public class Program {
 
         String secondRook = listOfRooks.get( secondRookId );
 
+        haveCollision( 'y', listOfRooks, sc );
+
         System.out.printf("The first rook manages to attack the second one? Answer: %s", logicForRookInsideOfAGameOfChess( firstRook, secondRook ));
+
+    }
+
+    private static boolean haveCollision ( char userResponse, List < String > listOfRooks, Scanner sc ) {
+
+        if ( userResponse == 'y' ) {
+
+            System.out.println( "Enter the position of the element you want: " );
+
+            String chessPiece = sc.next();
+
+            if ( validateRook( chessPiece ) ) listOfRooks.add( chessPiece );
+
+        }
 
     }
 
