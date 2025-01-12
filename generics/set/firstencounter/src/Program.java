@@ -62,7 +62,7 @@ public class Program {
         Name: rock, product id: 12342
         Name: paper, product id: 10293
         Name: ball, product id: 1000
-        
+
         */
 
     }
