@@ -91,7 +91,9 @@ public class Program {
 
         String secondRook = listOfRooks.get( secondRookId );
 
-        haveCollision( 'y', listOfRooks, sc );
+        char userResponse = sc.next().charAt( 0 );
+
+        haveCollision( userResponse, listOfRooks, sc );
 
         System.out.printf("The first rook manages to attack the second one? Answer: %s", logicForRookInsideOfAGameOfChess( firstRook, secondRook ));
 
@@ -108,6 +110,8 @@ public class Program {
             if ( validateRook( chessPiece ) ) listOfRooks.add( chessPiece );
 
         }
+
+        return false;
 
     }
 
