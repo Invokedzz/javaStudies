@@ -22,7 +22,7 @@ public class ASCIIValues {
 
             asciiValues += Math.abs( s.charAt(index) - s.charAt( index + 1));
 
-        } 
+        }
 
         return asciiValues;
 
