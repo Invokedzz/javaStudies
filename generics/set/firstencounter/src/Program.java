@@ -50,6 +50,21 @@ public class Program {
 
         }
 
+        /* Output (HashSet list):
+
+        3
+        paper
+        10293
+        ball
+        1000
+        rock
+        12342
+        Name: rock, product id: 12342
+        Name: paper, product id: 10293
+        Name: ball, product id: 1000
+        
+        */
+
     }
 
 }
