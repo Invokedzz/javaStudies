@@ -6,7 +6,7 @@ public class ArrayPermutation {
 
     public static void main ( String[] args ) {
 
-        int [] nums = {2, 0, 4};
+        int [] nums = {0, 0, 4};
 
         int [] arrayBuild = buildArray( nums );
 
@@ -20,7 +20,7 @@ public class ArrayPermutation {
 
         for ( int index = 0; index < ans.length; index ++ ) {
 
-            ans [index] = nums [nums[index]];
+            ans [index] = nums[nums[index]];
 
         }
 
