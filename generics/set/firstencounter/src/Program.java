@@ -6,7 +6,13 @@ import java.util.HashSet;
 
 import java.util.Scanner;
 
+import java.util.Arrays;
+
+import java.util.TreeSet;
+
 import generics.set.firstencounter.entities.Product;
+
+import generics.set.firstencounter.entities.Employee;
 
 public class Program {
 
@@ -14,7 +20,9 @@ public class Program {
 
         Scanner sc = new Scanner( System.in );
 
-        runThisShit( sc );
+        // runThisShit( sc );
+
+        // testTreeSet( sc );
 
     }
 
@@ -64,6 +72,38 @@ public class Program {
         Name: ball, product id: 1000
 
         */
+
+    }
+
+    private static void testTreeSet ( Scanner sc ) {
+
+        Set < Employee > employeeSet = new TreeSet<>(); // now that we implemented "Comparable <Employee>", TreeSet is doing fine
+
+        int numberOfElements = sc.nextInt();
+
+        for ( int index = 0; index < numberOfElements; index ++ ) {
+
+            String employeeName = sc.next();
+
+            Integer employeeId = sc.nextInt();
+
+            employeeSet.add( new Employee( employeeName, employeeId ));
+
+        }
+
+        for ( Employee item : employeeSet ) {
+
+            System.out.println( item );
+
+        }
+
+        Employee firstEmployee = new Employee( "John", 18273 );
+
+        Employee secondEmployee = new Employee( "Robert", 7283 );
+
+        int comparingElements = firstEmployee.compareTo( secondEmployee );
+
+        System.out.println( comparingElements );
 
     }
 

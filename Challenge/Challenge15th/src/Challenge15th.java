@@ -6,7 +6,7 @@ public class Challenge15th {
 
     public static void main ( String[] args ) {
 
-        int [] nums = { 3, 2, 3 };
+        int [] nums = { 3, 2, 3, 4, 3, 4 };
 
         int [] result = getConcatenation( nums );
 
@@ -21,6 +21,8 @@ public class Challenge15th {
                 Specifically, ans is the concatenation of two nums arrays.
 
                 Return the array ans */
+
+        System.out.println( nums.length );
 
         int [] ans = new int [nums.length * 2];
 
