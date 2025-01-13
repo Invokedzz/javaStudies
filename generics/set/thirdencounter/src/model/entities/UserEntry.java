@@ -41,6 +41,6 @@ public class UserEntry {
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, date);
+        return Objects.hash(username);
     }
 }
