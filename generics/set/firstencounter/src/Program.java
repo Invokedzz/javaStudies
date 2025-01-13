@@ -1,16 +1,10 @@
 package generics.set.firstencounter.src;
 
-import java.util.Set;
-
-import java.util.HashSet;
-
-import java.util.Scanner;
-
-import java.util.Arrays;
-
-import java.util.TreeSet;
+import java.util.*;
 
 import generics.set.firstencounter.entities.Product;
+
+import generics.set.firstencounter.entities.Game;
 
 import generics.set.firstencounter.entities.Employee;
 
@@ -23,6 +17,8 @@ public class Program {
         // runThisShit( sc );
 
         // testTreeSet( sc );
+
+        linkedHashSet( sc );
 
     }
 
@@ -104,6 +100,22 @@ public class Program {
         int comparingElements = firstEmployee.compareTo( secondEmployee );
 
         System.out.println( comparingElements );
+
+    }
+
+    private static void linkedHashSet ( Scanner sc ) { // normal execution, and a list ordered by the elements added
+
+        Set < Game > gameSet = new LinkedHashSet<>();
+
+        gameSet.add( new Game("Super Mario World", 60.0 ));
+
+        gameSet.add( new Game("Sonic The Hedgehog", 50.0 ));
+
+        for ( Game item : gameSet ) {
+
+            System.out.println( item );
+
+        }
 
     }
 
