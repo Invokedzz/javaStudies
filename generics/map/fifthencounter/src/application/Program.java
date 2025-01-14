@@ -3,6 +3,7 @@ package generics.map.fifthencounter.src.application;
 import generics.map.fifthencounter.src.model.entities.Client;
 
 import generics.map.fifthencounter.src.model.entities.Novel;
+import generics.map.fifthencounter.src.model.services.NovelServices;
 
 public class Program {
 
@@ -18,9 +19,13 @@ public class Program {
 
         Client client = new Client( "Paul Walker", 1L, 100.0 );
 
-        System.out.println( novel );
+        NovelServices novelServices = new NovelServices( client, novel );
 
-        System.out.println( client );
+        double result = novelServices.payment( client, novel );
+
+        System.out.println( novelServices.createMapList() );
+
+        System.out.println( result );
 
     }
 

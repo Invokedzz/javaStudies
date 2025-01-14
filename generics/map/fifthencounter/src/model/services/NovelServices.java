@@ -4,6 +4,8 @@ import generics.map.fifthencounter.src.model.entities.Client;
 
 import generics.map.fifthencounter.src.model.entities.Novel;
 
+import java.util.LinkedHashMap;
+
 import java.util.Map;
 
 public class NovelServices implements ProductServices {
@@ -35,8 +37,20 @@ public class NovelServices implements ProductServices {
     }
 
     @Override
-    public Map<?, ?> createMapList() {
+    public Map <?, ?> createMapList() {
+
+        Map < Client, Novel > map = new LinkedHashMap<>();
+
+        map.put( getClient(), getNovel() );
+
+        for ( Object key : map.keySet() ) {
+
+            System.out.printf( "%s\n%s", key, map.keySet() );
+
+        }
+
         return Map.of();
+
     }
 
 }
