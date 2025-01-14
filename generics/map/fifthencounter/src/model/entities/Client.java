@@ -2,7 +2,7 @@ package generics.map.fifthencounter.src.model.entities;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Client extends General {
+public final class Client extends General {
 
     private Double balance;
 
