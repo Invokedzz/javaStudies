@@ -1,14 +1,14 @@
-package lambdaandmore.firstencounter.src.entities;
+package lambdaandmore.firstencounter.src.entities2;
 
-public class Product1 implements Comparable < Product1 > {
+public class Product2 {
 
     private String name;
 
     private Double price;
 
-    public Product1 () {}
+    public Product2 () {}
 
-    public Product1 ( String name, Double price ) {
+    public Product2 ( String name, Double price ) {
 
         this.name = name;
 
@@ -29,16 +29,8 @@ public class Product1 implements Comparable < Product1 > {
     }
 
     @Override
-    public int compareTo(Product1 o) {
-
-        return name.toUpperCase().compareTo(o.getName().toUpperCase());
-
-    }
-
-
-    @Override
     public String toString() {
-        return "Product1{" +
+        return "Product2{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 '}';
