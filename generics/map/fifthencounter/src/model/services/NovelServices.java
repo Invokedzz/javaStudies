@@ -66,7 +66,7 @@ public class NovelServices implements ProductServices {
 
         Map < ?, ? > map = createMapList();
 
-        if ( map.containsValue( List.of( getNovel() ) ) && map.containsKey( getClient() )) return 100.0;
+        if ( map.containsValue( List.of( getNovel() ) ) && map.containsKey( getClient() )) return payment( getClient(), getNovel() );
 
         return 0.0;
 
