@@ -21,9 +21,7 @@ public class Program {
 
         NovelServices novelServices = new NovelServices( client, novel );
 
-        double result = novelServices.payment( client, novel );
-
-        System.out.println( novelServices.createMapList() );
+        double result = novelServices.receivePaymentCredits();
 
         System.out.println( result );
 
