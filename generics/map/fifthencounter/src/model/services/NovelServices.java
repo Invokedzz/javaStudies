@@ -14,11 +14,11 @@ public class NovelServices implements ProductServices {
 
     private Client client;
 
-    private Novel novel;
+    private List < Novel > novel;
 
     public NovelServices () {}
 
-    public NovelServices ( Client client, Novel novel ) {
+    public NovelServices ( Client client, List < Novel > novel ) {
 
         this.client = client;
 
@@ -32,7 +32,7 @@ public class NovelServices implements ProductServices {
 
     }
 
-    public Novel getNovel () {
+    public List < Novel > getNovel () {
 
         return novel;
 
@@ -43,7 +43,7 @@ public class NovelServices implements ProductServices {
 
         Map < Client, List < Novel > > map = new LinkedHashMap<>();
 
-        map.put( getClient(), List.of( getNovel() ) );
+        map.put( getClient(), getNovel() );
 
         for ( Map.Entry < Client, List <Novel> > entry : map.entrySet() ) {
 
@@ -66,7 +66,19 @@ public class NovelServices implements ProductServices {
 
         Map < ?, ? > map = createMapList();
 
-        if ( map.containsValue( List.of( getNovel() ) ) && map.containsKey( getClient() )) return payment( getClient(), getNovel() );
+        if ( map.containsValue( getNovel() ) && map.containsKey( getClient() )) {
+
+            double totalPrice = 0.0;
+
+            for ( int index = 0; index < getNovel().size(); index++ ) {
+
+                totalPrice += payment( getClient(), getNovel().get( index ));
+
+            }
+
+            return totalPrice - getClient().getBalance();
+
+        }
 
         return 0.0;
 

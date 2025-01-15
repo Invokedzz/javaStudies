@@ -3,7 +3,12 @@ package generics.map.fifthencounter.src.application;
 import generics.map.fifthencounter.src.model.entities.Client;
 
 import generics.map.fifthencounter.src.model.entities.Novel;
+
 import generics.map.fifthencounter.src.model.services.NovelServices;
+
+import java.util.ArrayList;
+
+import java.util.List;
 
 public class Program {
 
@@ -21,7 +26,13 @@ public class Program {
 
         Client client = new Client( "Paul Walker", 1L, 100.0 );
 
-        NovelServices novelServices = new NovelServices( client, novel2 );
+        List < Novel > novelList = new ArrayList<>();
+
+        novelList.add( novel );
+
+        novelList.add( novel2 );
+
+        NovelServices novelServices = new NovelServices( client, novelList );
 
         double result = novelServices.receivePaymentCredits();
 
