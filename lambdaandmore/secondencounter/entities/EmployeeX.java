@@ -1,5 +1,10 @@
 package lambdaandmore.secondencounter.entities;
 
+import lambdaandmore.secondencounter.services.RandomEmployeesInterface;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class EmployeeX {
 
     private String name;
