@@ -20,27 +20,23 @@ public class Program {
 
         Person person = new Person( "Paul", 21, Person.SayGex.MALE );
 
-        Person person2 = new Person( "Mr.Duck", 25, Person.SayGex.MALE );
+        Person person2 = new Person( "Mr.Duck", 21, Person.SayGex.MALE );
 
         List < Person > personList = new ArrayList<>();
 
         personList.add( person );
 
+        personList.add( person2 );
+
         CheckPerson2 check = ( list ) -> {
 
             for ( Person p : list ) {
 
-                if ( p.getAge() >= 20 && p.getAge() <= 30 ) {
-
-                    System.out.println( p );
-
-                    return true;
-
-                }
+                if ( p.getAge() >= 20 && p.getAge() <= 30 ) System.out.println( p );
 
             }
 
-            return false;
+            return true;
 
         };
 
