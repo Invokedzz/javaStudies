@@ -16,9 +16,13 @@ public class Program {
 
         Person person = new Person( "Mr.Duck", 20, Person.Sex.MALE );
 
+        Person person2 = new Person( "Mr.Pig", 28, Person.Sex.MALE );
+
+        Person person3 = new Person( "Mr.Goose", 22, Person.Sex.MALE );
+
         CheckPersonEligibleForSelectiveService checkPersonEligibleForSelectiveService = new CheckPersonEligibleForSelectiveService();
 
-        System.out.println( checkPersonEligibleForSelectiveService.test( person ) );
+        checkPersonEligibleForSelectiveService.test( person );
 
     }
 
