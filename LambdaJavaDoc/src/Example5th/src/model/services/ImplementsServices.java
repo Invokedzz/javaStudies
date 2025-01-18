@@ -27,6 +27,10 @@ public class ImplementsServices implements AccountServices {
 
         if ( acc.getBalance() < amount ) throw new WithdrawException( "Invalid amount!" );
 
+        double newValue = acc.getBalance() + amount;
+
+        acc.setBalance( newValue );
+
         return acc.getBalance() - amount;
 
     }
@@ -34,7 +38,11 @@ public class ImplementsServices implements AccountServices {
     @Override
     public double deposit ( Account acc, Double amount ) {
 
-        return acc.getBalance() + amount;
+        double newValue = acc.getBalance() - amount;
+
+        acc.setBalance( newValue );
+
+        return newValue;
 
     }
 
