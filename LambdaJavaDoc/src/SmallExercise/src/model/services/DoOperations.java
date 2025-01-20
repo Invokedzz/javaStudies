@@ -27,17 +27,14 @@ public class DoOperations implements DoOperationsContract {
     @Override
     public Double filterData(List<ProductAB> productList ) {
 
-        ABPredicate abPredicate = ( product ) -> productAB.getName().charAt(0) == 'T';
-
         double sum = 0;
 
-        for (ProductAB product : productList) {
+        ABPredicate predicate = ( product ) -> product.getName().charAt(0) == 'T';
 
-            if (abPredicate.test( product )) {
+        for (int i = 0; i < productList.size(); i++) {
 
-                sum += product.getPrice();
-
-            }
+            if (predicate.test(productList.get(i) )) sum += productList.get(i).getPrice();
+            else sum += 0;
 
         }
 
