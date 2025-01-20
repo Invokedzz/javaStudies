@@ -26,7 +26,7 @@ public class Program {
 
         products.add(new Product("HD Case", 80.90));
 
-        products.removeIf( p -> p.getPrice() <= 100 );
+        products.removeIf( p -> p.getPrice() <= 100 ); // lambda expression in order to remove a value that's lower/equal to 100;
 
         for ( Product items : products ) {
 

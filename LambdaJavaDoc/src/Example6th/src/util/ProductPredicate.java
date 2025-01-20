@@ -6,6 +6,8 @@ import java.util.function.Predicate;
 
 public interface ProductPredicate extends Predicate <Product> {
 
+    // an interface can't implement another interface, but an interface can extends other interface
+
     boolean test ( Product product );
 
 }
