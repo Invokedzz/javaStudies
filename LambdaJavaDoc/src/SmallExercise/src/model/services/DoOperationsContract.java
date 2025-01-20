@@ -4,8 +4,9 @@ import LambdaJavaDoc.src.SmallExercise.src.model.entities.ProductAB;
 
 import java.util.List;
 
+@FunctionalInterface
 public interface DoOperationsContract {
 
-    void filterData ( List < ProductAB > productList );
+    Double filterData (List < ProductAB > productList );
 
 }
