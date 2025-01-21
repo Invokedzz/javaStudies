@@ -2,11 +2,9 @@ package Stream.first.src.model.services;
 
 import Stream.first.src.model.entities.ProductStream;
 
-import java.util.Collections;
 import java.util.List;
 
 import java.io.*;
-import java.util.stream.Collectors;
 
 public class PatternService implements PatternContract {
 
