@@ -14,8 +14,6 @@ public class FilterEmployees implements EmployeeContract {
     @Override
     public void filter ( List<EmployeeStream> emp, EmployeePredicate employeePredicate ) {
 
-        employeePredicate = ( employee ) -> employee.getSalary() >= 1000.0 && !employee.getEmail().isEmpty();
-
         File file = new File( "/Users/samunoinv/Documents/GitHub/javaStudies/Stream/second/files/EmployeeAccounts" );
 
         try (BufferedReader bufferedReader = new BufferedReader( new FileReader( file ))) {
@@ -26,25 +24,15 @@ public class FilterEmployees implements EmployeeContract {
 
                 String [] fields = line.split( "," );
 
-                emp.add( new EmployeeStream( fields[0], Double.parseDouble( fields[1] )));
+                emp.add( new EmployeeStream( fields[0], fields[1], Double.parseDouble( fields[2] )));
 
                 line = bufferedReader.readLine();
 
             }
 
-            for (EmployeeStream elements : emp) {
+            emp.removeIf( employees -> !employeePredicate.test(employees) );
 
-                if ( employeePredicate.test(elements) ) {
-
-                    getFilteredEmployees( emp );
-
-                    return;
-
-                }
-
-                System.out.println("Invalid employees on the block");
-
-            }
+            getFilteredEmployees(emp);
 
 
         } catch ( IOException exception ) {
@@ -56,6 +44,12 @@ public class FilterEmployees implements EmployeeContract {
     }
 
     private void getFilteredEmployees ( List <EmployeeStream> list ) {
+
+
+
+        for (EmployeeStream emp: list) {
+            System.out.println(emp);
+        }
 
     }
 

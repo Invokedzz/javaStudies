@@ -2,17 +2,27 @@ package Stream.second.model.entities;
 
 public class EmployeeStream {
 
+    private String name;
+
     private String email;
 
     private Double salary;
 
     public EmployeeStream () {}
 
-    public EmployeeStream ( String email, Double salary ) {
+    public EmployeeStream ( String name, String email, Double salary ) {
+
+        this.name = name;
 
         this.email = email;
 
         this.salary = salary;
+
+    }
+
+    public String getName () {
+
+        return name;
 
     }
 
@@ -31,7 +41,7 @@ public class EmployeeStream {
     @Override
     public String toString () {
 
-        return getEmail() + " " + getSalary();
+        return getName() + " " + getEmail() + " " + getSalary();
 
     }
 

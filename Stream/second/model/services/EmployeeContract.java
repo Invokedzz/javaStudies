@@ -6,6 +6,7 @@ import Stream.second.util.EmployeePredicate;
 
 import java.util.List;
 
+@FunctionalInterface
 public interface EmployeeContract {
 
     void filter ( List <EmployeeStream> emp, EmployeePredicate employeePredicate );
