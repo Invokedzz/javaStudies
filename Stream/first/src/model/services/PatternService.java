@@ -2,9 +2,11 @@ package Stream.first.src.model.services;
 
 import Stream.first.src.model.entities.ProductStream;
 
+import java.util.Collections;
 import java.util.List;
 
 import java.io.*;
+import java.util.stream.Collectors;
 
 public class PatternService implements PatternContract {
 
@@ -27,11 +29,6 @@ public class PatternService implements PatternContract {
 
             }
 
-            for (ProductStream products : list) {
-
-                System.out.println(products);
-
-            }
 
             reOrderElements( list );
 
@@ -43,8 +40,18 @@ public class PatternService implements PatternContract {
 
     }
 
-    @Override
-    public void reOrderElements(List<ProductStream> list) {
+    private void reOrderElements (List<ProductStream> list) {
+
+        double average = list.stream()
+                .map( ProductStream::getPrice )
+                .reduce( 0.0, (x, y) -> (x + y) / list.size() );
+
+        List <String> names = list.stream()
+                .filter( x -> x.getPrice() > average )
+                .map( ProductStream::getName )
+                .toList();
+
+        names.forEach( System.out::println );
 
     }
 
