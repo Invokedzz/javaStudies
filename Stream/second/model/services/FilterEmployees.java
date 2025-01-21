@@ -1,6 +1,5 @@
 package Stream.second.model.services;
 
-import Stream.first.src.model.entities.ProductStream;
 import Stream.second.model.entities.EmployeeStream;
 
 import Stream.second.util.EmployeePredicate;
@@ -43,13 +42,19 @@ public class FilterEmployees implements EmployeeContract {
 
     }
 
-    private void getFilteredEmployees ( List <EmployeeStream> list ) {
+    private void getFilteredEmployees ( List <EmployeeStream> emp ) {
 
+        Double getTotal = emp.stream()
+                .map( EmployeeStream::getSalary )
+                .reduce( 0.0, Double::sum );
 
+        for (EmployeeStream employees : emp) {
 
-        for (EmployeeStream emp: list) {
-            System.out.println(emp);
+            System.out.println( employees );
+
         }
+
+        System.out.println( "Value spent with employees: " + getTotal );
 
     }
 
